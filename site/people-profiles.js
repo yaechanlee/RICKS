@@ -2,6 +2,7 @@
 'use strict';
 const {api,esc}=window.RicksCMS;
 const types=['Faculty profile','Executive profile','Graduate student profile'];
+const originalProfiles=[{"originalKey":"ryoo-joohan","type":"Faculty profile","title":"Ryoo Joohan","photo":"/assets/director-faculty.webp","body":"{\"role\":\"Professor · Chair of Global Strategy and Intelligence Program\",\"degree\":\"Ph.D. in Management, London School of Economics\",\"affiliation\":\"\",\"research\":\"International market entry, new business development, strategic alliances, mergers and acquisitions, post-merger integration, venture management, and new climate strategies.\",\"email\":\"jhryoo@hanyang.ac.kr\"}"},{"originalKey":"choi-lyong","type":"Faculty profile","title":"Choi Lyong","photo":"/assets/lyong-choi.webp","body":"{\"role\":\"Associate Professor · Chair of East Asian Studies Program\",\"degree\":\"Ph.D. in International History, London School of Economics\",\"affiliation\":\"\",\"research\":\"International security, Indo-Pacific international relations, nuclear security, U.S. foreign policy, and diplomatic history.\",\"email\":\"choiu2@hanyang.ac.kr\"}"},{"originalKey":"lee-yaechan","type":"Faculty profile","title":"Lee Yaechan","photo":"/assets/yaechan-lee.webp","body":"{\"role\":\"Assistant Professor · Chair of Korean Studies Program\",\"degree\":\"Ph.D. in Political Science, Boston University\",\"affiliation\":\"\",\"research\":\"International political economy, politics of finance, developmental states, Korean political economy, and comparative political economy of East Asia.\",\"email\":\"yaechanlee@hanyang.ac.kr\"}"},{"originalKey":"kim-youen","type":"Faculty profile","title":"Kim Youen","photo":"/assets/kim-youen.webp","body":"{\"role\":\"Professor Emeritus\",\"degree\":\"Ph.D. in Political Science, Hanyang University\",\"affiliation\":\"\",\"research\":\"\",\"email\":\"maloman@hanyang.ac.kr\"}"},{"originalKey":"ines-amrouche","type":"Executive profile","title":"Ines Amrouche","photo":"/assets/ines-amrouche.jpeg","body":"{\"role\":\"Executive Editor\",\"degree\":\"Ph.D. Candidate in International Studies (Korean Studies)\",\"affiliation\":\"Hanyang GSIS\",\"research\":\"Energy security, regional cooperation, and geopolitical dynamics in Asia\",\"email\":\"inesamrouche@hanyang.ac.kr\"}"}];
 const $=id=>document.getElementById(id);
 function fields(item){try{return JSON.parse(item.body||'{}');}catch{return {};}}
 function card(item){
@@ -13,7 +14,8 @@ return '<article class="community-editor">'+(portrait||'<div aria-hidden="true">
 }
 async function publicProfiles(){
 try{const result=await api('publicFeed');const entries=result.items.filter(x=>types.includes(x.type));const full=await Promise.all(entries.map(x=>api('publicArticle',{id:x.id}).then(r=>r.item)));
-for(const type of types){const target=type===types[0]?document.querySelector('.faculty-grid'):$(type===types[1]?'executive-profiles':'graduate-profiles');const items=full.filter(x=>x&&x.type===type);if(target)target.insertAdjacentHTML('beforeend',items.map(card).join(''));if(type===types[2]&&items.length)$('graduate-empty').hidden=true;}
+for(const item of full){if(!item?.originalKey)continue;const original=document.querySelector('[data-original-profile="'+item.originalKey.replace(/[^a-z0-9-]/g,'')+'"]');if(original){if(!item.removed&&item.status==='published'&&original.classList.contains(item.type===types[0]?'faculty-card':'community-editor'))original.outerHTML=card(item);else original.remove();item.renderedOriginal=true;}}
+for(const type of types){const target=type===types[0]?document.querySelector('.faculty-grid'):$(type===types[1]?'executive-profiles':'graduate-profiles');const items=full.filter(x=>x&&x.type===type&&!x.removed&&x.status==='published'&&!x.renderedOriginal);if(target)target.insertAdjacentHTML('beforeend',items.map(card).join(''));if(type===types[2]&&items.length)$('graduate-empty').hidden=true;}
 }catch{const target=$('graduate-profiles');if(target)target.innerHTML='<p class="editor-help">Additional profiles could not be loaded. Please refresh.</p>';}
 }
 if($('graduate-profiles')){publicProfiles();return;}
@@ -35,8 +37,17 @@ profilePage=Math.min(Math.max(0,profilePage),Math.max(0,Math.ceil(profileItems.l
 const items=profileItems.slice(profilePage*10,profilePage*10+10);
 $('profile-library').innerHTML=items.map(x=>'<div class="library-row"><button type="button" class="library-open" data-profile="'+esc(x.id)+'"><span class="library-category category-profile">'+esc(x.type.replace(' profile',''))+'</span><span class="library-title">'+esc(x.title)+'</span><small>'+(x.status==='published'?'Published':'Draft')+'</small></button><button type="button" class="library-delete" data-profile-delete="'+esc(x.id)+'" aria-label="Delete '+esc(x.title)+'" title="Delete">×</button></div>').join('')+(items.length?'<div class="library-pagination"><button type="button" data-profile-page="-1" '+(profilePage===0?'disabled':'')+'>Previous</button><span>'+(profilePage+1)+' / '+Math.ceil(profileItems.length/10)+'</span><button type="button" data-profile-page="1" '+((profilePage+1)*10>=profileItems.length?'disabled':'')+'>Next</button></div>':'<p class="editor-help">Saved profiles will appear here.</p>');
 }
-async function refresh(){const r=await request('adminList');profileItems=r.items.filter(x=>types.includes(x.type)).sort((a,b)=>String(b.updatedAt||b.date).localeCompare(String(a.updatedAt||a.date)));drawProfiles();}
-$('people-tab').addEventListener('click',async()=>{$('content-workspace').hidden=true;$('profile-workspace').hidden=false;$('people-tab').setAttribute('aria-pressed','true');$('content-tab').setAttribute('aria-pressed','false');lock(true);try{await refresh();}catch(e){status(e.message);}finally{lock(false);}});
+async function refresh(){let r=await request('adminList');
+for(const seed of originalProfiles){
+if(r.items.some(x=>x.originalKey===seed.originalKey))continue;
+status('Adding existing profiles to the editor…');
+const response=await fetch(seed.photo);if(!response.ok)throw new Error('Could not load the existing portrait. Please try again.');
+const bitmap=await createImageBitmap(await response.blob());let data;
+try{const scale=Math.min(1,1000/Math.max(bitmap.width,bitmap.height)),canvas=document.createElement('canvas');canvas.width=Math.round(bitmap.width*scale);canvas.height=Math.round(bitmap.height*scale);const ctx=canvas.getContext('2d');ctx.fillStyle='#fff';ctx.fillRect(0,0,canvas.width,canvas.height);ctx.drawImage(bitmap,0,0,canvas.width,canvas.height);data=canvas.toDataURL('image/jpeg',.85);}finally{bitmap.close();}
+await request('adminSave',{item:{type:seed.type,originalKey:seed.originalKey,title:seed.title,author:'',affiliation:'',date:new Date().toLocaleDateString('en-CA',{timeZone:'Asia/Seoul'}),summary:JSON.parse(seed.body).role,body:seed.body,images:[{data,alt:seed.title,caption:'',after:0}],status:'published'}});
+}
+r=await request('adminList');profileItems=r.items.filter(x=>types.includes(x.type)&&!x.removed).sort((a,b)=>String(b.updatedAt||b.date).localeCompare(String(a.updatedAt||a.date)));drawProfiles();}
+$('people-tab').addEventListener('click',async()=>{if(busy)return;$('content-workspace').hidden=true;$('profile-workspace').hidden=false;$('people-tab').setAttribute('aria-pressed','true');$('content-tab').setAttribute('aria-pressed','false');lock(true);try{await refresh();}catch(e){status(e.message);}finally{lock(false);}});
 $('content-tab').addEventListener('click',()=>{$('content-workspace').hidden=false;$('profile-workspace').hidden=true;$('people-tab').setAttribute('aria-pressed','false');$('content-tab').setAttribute('aria-pressed','true');});
 window.addEventListener('ricks-editor-ready',()=>{edit();$('content-tab').click();});
 $('profile-new').addEventListener('click',()=>{if(dirty&&!confirm('Discard unsaved profile changes?'))return;edit();status('');});
@@ -55,7 +66,7 @@ $('profile-photo-remove').addEventListener('click',()=>{images=[];dirty=true;pho
 async function save(state){
 if(busy||!$('profile-form').reportValidity())return;lock(true);status('Saving profile…');
 try{const p={};for(const key of ['role','degree','affiliation','research','email'])p[key]=$('profile-'+key).value.trim();
-const item={id:current.id,updatedAt:current.updatedAt,type:$('profile-group').value,title:$('profile-name').value.trim(),author:'',affiliation:p.affiliation,date:current.date||new Date().toLocaleDateString('en-CA',{timeZone:'Asia/Seoul'}),summary:p.role,body:JSON.stringify(p),images,status:state};
+const item={id:current.id,originalKey:current.originalKey,updatedAt:current.updatedAt,type:$('profile-group').value,title:$('profile-name').value.trim(),author:'',affiliation:p.affiliation,date:current.date||new Date().toLocaleDateString('en-CA',{timeZone:'Asia/Seoul'}),summary:p.role,body:JSON.stringify(p),images,status:state};
 const r=await request('adminSave',{item});edit(r.item);await refresh();status(state==='published'?'Profile published on People.':'Profile saved as a draft.');}catch(e){status(e.message);}finally{lock(false);}
 }
 $('profile-draft').addEventListener('click',()=>save('draft'));
