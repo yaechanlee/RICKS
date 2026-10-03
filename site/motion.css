@@ -95,3 +95,11 @@
 
 /* Stable frosted shading avoids delayed backdrop-filter compositing during fades. */
 .home-page .feature-publication{backdrop-filter:none;-webkit-backdrop-filter:none;background:linear-gradient(125deg,rgba(6,40,75,.94),rgba(28,63,91,.92));}
+
+/* Shared bilingual institute wordmark on each carousel slide. */
+.home-page .hero-kicker{display:flex;align-items:center;gap:14px;letter-spacing:0;max-width:none;flex-wrap:nowrap;line-height:1.2}
+.home-page .hero-kicker span{display:inline-block;width:auto;height:auto;background:none;margin:0}
+.home-page .hero-kicker .hero-brand-en{font-family:"Cormorant Garamond",Georgia,serif;font-size:38px;font-weight:400;letter-spacing:-.035em;color:#fff}
+.home-page .hero-kicker .hero-brand-star{font-size:24px;color:#e3bd64}
+.home-page .hero-kicker .hero-brand-ko{font-family:"Noto Sans KR",sans-serif;font-size:20px;font-weight:500;letter-spacing:-.035em;color:#fff;white-space:nowrap}
+@media(max-width:680px){.home-page .hero-kicker{gap:10px}.home-page .hero-kicker .hero-brand-en{font-size:29px}.home-page .hero-kicker .hero-brand-star{font-size:18px}.home-page .hero-kicker .hero-brand-ko{font-size:16px}}

@@ -36,13 +36,13 @@ async function publicContent(){
  if(noticeSlide){
    const today=new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Seoul',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date());
    const notice=notices.find(x=>x.date===today)||notices.find(x=>x.date<=today);
-   noticeSlide.querySelector('.notice-kicker').innerHTML='<span></span> '+(notice&&notice.date===today?'TODAY’S NEWS':'NEWS & NOTICES');
+   
    noticeSlide.querySelector('.notice-date').textContent=notice?date(notice.date):date(today);
    noticeSlide.querySelector('.notice-title').textContent=notice?notice.title:'No notices today';
    noticeSlide.querySelector('.notice-byline').textContent=notice?(notice.summary.length>180?notice.summary.slice(0,177)+'…':notice.summary):'Institute announcements will appear here when published.';
    const target=noticeSlide.querySelector('.notice-link');target.href=notice?link(notice):'notices.html';target.innerHTML=(notice?'Read the notice':'View all notices')+' <span aria-hidden="true">↗</span>';
  }
- const latest=publications[0];const hero=document.querySelector('.hero');if(hero){hero.querySelector('.feature-title').textContent=latest?latest.title:'Our latest publications will appear here';hero.querySelector('.feature-type').textContent=latest?latest.type:'RICKS PUBLICATIONS';hero.querySelector('.feature-byline').textContent=latest?[latest.author,latest.affiliation].filter(Boolean).join(' · '):'Reviews and commentary on Korea';hero.querySelector('.feature-link').href=latest?link(latest):'reviews.html';hero.querySelector('.hero-slide[data-slide="1"] .hero-kicker').innerHTML='<span></span> LATEST PUBLICATION';hero.querySelector('.hero-slide[data-slide="1"] h1').innerHTML='Recent<br><em>publication.</em>';}
+ const latest=publications[0];const hero=document.querySelector('.hero');if(hero){hero.querySelector('.feature-title').textContent=latest?latest.title:'Our latest publications will appear here';hero.querySelector('.feature-type').textContent=latest?latest.type:'RICKS PUBLICATIONS';hero.querySelector('.feature-byline').textContent=latest?[latest.author,latest.affiliation].filter(Boolean).join(' · '):'Reviews and commentary on Korea';hero.querySelector('.feature-link').href=latest?link(latest):'reviews.html';hero.querySelector('.hero-slide[data-slide="1"] h1').innerHTML='Recent<br><em>publication.</em>';}
  }catch(e){const noticeSlide=document.querySelector('.notice-feature');if(noticeSlide){noticeSlide.querySelector('.notice-title').textContent='View institute notices';noticeSlide.querySelector('.notice-byline').textContent='Open the notices page for the latest announcements.';}for(const node of document.querySelectorAll('#reviews-list,#commentary-list,.page-comment-grid,#notices-list,#latest-publications,#activities-list'))node.innerHTML='<p class="cms-empty">Publications could not be loaded. Please refresh in a moment.</p>';}
 }
 publicContent();
