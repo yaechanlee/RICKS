@@ -90,3 +90,13 @@
 .home-page .hero-copy{font-size:18px;line-height:1.75;max-width:570px;font-weight:400}
 .home-page .publication-feature h1{font-size:43px}
 @media(max-width:680px){.home-page .hero,.home-page .hero-slides,.home-page .hero-slide-inner{min-height:600px}.home-page .hero h1{font-size:clamp(38px,10.5vw,53px)}.home-page .hero-copy{font-size:16px}.home-page .publication-feature h1{font-size:34px}}
+
+/* Compact, light navigation below the homepage banner. */
+.home-section-nav{background:#fff;color:#193650;border-bottom:1px solid #e2e9ef}
+.home-section-nav .wrap{flex-wrap:nowrap;gap:30px;overflow-x:auto;scrollbar-width:none;padding-top:0;padding-bottom:0}
+.home-section-nav .wrap::-webkit-scrollbar{display:none}
+.home-section-nav a{flex:0 0 auto;color:#34536c;font-size:13px;font-weight:600;line-height:1.5;padding:19px 0;position:relative;transition:color .18s}
+.home-section-nav a:hover,.home-section-nav a:focus-visible{color:#004483;text-decoration:none}
+.home-section-nav a:after{content:"";position:absolute;left:0;right:0;bottom:0;height:2px;background:#004483;transform:scaleX(0);transform-origin:left;transition:transform .18s}
+.home-section-nav a:hover:after,.home-section-nav a:focus-visible:after{transform:scaleX(1)}
+@media(max-width:680px){.home-section-nav .wrap{width:100%;padding-left:24px;padding-right:24px;gap:27px;scroll-snap-type:x proximity}.home-section-nav a{font-size:12px;padding:17px 0;scroll-snap-align:start}.home-section-nav{position:relative}.home-section-nav:after{content:"";position:absolute;right:0;top:0;bottom:1px;width:22px;background:linear-gradient(90deg,transparent,#fff);pointer-events:none}}
