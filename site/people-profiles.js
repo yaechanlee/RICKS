@@ -27,7 +27,7 @@ function edit(item={}){
 current=item;images=(item.images||[]).map(x=>({...x}));const p=fields(item);
 $('profile-group').value=item.type||types[0];$('profile-name').value=item.title||'';
 for(const key of ['role','degree','affiliation','research','email'])$('profile-'+key).value=p[key]||'';
-$('profile-heading').textContent=item.id?'Edit profile':'New profile';$('profile-unpublish').hidden=item.status!=='published';$('profile-draft').hidden=item.status==='published';$('profile-publish').textContent=item.status==='published'?'Update profile':'Publish profile';photoPreview();dirty=false;
+$('profile-heading').textContent=item.id?'Edit profile':'New profile';$('profile-unpublish').hidden=item.status!=='published';$('profile-draft').hidden=item.status==='published';$('profile-publish').textContent=item.status==='published'?'Update profile':'Publish profile';photoPreview();dirty=false;$('profile-delete').hidden=!item.id;
 }
 async function refresh(){const r=await request('adminList');$('profile-library').innerHTML=r.items.filter(x=>types.includes(x.type)).map(x=>'<button type="button" data-profile="'+esc(x.id)+'">'+esc(x.title)+'<small>'+esc(x.type)+' · '+esc(x.status)+'</small></button>').join('')||'<p class="editor-help">Saved profiles will appear here.</p>';}
 $('people-tab').addEventListener('click',async()=>{$('content-workspace').hidden=true;$('profile-workspace').hidden=false;$('people-tab').setAttribute('aria-pressed','true');$('content-tab').setAttribute('aria-pressed','false');lock(true);try{await refresh();}catch(e){status(e.message);}finally{lock(false);}});
@@ -51,6 +51,7 @@ const r=await request('adminSave',{item});edit(r.item);await refresh();status(st
 $('profile-draft').addEventListener('click',()=>save('draft'));
 $('profile-publish').addEventListener('click',()=>save('published'));
 $('profile-unpublish').addEventListener('click',()=>{if(confirm('Remove this profile from the public People page and keep it as a draft?'))save('draft');});
+$('profile-delete').addEventListener('click',async()=>{if(busy||!current.id)return;if(!confirm('Delete “'+current.title+'”? This removes the profile from People and the editor.'))return;lock(true);status('Deleting profile…');try{await window.RicksCMS.deleteItem(current,sessionStorage.getItem('ricks-editor-session')||'');edit();await refresh();status('Profile deleted.');}catch(e){status(e.message);}finally{lock(false);}});
 window.addEventListener('beforeunload',e=>{if(dirty){e.preventDefault();e.returnValue='';}});
 edit();
 })();
