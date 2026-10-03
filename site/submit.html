@@ -55,7 +55,7 @@
     #submission-status.error{background:#fff1ef;color:#9b2f22}
     .submission-trap{position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden}
     @media(max-width:680px){.submission-row{grid-template-columns:1fr;gap:22px}}
-</style>
+.submission-choice{border:0;padding:0;margin:0 0 24px}.submission-choice legend{font-size:15px;font-weight:700;color:#173955;margin-bottom:12px}#ricks-submission .submission-choice label{display:inline-flex;align-items:center;gap:8px;margin-right:24px}#ricks-submission .submission-choice input{width:auto}#manuscriptText{min-height:360px}[hidden]{display:none!important}</style>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
@@ -87,25 +87,21 @@
           <h2>Share a review or a perspective on Korea today.</h2>
           <p>Use the form below to submit your English-language manuscript to the Hanyang Research Institute for Contemporary Korean Studies. The Institute reviews submissions before publication. The form records the submission date automatically.</p>
         </div>
-        <div class="submit-types" aria-label="Accepted submission types">
-          <div class="submit-type"><span>01</span><strong>Book review</strong></div>
-          <div class="submit-type"><span>02</span><strong>Article review</strong></div>
-          <div class="submit-type"><span>03</span><strong>Commentary</strong></div>
-        </div>
         <section class="form-panel" aria-labelledby="form-title">
           <div class="form-panel-head">
             <h2 id="form-title">Submission form</h2>
-            <p>Complete the details and upload your manuscript.</p>
+            <p>Write your manuscript below or upload a file.</p>
           </div>
           <form id="ricks-submission">
 <div class="submission-trap" aria-hidden="true"><label>Leave empty<input name="website" tabindex="-1" autocomplete="off"></label></div>
 <div class="submission-row"><div><label for="submissionType">Submission type</label><select id="submissionType" name="submissionType" required><option value="">Choose a type</option><option>Book review</option><option>Article review</option><option>Commentary</option></select></div><div><label for="authorName">Your name</label><input id="authorName" name="name" autocomplete="name" maxlength="200" required></div></div>
 <div class="submission-row"><div><label for="authorEmail">Email address</label><input id="authorEmail" name="email" type="email" autocomplete="email" maxlength="200" required></div><div><label for="manuscriptTitle">Manuscript title</label><input id="manuscriptTitle" name="title" maxlength="300" required></div></div>
-<div class="submission-field"><label for="submissionDetails">Book or article citation / issue addressed</label><textarea id="submissionDetails" name="details" maxlength="2000" required placeholder="For a review, provide the full citation. For a commentary, briefly identify the issue."></textarea></div>
-<div class="submission-field"><label for="manuscript">Manuscript file</label><input id="manuscript" name="manuscript" type="file" accept=".docx,.pdf" required><p class="submission-hint">DOCX or PDF, up to 10 MB.</p></div>
+<fieldset class="submission-choice"><legend>How would you like to submit?</legend><label><input type="radio" name="submissionMode" value="text" checked> Write or paste text</label><label><input type="radio" name="submissionMode" value="file"> Upload a file</label></fieldset>
+<div class="submission-field" id="text-submission"><label for="manuscriptText">Your manuscript</label><textarea id="manuscriptText" name="manuscriptText" maxlength="1000000" required placeholder="Write or paste your manuscript here." rows="16"></textarea><p class="submission-hint">Your text will be saved as a Word document for editorial review.</p></div>
+<div class="submission-field" id="file-submission" hidden><label for="manuscript">Manuscript file</label><input id="manuscript" name="manuscript" type="file" accept=".docx,.pdf" disabled><p class="submission-hint">DOCX or PDF, up to 10 MB.</p></div>
 <button class="submission-send" type="submit">Send submission</button><p id="submission-status" role="status" aria-live="polite" hidden></p>
 </form>
-          <p class="submit-note"><span aria-hidden="true">ⓘ</span><span><b>File upload:</b> No account or sign-in is required. Submit a DOCX or PDF manuscript up to 10 MB. Your details and manuscript are stored for editorial review.</span></p>
+          <p class="submit-note"><span aria-hidden="true">ⓘ</span><span>No account or sign-in is required. Your name, email address, and manuscript are stored for editorial review.</span></p>
         </section>
       </div>
     </section>
