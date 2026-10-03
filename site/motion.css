@@ -65,7 +65,7 @@
 @media(prefers-reduced-motion:reduce){.hero-scene,.research-ribbon>div,.hero-scroll i{animation:none!important}.motion-ready .reveal,.hero-slide .hero-copy-block>*{opacity:1;transform:none;transition:none!important}.home-page *{scroll-behavior:auto!important;transition-duration:.01ms!important}}
 
 /* Overlay the homepage masthead on the campus hero. */
-.home-page .site-header{background:transparent;color:#fff;box-shadow:none;margin-bottom:-88px;border-bottom:1px solid rgba(255,255,255,.16);transition:background .3s,box-shadow .3s}
+.home-page .site-header{background:transparent;color:#fff;box-shadow:none;margin-bottom:-88px;border-bottom:0;transition:background .3s,box-shadow .3s}
 .home-page .site-header .brand-mark{filter:brightness(0) invert(1)}
 .home-page .site-header .brand-name small,.home-page .site-header .primary-nav>a:not(.nav-contact){color:#fff}
 .home-page .site-header .menu-toggle{color:#fff}
