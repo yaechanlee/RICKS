@@ -145,3 +145,6 @@ body{font-size:17px;line-height:1.78}
 .director-copy figcaption{margin-top:18px}
 .page-intro-copy p:last-child{margin-bottom:0}
 @media(max-width:680px){.director-message{grid-template-columns:1fr}.director-portrait{height:360px;min-height:0;max-height:420px;object-position:center 25%}.director-copy{padding:25px 22px}.director-copy blockquote{font-size:18px}}
+
+/* Public contribution form navigation */
+.nav-submit{color:#004483!important;font-weight:700!important}.nav-submit:hover{color:#a0782c!important}
