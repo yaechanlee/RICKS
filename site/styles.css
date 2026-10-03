@@ -159,3 +159,6 @@ body{font-size:17px;line-height:1.78}
 
 /* The institute masthead is now the only top header. */
 .utility{display:none}
+
+/* Put the mailing list directly beneath the institute identity. */
+.footer-identity{display:flex;flex-direction:column;align-items:flex-start;gap:25px}.footer-subscribe{display:inline-block;color:#e0c06e;font-size:16px;font-weight:700;line-height:1.5;text-decoration:none}.footer-subscribe:hover{color:#fff}.footer-subscribe:focus-visible{outline:2px solid #e0c06e;outline-offset:6px}@media(max-width:680px){.footer-identity{width:100%;gap:25px}.footer-main .footer-info{order:0}.footer-main .to-top{order:1}}
