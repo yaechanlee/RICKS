@@ -1,0 +1,32 @@
+(() => {
+  const root = document.documentElement;
+  const reduced = matchMedia('(prefers-reduced-motion: reduce)');
+  const hero = document.querySelector('.hero');
+  const progress = document.querySelector('.reading-progress');
+  const nodes = document.querySelectorAll('.home-intro, .home-gateway, .home-section-heading, .home-director, .home-community, .home-section-deck, .home-purpose > div, .home-contribute > .wrap');
+  if ('IntersectionObserver' in window && !reduced.matches) {
+    root.classList.add('motion-ready');
+    const observer = new IntersectionObserver(entries => entries.forEach(entry => {
+      if (entry.isIntersecting) {entry.target.classList.add('is-visible'); observer.unobserve(entry.target);}
+    }), {threshold: .08, rootMargin:'0px 0px -25px 0px'});
+    nodes.forEach((node,i) => {node.classList.add('reveal'); if(node.matches('.home-gateway')) node.style.setProperty('--reveal-delay', (i % 3) * 100 + 'ms'); observer.observe(node);});
+    document.querySelectorAll('#latest-publications, #notices-list').forEach(container => {
+      const watch = new MutationObserver(() => container.querySelectorAll('.cms-card:not(.reveal)').forEach((card,i) => {card.classList.add('reveal');card.style.setProperty('--reveal-delay',i*90+'ms');observer.observe(card);}));
+      watch.observe(container,{childList:true});
+    });
+  }
+  let scheduled = false;
+  function update() {
+    scheduled = false;
+    const y = window.scrollY;
+    const range = document.documentElement.scrollHeight - window.innerHeight;
+    if(progress) progress.style.transform = 'scaleX(' + (range > 0 ? y/range : 0) + ')';
+    document.body.classList.toggle('has-scrolled', y > 30);
+  }
+  addEventListener('scroll', () => {if(!scheduled){scheduled=true;requestAnimationFrame(update);}}, {passive:true});
+  addEventListener('resize',update);update();
+  // Touch swipes use the existing accessible carousel controls.
+  let touchX;
+  hero?.addEventListener('touchstart',e=>{touchX=e.touches[0].clientX;},{passive:true});
+  hero?.addEventListener('touchend',e=>{if(touchX===undefined)return;const dx=e.changedTouches[0].clientX-touchX;if(Math.abs(dx)>65)hero.querySelector(dx<0?'.carousel-next':'.carousel-prev')?.click();touchX=undefined;},{passive:true});
+})();

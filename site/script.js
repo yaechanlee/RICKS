@@ -19,7 +19,8 @@ if (carousel) {
   const featured = document.querySelector('#reviews-list .article-card[data-featured="true"]');
   let activeIndex = 0;
   let timer;
-  let paused = false;
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  let paused = reduceMotion.matches;
 
   if (featured) {
     const title = featured.querySelector('.article-copy h3')?.innerText.trim();
@@ -50,7 +51,7 @@ if (carousel) {
   function stopTimer() { window.clearInterval(timer); }
   function startTimer() {
     stopTimer();
-    if (!paused) timer = window.setInterval(() => showSlide(activeIndex + 1), 6500);
+    if (!paused && !document.hidden) timer = window.setInterval(() => showSlide(activeIndex + 1), 6500);
   }
   function manualMove(index) { showSlide(index); startTimer(); }
 
@@ -63,5 +64,8 @@ if (carousel) {
     pauseButton.setAttribute('aria-label', paused ? 'Play slideshow' : 'Pause slideshow');
     startTimer();
   });
+  document.addEventListener('visibilitychange', startTimer);
+  reduceMotion.addEventListener('change', () => { if (reduceMotion.matches) { paused = true; pauseButton.textContent = '▶'; pauseButton.setAttribute('aria-label', 'Play slideshow'); startTimer(); } });
+  if (paused && pauseButton) {pauseButton.textContent = '▶';pauseButton.setAttribute('aria-label','Play slideshow');}
   startTimer();
 }
