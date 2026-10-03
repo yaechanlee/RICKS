@@ -23,8 +23,8 @@
 .hero-slide.is-active .hero-copy-block>*:nth-child(3){transition-delay:.2s}
 .hero-slide.is-active .hero-copy-block>*:nth-child(4){transition-delay:.3s}
 .home-page .hero-controls{bottom:42px;gap:19px}
-.home-page .carousel-arrow,.home-page .carousel-pause{border-radius:50%;width:44px;height:44px;background:transparent;border:1px solid rgba(255,255,255,.5);transition:background .25s,transform .25s}
-.home-page .carousel-arrow:hover,.home-page .carousel-pause:hover{background:rgba(255,255,255,.2);transform:scale(1.08)}
+.home-page .carousel-arrow,.home-page .carousel-pause{border-radius:0;width:44px;height:44px;background:transparent;border:0;transition:background .25s,transform .25s}
+.home-page .carousel-arrow:hover,.home-page .carousel-pause:hover{background:transparent;transform:scale(1.08)}
 .home-page .carousel-dot{width:25px;height:3px;border-radius:0;transition:width .5s,background .4s}
 .home-page .carousel-dot.is-active{width:65px;background:#fff}
 .hero-scroll{position:absolute;right:6%;bottom:40px;display:flex;align-items:center;gap:18px;color:white;z-index:4}
