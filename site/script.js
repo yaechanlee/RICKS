@@ -51,6 +51,7 @@ if (carousel) {
   function stopTimer() { window.clearInterval(timer); }
   function startTimer() {
     stopTimer();
+    carousel.classList.toggle("is-paused", paused || document.hidden);
     if (!paused && !document.hidden) timer = window.setInterval(() => showSlide(activeIndex + 1), 6500);
   }
   function manualMove(index) { showSlide(index); startTimer(); }

@@ -80,3 +80,15 @@
 
 /* A distinct blue invitation banner above the navy footer. */
 .home-page .home-contribute{background:linear-gradient(120deg,#104c76 0%,#17628d 55%,#0c3d65 100%);border-bottom:1px solid rgba(255,255,255,.16)}
+
+/* Two campus photographs dissolve while the camera gently pans and zooms. */
+.home-page .hero-scene{background:none;animation:none;transform:none;inset:0;overflow:hidden}
+.hero-scene-frame{position:absolute;inset:-7%;background-position:center;background-size:cover;will-change:transform,opacity}
+.hero-scene-frame:first-child{background-image:url('assets/hanyang-campus.webp');animation:campus-camera-a 28s ease-in-out infinite,campus-dissolve-a 28s linear infinite}
+.hero-scene-frame:last-child{background-image:url('assets/international-building.webp');background-position:center 58%;animation:campus-camera-b 28s ease-in-out infinite,campus-dissolve-b 28s linear infinite}
+@keyframes campus-camera-a{0%{transform:scale(1.03) translateX(-2%)}50%{transform:scale(1.14) translateX(2%)}100%{transform:scale(1.03) translateX(-2%)}}
+@keyframes campus-camera-b{0%{transform:scale(1.14) translateX(2%)}50%{transform:scale(1.03) translateX(-2%)}100%{transform:scale(1.14) translateX(2%)}}
+@keyframes campus-dissolve-a{0%,43%{opacity:1}50%,93%{opacity:0}100%{opacity:1}}
+@keyframes campus-dissolve-b{0%,43%{opacity:0}50%,93%{opacity:1}100%{opacity:0}}
+.hero.is-paused .hero-scene-frame{animation-play-state:paused}
+@media(prefers-reduced-motion:reduce){.hero-scene-frame{animation:none!important;transform:none;will-change:auto}.hero-scene-frame:last-child{opacity:0}}
