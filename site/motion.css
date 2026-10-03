@@ -79,7 +79,7 @@
 .home-page .site-header .nav-submit{color:#fff!important}.home-page .site-header .nav-submit:hover{color:#d2e5f3!important}
 
 /* A distinct blue invitation banner above the navy footer. */
-.home-page .home-contribute{background:linear-gradient(120deg,#104c76 0%,#17628d 55%,#0c3d65 100%);border-bottom:1px solid rgba(255,255,255,.16)}
+.home-page .home-contribute{background:linear-gradient(120deg,#104c76 0%,#17628d 55%,#0c3d65 100%);border-bottom:0}
 
 /* Two campus photographs dissolve while the camera gently pans and zooms. */
 .home-page .hero-scene{background:none;animation:none;transform:none;inset:0;overflow:hidden}
