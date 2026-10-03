@@ -21,7 +21,7 @@ if(!$('profile-form'))return;
 let current={},images=[],dirty=false,busy=false;
 const status=s=>{$('editor-status').textContent=s;};
 const request=(action,data={})=>api(action,{...data,token:sessionStorage.getItem('ricks-editor-session')||''});
-function lock(value){busy=value;$('profile-workspace').querySelectorAll('button,input,textarea,select').forEach(n=>n.disabled=value);}
+function lock(value){busy=value;$('profile-workspace').querySelectorAll('button,input,textarea,select').forEach(n=>n.disabled=value);if(!value)drawProfiles();}
 function photoPreview(){$('profile-photo-preview').innerHTML=images.length?'<img src="'+esc(images[0].data)+'" alt="Portrait preview" style="width:100px;height:100px;border-radius:50%;object-fit:cover;margin:16px 0">':'';$('profile-photo-remove').hidden=!images.length;}
 function edit(item={}){
 current=item;images=(item.images||[]).map(x=>({...x}));const p=fields(item);
@@ -29,12 +29,22 @@ $('profile-group').value=item.type||types[0];$('profile-name').value=item.title|
 for(const key of ['role','degree','affiliation','research','email'])$('profile-'+key).value=p[key]||'';
 $('profile-heading').textContent=item.id?'Edit profile':'New profile';$('profile-unpublish').hidden=item.status!=='published';$('profile-draft').hidden=item.status==='published';$('profile-publish').textContent=item.status==='published'?'Update profile':'Publish profile';photoPreview();dirty=false;$('profile-delete').hidden=!item.id;
 }
-async function refresh(){const r=await request('adminList');$('profile-library').innerHTML=r.items.filter(x=>types.includes(x.type)).map(x=>'<button type="button" data-profile="'+esc(x.id)+'">'+esc(x.title)+'<small>'+esc(x.type)+' · '+esc(x.status)+'</small></button>').join('')||'<p class="editor-help">Saved profiles will appear here.</p>';}
+let profileItems=[],profilePage=0;
+function drawProfiles(){
+profilePage=Math.min(Math.max(0,profilePage),Math.max(0,Math.ceil(profileItems.length/10)-1));
+const items=profileItems.slice(profilePage*10,profilePage*10+10);
+$('profile-library').innerHTML=items.map(x=>'<div class="library-row"><button type="button" class="library-open" data-profile="'+esc(x.id)+'"><span class="library-category category-profile">'+esc(x.type.replace(' profile',''))+'</span><span class="library-title">'+esc(x.title)+'</span><small>'+(x.status==='published'?'Published':'Draft')+'</small></button><button type="button" class="library-delete" data-profile-delete="'+esc(x.id)+'" aria-label="Delete '+esc(x.title)+'" title="Delete">×</button></div>').join('')+(items.length?'<div class="library-pagination"><button type="button" data-profile-page="-1" '+(profilePage===0?'disabled':'')+'>Previous</button><span>'+(profilePage+1)+' / '+Math.ceil(profileItems.length/10)+'</span><button type="button" data-profile-page="1" '+((profilePage+1)*10>=profileItems.length?'disabled':'')+'>Next</button></div>':'<p class="editor-help">Saved profiles will appear here.</p>');
+}
+async function refresh(){const r=await request('adminList');profileItems=r.items.filter(x=>types.includes(x.type)).sort((a,b)=>String(b.updatedAt||b.date).localeCompare(String(a.updatedAt||a.date)));drawProfiles();}
 $('people-tab').addEventListener('click',async()=>{$('content-workspace').hidden=true;$('profile-workspace').hidden=false;$('people-tab').setAttribute('aria-pressed','true');$('content-tab').setAttribute('aria-pressed','false');lock(true);try{await refresh();}catch(e){status(e.message);}finally{lock(false);}});
 $('content-tab').addEventListener('click',()=>{$('content-workspace').hidden=false;$('profile-workspace').hidden=true;$('people-tab').setAttribute('aria-pressed','false');$('content-tab').setAttribute('aria-pressed','true');});
 window.addEventListener('ricks-editor-ready',()=>{edit();$('content-tab').click();});
 $('profile-new').addEventListener('click',()=>{if(dirty&&!confirm('Discard unsaved profile changes?'))return;edit();status('');});
-$('profile-library').addEventListener('click',async e=>{const b=e.target.closest('[data-profile]');if(!b||busy)return;if(dirty&&!confirm('Discard unsaved profile changes?'))return;lock(true);try{const r=await request('adminGet',{id:b.dataset.profile});edit(r.item);status('');}catch(e){status(e.message);}finally{lock(false);}});
+$('profile-library').addEventListener('click',async e=>{
+if(busy)return;
+const pager=e.target.closest('[data-profile-page]');if(pager){profilePage+=Number(pager.dataset.profilePage);drawProfiles();return;}
+const remove=e.target.closest('[data-profile-delete]');if(remove){const item=profileItems.find(x=>x.id===remove.dataset.profileDelete);if(!item||!confirm('Delete “'+item.title+'”? This removes the profile from People and the editor.'))return;lock(true);status('Deleting profile…');try{const full=await request('adminGet',{id:item.id});await window.RicksCMS.deleteItem(full.item,sessionStorage.getItem('ricks-editor-session')||'');if(current.id===item.id)edit();await refresh();status('Profile deleted.');}catch(e){status(e.message);}finally{lock(false);drawProfiles();}return;}
+const b=e.target.closest('[data-profile]');if(!b||busy)return;if(dirty&&!confirm('Discard unsaved profile changes?'))return;lock(true);try{const r=await request('adminGet',{id:b.dataset.profile});edit(r.item);status('');}catch(e){status(e.message);}finally{lock(false);}});
 $('profile-form').addEventListener('input',()=>dirty=true);
 $('profile-form').addEventListener('submit',e=>e.preventDefault());
 $('profile-group').addEventListener('change',()=>{if(!$('profile-role').value)$('profile-role').value=$('profile-group').value===types[2]?'Graduate Student':'';});
