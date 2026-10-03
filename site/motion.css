@@ -75,3 +75,5 @@
 .home-page .site-header .primary-nav>a:hover{color:#d2e5f3}
 @media(max-width:900px){.home-page .site-header{margin-bottom:-78px}.home-page .hero-slide-inner{padding-top:148px}}
 @media(max-width:680px){.home-page .site-header{margin-bottom:-68px}.home-page .hero-slide-inner{padding-top:113px}.home-page .site-header .primary-nav.open{background:#06284b;border-color:rgba(255,255,255,.2)}.home-page .site-header .primary-nav.open a:not(.nav-contact){color:#fff;border-color:rgba(255,255,255,.16)}}
+
+.home-page .site-header .nav-submit{color:#fff!important}.home-page .site-header .nav-submit:hover{color:#d2e5f3!important}
