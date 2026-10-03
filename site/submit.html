@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#06284b">
+  <meta name="description" content="Submit book reviews, article reviews, and commentaries to the Hanyang Research Institute for Contemporary Korean Studies.">
+  <title>Submit your work | Hanyang Research Institute for Contemporary Korean Studies</title>
+  <link rel="icon" type="image/svg+xml" href="assets/hyu-logo.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+  <style>
+    .submit-intro{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(28px,7vw,90px);align-items:start;margin-bottom:38px}
+    .submit-intro h2{font-size:clamp(24px,3vw,34px);line-height:1.35;margin:0;color:#123c60}
+    .submit-intro p{margin:0;color:#50677b;line-height:1.9}
+    .submit-types{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:0 0 36px}
+    .submit-type{padding:17px 18px;background:#f3f6f9;border-top:2px solid #004483}
+    .submit-type span{display:block;color:#9a7837;font-size:10px;font-weight:700;letter-spacing:.15em;margin-bottom:6px}
+    .submit-type strong{color:#173955;font-size:15px}
+    .form-panel{padding:clamp(12px,2.2vw,24px);background:#f3f6f9;border:1px solid #d9e2ea}
+    .form-panel-head{display:flex;justify-content:space-between;align-items:end;gap:20px;padding:7px 6px 18px}
+    .form-panel-head h2{margin:0;color:#123c60;font-size:23px}
+    .form-panel-head p{margin:0;color:#607486;font-size:12px}
+    .form-frame{overflow:hidden;background:#fff;border:1px solid #d9e2ea}
+    .form-frame iframe{display:block;width:100%;height:1450px;border:0;background:#fff}
+    .submit-note{display:flex;gap:12px;align-items:flex-start;margin:20px 6px 4px;color:#566d81;font-size:13px;line-height:1.7}
+    .submit-note b{color:#004483}
+    .submit-alternative{text-align:center;margin:18px 0 0;font-size:13px}
+    .submit-alternative a{color:#004483;font-weight:700;text-decoration:underline;text-underline-offset:3px}
+    .nav-submit{color:#004483!important;font-weight:700!important}
+    .nav-submit:hover{color:#a0782c!important}
+    @media(max-width:680px){
+      .submit-intro{grid-template-columns:1fr;gap:12px}
+      .submit-types{grid-template-columns:1fr;gap:8px}
+      .submit-type{padding:12px 15px}
+      .form-panel-head{display:block}
+      .form-panel-head p{margin-top:5px}
+      .form-frame iframe{height:1650px}
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <div class="utility"><div class="wrap utility-inner"><a href="https://gsis.hanyang.ac.kr/en/home" target="_blank" rel="noreferrer">Hanyang University <span aria-hidden="true">↗</span></a><span>HANYANG UNIVERSITY</span></div></div>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="index.html" aria-label="Research Institute for Contemporary Korean Studies home">
+        <img class="brand-mark" src="assets/hyu-logo.svg" alt="">
+        <span class="brand-name"><strong>Research Institute for<br class="brand-break"> Contemporary Korean Studies</strong><small>HANYANG UNIVERSITY</small></span>
+      </a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav"><span></span><span></span><span class="sr-only">Menu</span></button>
+      <nav id="primary-nav" class="primary-nav" aria-label="Main navigation">
+        <a href="about.html">About</a><a href="reviews.html">Book & Article Reviews</a><a href="korea-now.html">Korea Now</a><a href="people.html">People</a><a href="activities.html">Research & Activities</a><a class="nav-submit" href="submit.html" aria-current="page">Submit work</a>
+        <a class="nav-contact" href="mailto:gsis@hanyang.ac.kr">Contact <span aria-hidden="true">↗</span></a>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+    <section class="page-hero">
+      <div class="wrap">
+        <p class="eyebrow">CONTRIBUTE TO RICKS</p>
+        <h1>Bring your research<br>into the conversation.</h1>
+        <p>We welcome original book reviews, article reviews, and commentaries that connect Korean scholarship with readers around the world.</p>
+      </div>
+    </section>
+    <section class="page-content">
+      <div class="wrap">
+        <div class="submit-intro">
+          <h2>Share a review or a perspective on Korea today.</h2>
+          <p>Use the form below to submit your English-language manuscript to the Hanyang Research Institute for Contemporary Korean Studies. The Institute reviews submissions before publication. The form records the submission date automatically.</p>
+        </div>
+        <div class="submit-types" aria-label="Accepted submission types">
+          <div class="submit-type"><span>01</span><strong>Book review</strong></div>
+          <div class="submit-type"><span>02</span><strong>Article review</strong></div>
+          <div class="submit-type"><span>03</span><strong>Commentary</strong></div>
+        </div>
+        <section class="form-panel" aria-labelledby="form-title">
+          <div class="form-panel-head">
+            <h2 id="form-title">Submission form</h2>
+            <p>Complete the details and upload your manuscript.</p>
+          </div>
+          <div class="form-frame">
+            <iframe title="RICKS Submission Form" src="https://docs.google.com/forms/d/e/1FAIpQLScNDaxOXRDW0al90y4iVWdPbQk9jRZ9jtVq-FV-Y5wcvbjhVg/viewform?embedded=true" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+          <p class="submit-note"><span aria-hidden="true">ⓘ</span><span><b>File upload:</b> Google sign-in is required to upload a manuscript. You can use any Google account; the form is open to anyone with its link.</span></p>
+          <p class="submit-alternative">Having trouble with the embedded form? <a href="https://docs.google.com/forms/d/e/1FAIpQLScNDaxOXRDW0al90y4iVWdPbQk9jRZ9jtVq-FV-Y5wcvbjhVg/viewform" target="_blank" rel="noreferrer">Open the form in a new tab ↗</a></p>
+        </section>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap footer-main">
+      <a class="brand footer-brand" href="index.html"><img class="brand-mark" src="assets/hyu-logo.svg" alt=""><span class="brand-name"><strong>Research Institute for<br>Contemporary Korean Studies</strong><small>HANYANG UNIVERSITY</small></span></a>
+      <div class="footer-info"><p>Hanyang University<br>222 Wangsimni-ro, Seongdong-gu, Seoul, Republic of Korea</p><a href="mailto:gsis@hanyang.ac.kr">gsis@hanyang.ac.kr</a></div>
+      <a class="to-top" href="#main">Back to top ↑</a>
+    </div>
+    <div class="wrap footer-bottom"><span>© HANYANG RESEARCH INSTITUTE FOR CONTEMPORARY KOREAN STUDIES</span><a href="https://gsis.hanyang.ac.kr/en/home" target="_blank" rel="noreferrer">HANYANG UNIVERSITY ↗</a></div>
+  </footer>
+</body>
+</html>
