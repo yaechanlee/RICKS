@@ -12,8 +12,8 @@ nav?.querySelectorAll('a').forEach(link => link.addEventListener('click', () => 
 
 const carousel = document.querySelector('.hero');
 if (carousel) {
-  const slides = [...carousel.querySelectorAll('.hero-slide')];
-  const dots = [...carousel.querySelectorAll('.carousel-dot')];
+  let slides = [...carousel.querySelectorAll('.hero-slide')];
+  let dots = [...carousel.querySelectorAll('.carousel-dot')];
   const counter = carousel.querySelector('.carousel-count b');
   const pauseButton = carousel.querySelector('.carousel-pause');
   const featured = document.querySelector('#reviews-list .article-card[data-featured="true"]');
@@ -58,7 +58,8 @@ if (carousel) {
 
   carousel.querySelector('.carousel-prev')?.addEventListener('click', () => manualMove(activeIndex - 1));
   carousel.querySelector('.carousel-next')?.addEventListener('click', () => manualMove(activeIndex + 1));
-  dots.forEach((dot, i) => dot.addEventListener('click', () => manualMove(i)));
+  carousel.querySelector('.carousel-dots')?.addEventListener('click',e=>{const dot=e.target.closest('.carousel-dot');if(dot)manualMove(dots.indexOf(dot));});
+carousel.addEventListener('ricks-slides-updated',()=>{slides=[...carousel.querySelectorAll('.hero-slide')];dots=[...carousel.querySelectorAll('.carousel-dot')];if(counter)counter.parentElement.lastChild.textContent=' / '+String(slides.length).padStart(2,'0');showSlide(Math.min(activeIndex,slides.length-1));startTimer();});
   pauseButton?.addEventListener('click', () => {
     paused = !paused;
     pauseButton.textContent = paused ? '▶' : 'Ⅱ';
