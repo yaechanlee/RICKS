@@ -29,13 +29,13 @@ function edit(item={}){
 current=item;images=(item.images||[]).map(x=>({...x}));const p=fields(item);
 $('profile-group').value=item.type||types[0];$('profile-name').value=item.title||'';
 for(const key of ['role','degree','affiliation','research','email'])$('profile-'+key).value=p[key]||'';
-$('profile-heading').textContent=item.id?'Edit profile':'New profile';$('profile-unpublish').hidden=item.status!=='published';$('profile-draft').hidden=item.status==='published';$('profile-publish').textContent=item.status==='published'?'Update profile':'Publish profile';photoPreview();dirty=false;$('profile-delete').hidden=!item.id;
+$('profile-heading').textContent=item.id?'Edit profile':'New profile';$('profile-unpublish').hidden=item.status!=='published';$('profile-draft').hidden=item.status==='published';$('profile-publish').textContent=item.status==='published'?'Update profile':'Publish profile';photoPreview();dirty=false;$('profile-delete').hidden=!item.id;drawProfiles();
 }
 let profileItems=[],profilePage=0;
 function drawProfiles(){
 profilePage=Math.min(Math.max(0,profilePage),Math.max(0,Math.ceil(profileItems.length/10)-1));
 const items=profileItems.slice(profilePage*10,profilePage*10+10);
-$('profile-library').innerHTML=items.map(x=>'<div class="library-row"><button type="button" class="library-open" data-profile="'+esc(x.id)+'"><span class="library-category category-profile">'+esc(x.type.replace(' profile',''))+'</span><span class="library-title">'+esc(x.title)+'</span><small>'+(x.status==='published'?'Published':'Draft')+'</small></button><button type="button" class="library-delete" data-profile-delete="'+esc(x.id)+'" aria-label="Delete '+esc(x.title)+'" title="Delete">×</button></div>').join('')+(items.length?'<div class="library-pagination"><button type="button" data-profile-page="-1" '+(profilePage===0?'disabled':'')+'>Previous</button><span>'+(profilePage+1)+' / '+Math.ceil(profileItems.length/10)+'</span><button type="button" data-profile-page="1" '+((profilePage+1)*10>=profileItems.length?'disabled':'')+'>Next</button></div>':'<p class="editor-help">Saved profiles will appear here.</p>');
+$('profile-library').innerHTML=items.map(x=>'<div class="library-row"><button type="button" class="library-open" data-profile="'+esc(x.id)+'" aria-pressed="'+(current.id===x.id)+'"><span class="library-category category-profile">'+esc(x.type.replace(' profile',''))+'</span><span class="library-title">'+esc(x.title)+'</span><small>'+(x.status==='published'?'Published':'Draft')+'</small></button><button type="button" class="library-delete" data-profile-delete="'+esc(x.id)+'" aria-label="Delete '+esc(x.title)+'" title="Delete">×</button></div>').join('')+(items.length?'<div class="library-pagination"><button type="button" data-profile-page="-1" '+(profilePage===0?'disabled':'')+'>Previous</button><span>'+(profilePage+1)+' / '+Math.ceil(profileItems.length/10)+'</span><button type="button" data-profile-page="1" '+((profilePage+1)*10>=profileItems.length?'disabled':'')+'>Next</button></div>':'<p class="editor-help">Saved profiles will appear here.</p>');
 }
 async function refresh(){let r=await request('adminList');
 for(const seed of originalProfiles){
@@ -47,10 +47,10 @@ try{const scale=Math.min(1,1000/Math.max(bitmap.width,bitmap.height)),canvas=doc
 await request('adminSave',{item:{type:seed.type,originalKey:seed.originalKey,title:seed.title,author:'',affiliation:'',date:new Date().toLocaleDateString('en-CA',{timeZone:'Asia/Seoul'}),summary:JSON.parse(seed.body).role,body:seed.body,images:[{data,alt:seed.title,caption:'',after:0}],status:'published'}});
 }
 r=await request('adminList');profileItems=r.items.filter(x=>types.includes(x.type)&&!x.removed).sort((a,b)=>String(b.updatedAt||b.date).localeCompare(String(a.updatedAt||a.date)));drawProfiles();}
-$('people-tab').addEventListener('click',async()=>{if(busy)return;$('content-workspace').hidden=true;$('profile-workspace').hidden=false;$('people-tab').setAttribute('aria-pressed','true');$('content-tab').setAttribute('aria-pressed','false');lock(true);try{await refresh();}catch(e){status(e.message);}finally{lock(false);}});
+$('people-tab').addEventListener('click',async()=>{if(busy)return;if(dirty&&!confirm('Start a new profile without saving your changes?'))return;edit();$('content-workspace').hidden=true;$('profile-workspace').hidden=false;$('people-tab').setAttribute('aria-pressed','true');$('content-tab').setAttribute('aria-pressed','false');lock(true);try{await refresh();}catch(e){status(e.message);}finally{lock(false);}});
 $('content-tab').addEventListener('click',()=>{$('content-workspace').hidden=false;$('profile-workspace').hidden=true;$('people-tab').setAttribute('aria-pressed','false');$('content-tab').setAttribute('aria-pressed','true');});
 window.addEventListener('ricks-editor-ready',()=>{edit();$('content-tab').click();});
-$('profile-new').addEventListener('click',()=>{if(dirty&&!confirm('Discard unsaved profile changes?'))return;edit();status('');});
+
 $('profile-library').addEventListener('click',async e=>{
 if(busy)return;
 const pager=e.target.closest('[data-profile-page]');if(pager){profilePage+=Number(pager.dataset.profilePage);drawProfiles();return;}

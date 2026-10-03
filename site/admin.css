@@ -12,3 +12,5 @@
 .library-pagination{display:flex;align-items:center;justify-content:space-between;gap:6px;margin-top:16px;font-size:12px}
 .editor-library .library-pagination button{width:auto;margin:0;padding:8px;font-size:12px}
 .library-delete:hover{background:#fff0f0}
+
+.editor-actions button[aria-pressed="true"]{background:#004483;border-color:#004483;color:#fff;box-shadow:0 3px 10px #00448326}.editor-library .library-open[aria-pressed="true"]{background:#edf5fb;border:2px solid #004483;padding:11px;box-shadow:0 2px 9px #00448314}.editor-actions button[aria-pressed="false"]:hover{background:#eef4f8}
