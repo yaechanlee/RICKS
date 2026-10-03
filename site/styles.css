@@ -148,3 +148,7 @@ body{font-size:17px;line-height:1.78}
 
 /* Public contribution form navigation */
 .nav-submit{color:#004483!important;font-weight:700!important}.nav-submit:hover{color:#a0782c!important}
+
+/* Institute notices and navigation spacing. */
+.notice-empty{padding:32px;border-top:3px solid #004483;background:#f4f7fa}.notice-empty h2{margin:0 0 12px;color:#173955}.notice-empty p{margin:0;color:#566d81}
+@media(min-width:1101px){.primary-nav{gap:14px;font-size:13px}.header-inner{gap:20px}.primary-nav>a{flex-shrink:0}}
