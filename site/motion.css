@@ -63,3 +63,15 @@
 .home-people,.home-notices{padding:48px 0}.home-publications{padding:48px 0}.home-director,.home-community{padding:28px}.home-director>img{width:105px;height:140px}.home-director h3{font-size:24px}.home-community h3{font-size:29px}.home-purpose{padding-top:50px;padding-bottom:50px}.home-contribute{padding:48px 0}.research-ribbon{padding:21px 0}.research-ribbon>div{gap:28px}
 }
 @media(prefers-reduced-motion:reduce){.hero-scene,.research-ribbon>div,.hero-scroll i{animation:none!important}.motion-ready .reveal,.hero-slide .hero-copy-block>*{opacity:1;transform:none;transition:none!important}.home-page *{scroll-behavior:auto!important;transition-duration:.01ms!important}}
+
+/* Overlay the homepage masthead on the campus hero. */
+.home-page .site-header{background:transparent;color:#fff;box-shadow:none;margin-bottom:-88px;border-bottom:1px solid rgba(255,255,255,.16);transition:background .3s,box-shadow .3s}
+.home-page .site-header .brand-mark{filter:brightness(0) invert(1)}
+.home-page .site-header .brand-name small,.home-page .site-header .primary-nav>a:not(.nav-contact){color:#fff}
+.home-page .site-header .menu-toggle{color:#fff}
+.home-page .site-header .menu-toggle span:not(.sr-only){background:#fff}
+.home-page .hero-slide-inner{padding-top:158px}
+.home-page.has-scrolled .site-header{background:#06284b;box-shadow:0 5px 25px rgba(7,35,61,.18)}
+.home-page .site-header .primary-nav>a:hover{color:#d2e5f3}
+@media(max-width:900px){.home-page .site-header{margin-bottom:-78px}.home-page .hero-slide-inner{padding-top:148px}}
+@media(max-width:680px){.home-page .site-header{margin-bottom:-68px}.home-page .hero-slide-inner{padding-top:113px}.home-page .site-header .primary-nav.open{background:#06284b;border-color:rgba(255,255,255,.2)}.home-page .site-header .primary-nav.open a:not(.nav-contact){color:#fff;border-color:rgba(255,255,255,.16)}}
