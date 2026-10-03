@@ -92,3 +92,6 @@
 @keyframes campus-dissolve-b{0%,43%{opacity:0}50%,93%{opacity:1}100%{opacity:0}}
 .hero.is-paused .hero-scene-frame{animation-play-state:paused}
 @media(prefers-reduced-motion:reduce){.hero-scene-frame{animation:none!important;transform:none;will-change:auto}.hero-scene-frame:last-child{opacity:0}}
+
+/* Stable frosted shading avoids delayed backdrop-filter compositing during fades. */
+.home-page .feature-publication{backdrop-filter:none;-webkit-backdrop-filter:none;background:linear-gradient(125deg,rgba(6,40,75,.94),rgba(28,63,91,.92));}
