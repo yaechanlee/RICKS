@@ -12,6 +12,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <script src="script.js" defer></script>
+  <script src="submission.js" defer></script>
   <style>
     .submit-intro{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(28px,7vw,90px);align-items:start;margin-bottom:38px}
     .submit-intro h2{font-size:clamp(24px,3vw,34px);line-height:1.35;margin:0;color:#123c60}
@@ -40,7 +41,21 @@
       .form-panel-head p{margin-top:5px}
       .form-frame iframe{height:1260px}
     }
-  </style>
+  
+    #ricks-submission{padding:clamp(18px,4vw,40px);background:#fff;font-family:inherit}
+    .submission-row{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-bottom:22px}
+    #ricks-submission label{display:block;margin-bottom:8px;font-size:15px;font-weight:700;color:#173955}
+    #ricks-submission input,#ricks-submission select,#ricks-submission textarea{width:100%;padding:13px;border:1px solid #cbd5df;border-radius:4px;font:inherit;background:#fff;color:#173955}
+    #ricks-submission textarea{min-height:130px;resize:vertical}
+    #ricks-submission input:focus,#ricks-submission select:focus,#ricks-submission textarea:focus{outline:3px solid #d9eafa;border-color:#004483}
+    .submission-field{margin-bottom:22px}.submission-hint{font-size:13px;margin:7px 0;color:#566d81}
+    .submission-send{padding:15px 24px;background:#004483;border:0;border-radius:4px;color:white;font:700 15px Manrope,sans-serif;cursor:pointer}
+    .submission-send:disabled{opacity:.6;cursor:wait}
+    #submission-status{padding:16px;margin-top:20px;background:#edf6f1;color:#1c5d3b}
+    #submission-status.error{background:#fff1ef;color:#9b2f22}
+    .submission-trap{position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden}
+    @media(max-width:680px){.submission-row{grid-template-columns:1fr;gap:22px}}
+</style>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
@@ -82,11 +97,15 @@
             <h2 id="form-title">Submission form</h2>
             <p>Complete the details and upload your manuscript.</p>
           </div>
-          <div class="form-frame">
-            <iframe title="RICKS Submission Form" src="https://script.google.com/macros/s/AKfycbzoanbmQg-J3h6I-yZTRaQPR0jbwRPgeqTpgsNuRpSw6XmnZ6ocp8l80flHu2NVDiD6/exec" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-          </div>
+          <form id="ricks-submission">
+<div class="submission-trap" aria-hidden="true"><label>Leave empty<input name="website" tabindex="-1" autocomplete="off"></label></div>
+<div class="submission-row"><div><label for="submissionType">Submission type</label><select id="submissionType" name="submissionType" required><option value="">Choose a type</option><option>Book review</option><option>Article review</option><option>Commentary</option></select></div><div><label for="authorName">Your name</label><input id="authorName" name="name" autocomplete="name" maxlength="200" required></div></div>
+<div class="submission-row"><div><label for="authorEmail">Email address</label><input id="authorEmail" name="email" type="email" autocomplete="email" maxlength="200" required></div><div><label for="manuscriptTitle">Manuscript title</label><input id="manuscriptTitle" name="title" maxlength="300" required></div></div>
+<div class="submission-field"><label for="submissionDetails">Book or article citation / issue addressed</label><textarea id="submissionDetails" name="details" maxlength="2000" required placeholder="For a review, provide the full citation. For a commentary, briefly identify the issue."></textarea></div>
+<div class="submission-field"><label for="manuscript">Manuscript file</label><input id="manuscript" name="manuscript" type="file" accept=".docx,.pdf" required><p class="submission-hint">DOCX or PDF, up to 10 MB.</p></div>
+<button class="submission-send" type="submit">Send submission</button><p id="submission-status" role="status" aria-live="polite" hidden></p>
+</form>
           <p class="submit-note"><span aria-hidden="true">ⓘ</span><span><b>File upload:</b> No account or sign-in is required. Submit a DOCX or PDF manuscript up to 10 MB. Your details and manuscript are stored for editorial review.</span></p>
-          <p class="submit-alternative">Having trouble with the embedded form? <a href="https://script.google.com/macros/s/AKfycbzoanbmQg-J3h6I-yZTRaQPR0jbwRPgeqTpgsNuRpSw6XmnZ6ocp8l80flHu2NVDiD6/exec" target="_blank" rel="noreferrer">Open the form in a new tab ↗</a></p>
         </section>
       </div>
     </section>
