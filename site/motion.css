@@ -77,3 +77,6 @@
 @media(max-width:680px){.home-page .site-header{margin-bottom:-68px}.home-page .hero-slide-inner{padding-top:113px}.home-page .site-header .primary-nav.open{background:#06284b;border-color:rgba(255,255,255,.2)}.home-page .site-header .primary-nav.open a:not(.nav-contact){color:#fff;border-color:rgba(255,255,255,.16)}}
 
 .home-page .site-header .nav-submit{color:#fff!important}.home-page .site-header .nav-submit:hover{color:#d2e5f3!important}
+
+/* A distinct blue invitation banner above the navy footer. */
+.home-page .home-contribute{background:linear-gradient(120deg,#104c76 0%,#17628d 55%,#0c3d65 100%);border-bottom:1px solid rgba(255,255,255,.16)}
