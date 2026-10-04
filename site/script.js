@@ -71,3 +71,6 @@ carousel.addEventListener('ricks-slides-updated',()=>{slides=[...carousel.queryS
   if (paused && pauseButton) {pauseButton.textContent = '▶';pauseButton.setAttribute('aria-label','Play slideshow');}
   startTimer();
 }
+
+// Make post search available on every public page, including pages without a board.
+window.addEventListener('load',()=>{if(!window.RicksCMS&&!document.querySelector('script[src*="/cms.js"]')){const script=document.createElement('script');script.src='/cms.js?v=15';document.head.append(script);}});
