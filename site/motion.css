@@ -85,7 +85,7 @@
 .home-page .hero-scene{background:none;animation:none;transform:none;inset:0;overflow:hidden}
 .hero-scene-frame{position:absolute;inset:-5%;background-position:center;background-size:cover;opacity:0;transition:opacity 1s ease;will-change:transform,opacity;animation:campus-camera 24s ease-in-out infinite alternate}
 .hero-scene-frame.is-active{opacity:1}
-.hero-scene-frame:nth-child(1){background-image:url('/assets/carousel/campus-main-hires.webp');background-position:center 48%}
+.hero-scene-frame:nth-child(1){background-image:url('/assets/carousel/seoul-panorama.webp');background-position:center 48%}
 .hero-scene-frame:nth-child(2){background-image:url('/assets/carousel/main-building-hires.webp');background-position:center 50%}
 .hero-scene-frame:nth-child(3){background-image:url('/assets/carousel/international-hires.webp');background-position:center 58%}
 @keyframes campus-camera{from{transform:scale(1.02) translateX(-1%)}to{transform:scale(1.08) translateX(1%)}}

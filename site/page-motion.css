@@ -18,6 +18,6 @@
 @media(prefers-reduced-motion:reduce){.page-hero:after,.page-hero .wrap>*{animation:none}.page-motion-ready .page-reveal{opacity:1;transform:none;transition:none}.page-card,.faculty-card,.cms-card,.faculty-portrait img,.submission-send,.editor-actions button,.editor-login button{transition:none!important}}
 
 /* High-resolution campus photographs across the institute pages. */
-body.campus-view-courtyard .page-hero,body.campus-view-courtyard .page-hero:after{background-image:url('/assets/carousel/campus-main-hires.webp');background-position:center 48%}
-body.campus-view-international .page-hero,body.campus-view-international .page-hero:after{background-image:url('/assets/carousel/international-hires.webp');background-position:center 58%}
+body.campus-view-courtyard .page-hero,body.campus-view-courtyard .page-hero:after{background-image:url('/assets/carousel/main-building-hires.webp');background-position:center 48%}
+body.campus-view-international .page-hero,body.campus-view-international .page-hero:after{background-image:url('/assets/carousel/main-building-hires.webp');background-position:center 48%}
 .carousel-photo-credit{font-size:11px;line-height:1.7;color:#aeb9c8;padding-top:16px;margin-bottom:0}.carousel-photo-credit a{text-decoration:underline;text-underline-offset:3px}
