@@ -85,23 +85,28 @@ async function publicContent(){
  let activities=items.filter(x=>activityTypes.includes(x.type));if(document.documentElement.lang==='ko')activities=await Promise.all(activities.map(async x=>{try{return await publicDetail(x.id);}catch{return x;}}));
  const publications=items.filter(x=>['Book review','Article review','Commentary'].includes(x.type));
  const reviews=items.filter(x=>/review$/.test(x.type)),comments=items.filter(x=>x.type==='Commentary');
+ const researchActivities=activities.filter(x=>x.type==='Research projects'||x.type==='Academic publications');
+ const noticeActivities=activities.filter(x=>x.type==='Events');
  const card=x=>`<article class="cms-card"><a class="post-card-cover" data-post-cover="${esc(x.id)}" href="${link(x)}" aria-label="${esc(x.title)}" hidden></a><p class="eyebrow">${esc(x.type)}</p><h3><a href="${link(x)}">${esc(x.title)}</a></h3>${x.summary&&x.type!=='Academic publications'?`<p>${esc(x.summary)}</p>`:''}<div class="byline"><span>${esc(x.author||'RICKS')}${x.affiliation?`<small>${esc(x.affiliation)}</small>`:''}</span><time datetime="${esc(x.date)}">${date(x.date)}</time></div></article>`;
  const home=!!document.querySelector('.hero');
  const homeCard=x=>`<article class="cms-card" data-publication="${esc(x.id)}"><a class="home-cover" href="${link(x)}" aria-label="Read ${esc(x.title)}"><span aria-hidden="true">RICKS<small>${esc(x.type)}</small></span></a><div class="home-card-copy"><p class="eyebrow">${esc(x.type)}</p><h3><a href="${link(x)}">${esc(x.title)}</a></h3>${x.summary&&x.type!=='Academic publications'?`<p>${esc(x.summary)}</p>`:''}<div class="byline"><span>${esc(x.author||'RICKS')}</span><time datetime="${esc(x.date)}">${date(x.date)}</time></div></div></article>`;
- for(const [selector,list,empty] of [['#reviews-list',reviews,'Reviews will appear here when published.'],['#commentary-list,.page-comment-grid',comments,'Commentaries will appear here when published.'],['#activities-list',activities,'Research and activity updates will appear here when published.'],['#latest-publications',publications,'New reviews and commentaries will appear here when published.']]){const node=document.querySelector(selector);if(node){if(home)node.innerHTML=list.length?list.slice(0,3).map(selector==='#latest-publications'?homeCard:card).join(''):`<p class="cms-empty">${empty}</p>`;else paginate(node,list,card,empty);}}
+ for(const [selector,list,empty] of [['#reviews-list',reviews,'Reviews will appear here when published.'],['#commentary-list,.page-comment-grid',comments,'Commentaries will appear here when published.'],['#activities-list',noticeActivities,'Notices will appear here when published.'],['#research-initiatives-list',researchActivities,'Research initiative updates will appear here when published.'],['#latest-publications',publications,'New reviews and commentaries will appear here when published.']]){const node=document.querySelector(selector);if(node){if(home)node.innerHTML=list.length?list.slice(0,3).map(selector==='#latest-publications'?homeCard:card).join(''):`<p class="cms-empty">${empty}</p>`;else paginate(node,list,card,empty);}}
  hydrateCovers(document);
  for(const node of document.querySelectorAll('#latest-publications [data-publication]')){publicDetail(node.dataset.publication).then(item=>{const image=item.images?.[0];if(image)node.querySelector('.home-cover').innerHTML=`<img src="${esc(image.thumbnail||image.data)}" alt="${esc(image.alt||image.caption||item.title)}" loading="lazy">`;}).catch(()=>{});}
 
- const noticeSlide=document.querySelector('.notice-feature');
- if(noticeSlide){
-   const today=new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Seoul',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date());
-   const notice=activities[0];
-   
-   noticeSlide.querySelector('.notice-date').textContent=notice?notice.type:'RESEARCH & ACTIVITIES';
-   noticeSlide.querySelector('.notice-title').textContent=notice?notice.title:'Our latest research and activity updates will appear here';
-   noticeSlide.querySelector('.notice-byline').textContent=notice?(notice.type==='Academic publications'?'':notice.summary.length>180?notice.summary.slice(0,177)+'…':notice.summary):'Academic publications, events, and research projects.';
-   const target=noticeSlide.querySelector('.notice-link');target.href=notice?link(notice):local('/activities/');target.innerHTML=(notice?'Read the update':'View research & activities')+' <span aria-hidden="true">↗</span>';
+ const researchSlide=document.querySelector('.research-feature');
+ const noticeSlide=document.querySelector('.notices-feature');
+ function applyActivitySlide(slide,item,fallbackLabel,fallbackTitle,fallbackCopy,fallbackLink){
+   if(!slide)return;
+   slide.querySelector('.notice-date').textContent=item?item.type:fallbackLabel;
+   slide.querySelector('.notice-title').textContent=item?item.title:fallbackTitle;
+   const summary=item?(item.summary||''):fallbackCopy;
+   slide.querySelector('.notice-byline').textContent=summary.length>180?summary.slice(0,177)+'…':summary;
+   const target=slide.querySelector('.notice-link');target.href=item?link(item):fallbackLink;
+   target.innerHTML=(item?'Read the update':'View updates')+' <span aria-hidden="true">↗</span>';
  }
+ applyActivitySlide(researchSlide,researchActivities[0],'RESEARCH INITIATIVES','Research initiatives from RICKS','Data, maps, and collaborative projects exploring Korea’s place in the world.',local('/research-initiatives/'));
+ applyActivitySlide(noticeSlide,noticeActivities[0],'INSTITUTE NOTICES','Events, seminars, and opportunities from RICKS','Follow the institute’s latest announcements and activities.',local('/activities/'));
  const latest=publications[0];const hero=document.querySelector('.hero');if(hero){hero.querySelector('.feature-title').textContent=latest?latest.title:'Our latest publications will appear here';hero.querySelector('.feature-type').textContent=latest?latest.type:'RICKS PUBLICATIONS';hero.querySelector('.feature-byline').textContent=latest?[latest.author,latest.affiliation].filter(Boolean).join(' · '):'Reviews and commentary on Korea';hero.querySelector('.feature-link').href=latest?link(latest):local('/reviews/');hero.querySelector('.hero-slide[data-slide="1"] h1').innerHTML=document.documentElement.lang==='ko'?'최근<br><em>간행물</em>':'Recent<br><em>publication.</em>';}
  }catch(e){const noticeSlide=document.querySelector('.notice-feature');if(noticeSlide){noticeSlide.querySelector('.notice-title').textContent='Notices';noticeSlide.querySelector('.notice-byline').textContent='Open Notices for the latest updates.';}for(const node of document.querySelectorAll('#reviews-list,#commentary-list,.page-comment-grid,#notices-list,#latest-publications,#activities-list'))node.innerHTML='<p class="cms-empty">Publications could not be loaded. Please refresh in a moment.</p>';}
 }
