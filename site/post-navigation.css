@@ -83,3 +83,13 @@
 .site-header .primary-nav .site-search-hint span{display:block;line-height:20px}
 .site-header .primary-nav .site-search.has-query .site-search-hint span{display:none}
 }
+
+/* Leave comfortable space around desktop publication copy and metadata. */
+@media(min-width:901px){
+body:not(.home-page) #activities-list .cms-card,body:not(.home-page) #reviews-list .cms-card,body:not(.home-page) #commentary-list .cms-card{padding:28px 32px}
+body:not(.home-page) #activities-list .byline,body:not(.home-page) #reviews-list .byline,body:not(.home-page) #commentary-list .byline{justify-content:flex-start;align-items:flex-start;flex-wrap:wrap;gap:12px 28px;margin-top:20px}
+.cms-card .byline time{max-width:100%;white-space:normal}
+.home-page .home-notice-grid .cms-card{padding:28px 32px}
+.home-page .home-publication-grid .home-card-copy{padding:28px 32px}
+.home-page .home-publication-grid .byline{justify-content:flex-start;align-items:flex-start;gap:12px 24px}
+}
