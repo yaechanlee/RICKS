@@ -44,9 +44,10 @@ def main():
     with concurrent.futures.ThreadPoolExecutor(max_workers=3) as pool: list(pool.map(snapshot,items))
     save('feed.json',dict(ok=True,generatedAt=STAMP,items=items))
     # Bust old script URLs and establish connections without blocking rendering.
+    cms_version=hashlib.sha256((SITE/'cms.js').read_bytes()).hexdigest()[:12]
     for path in SITE.rglob('*.html'):
         text=path.read_text()
-        text=re.sub(r'/cms\.js\?v=[^"\s]+','/cms.js?v=performance-1',text)
+        text=re.sub(r'/cms\.js\?v=[^"\s]+','/cms.js?v='+cms_version,text)
         if '/cms.js' in text and 'href="https://script.google.com"' not in text:
             text=text.replace('</head>','<link rel="preconnect" href="https://script.google.com"><link rel="preconnect" href="https://script.googleusercontent.com"></head>')
         path.write_text(text)
