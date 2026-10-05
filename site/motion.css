@@ -188,3 +188,19 @@
 .atlas-slide-title{margin:10px 0!important}
 .atlas-slide-byline{font-size:13px;color:#dce5ef;margin:10px 0 16px}
 @media(max-width:680px){.atlas-carousel-card{grid-template-columns:90px minmax(0,1fr);gap:12px;padding:16px!important}.atlas-slide-preview{min-height:100px;padding:4px}.atlas-slide-type{font-size:8px;letter-spacing:.05em}.atlas-slide-title{font-size:21px!important}.atlas-slide-byline{font-size:11px}.atlas-carousel-card .button{padding:12px!important;font-size:12px!important}}
+
+/* The homepage hero occupies the mobile browser viewport. */
+@media(max-width:680px){.home-page .hero{height:100svh;min-height:100svh!important}.home-page .hero-controls{bottom:max(24px,env(safe-area-inset-bottom))}}
+.initiative-card-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,330px),1fr));gap:28px}
+.initiative-card{display:block;max-width:540px;background:#fff;border:1px solid #d7e1e9;transition:box-shadow .2s,transform .2s}
+.initiative-card:hover{transform:translateY(-3px);box-shadow:0 12px 30px #06284b15}
+.initiative-card-art{background:#eaf2f7;padding:20px;aspect-ratio:1.9;display:flex;align-items:center;overflow:hidden}
+.initiative-card-art img{width:100%;height:auto;display:block}
+.initiative-card-copy{padding:28px}.initiative-card-copy h2{margin:8px 0 14px;font-size:28px;color:#123c60}.initiative-card-copy p{color:#607386}.initiative-card-stats{font-size:13px}.initiative-card-copy .text-link{display:block;margin-top:22px;color:#004483}
+body.atlas-fullscreen{height:100dvh;min-height:0;display:flex;flex-direction:column;overflow:hidden}
+.atlas-fullscreen .site-header{flex:0 0 auto;position:relative;z-index:30}
+.atlas-fullscreen-main{flex:1 1 0;min-height:0;overflow:hidden}
+.atlas-fullscreen #koica-native-map{height:100%;min-height:0;margin:0}
+.atlas-page-footer{flex:0 0 auto;display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 24px;background:#06284b;color:#fff;font-size:11px;line-height:1.5}
+.atlas-page-footer a:hover{text-decoration:underline}
+@media(max-width:680px){.atlas-page-footer{padding:10px 14px;flex-wrap:wrap;gap:6px 12px}.atlas-page-footer span{margin-left:auto}.atlas-page-footer>a:last-child{width:100%;text-align:right;font-size:10px}.initiative-card-copy{padding:22px}}

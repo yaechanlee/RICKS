@@ -84,4 +84,4 @@ document.addEventListener('click',event=>{if(!event.target.closest('.nav-group')
 document.addEventListener('keydown',event=>{if(event.key==='Escape')document.querySelectorAll('.nav-group').forEach(group=>{group.classList.remove('is-open');group.querySelector('button').setAttribute('aria-expanded','false')})});
 
 // Keep atlas navigation within the current language of RICKS.
-document.querySelectorAll('a[href*="koica-research-atlas"]').forEach(a=>{a.href=location.pathname.startsWith('/ko/')?'/ko/research-initiatives/#koica-native-map':'/research-initiatives/#koica-native-map';});
+document.querySelectorAll('a[href*="koica-research-atlas"]').forEach(a=>{a.href=location.pathname.startsWith('/ko/')?'/ko/research-initiatives/koica-atlas/':'/research-initiatives/koica-atlas/';});
