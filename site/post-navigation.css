@@ -65,3 +65,11 @@
 .site-header .language-switch{grid-column:2;grid-row:1}
 .site-header .primary-nav,.home-page .site-header .primary-nav{grid-column:1 / -1;grid-row:2;justify-content:space-between;gap:12px}
 }
+
+/* Empty-field hint sits over the underline and clears when typing. */
+.site-header .primary-nav .site-search{position:relative;gap:0}
+.site-header .primary-nav .site-search input{box-sizing:border-box;width:100%;flex:1;padding:6px 8px}
+.site-search-hint{position:absolute;inset:0;display:flex;align-items:center;gap:9px;padding:0 8px;opacity:.5;pointer-events:none;color:inherit;font:inherit}
+.site-search-hint svg{display:block;width:18px;height:18px;flex-shrink:0}
+.site-search.has-query .site-search-hint{display:none}
+@media(max-width:900px){.site-search-hint{inset:12px 0}}
