@@ -141,3 +141,5 @@
   .home-page .carousel-dot{width:18px}
   .home-page .carousel-dot.is-active{width:40px}
 }
+
+.site-header .primary-nav.open,.site-header .primary-nav .nav-submenu{background:var(--nav-surface)!important;backdrop-filter:none!important;box-shadow:none!important}.site-header .primary-nav .nav-submenu a{color:var(--nav-ink)!important}.site-header .primary-nav .nav-submenu-toggle{border:0!important;border-radius:0!important;background:transparent!important;color:var(--nav-ink)!important}

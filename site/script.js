@@ -82,3 +82,6 @@ window.addEventListener('load',()=>{if(!window.RicksCMS&&!document.querySelector
 document.querySelectorAll('.nav-submenu-toggle').forEach(button=>{button.addEventListener('click',()=>{const group=button.closest('.nav-group'),open=!group.classList.contains('is-open');document.querySelectorAll('.nav-group').forEach(other=>{other.classList.remove('is-open');other.querySelector('button').setAttribute('aria-expanded','false')});group.classList.toggle('is-open',open);button.setAttribute('aria-expanded',String(open))})});
 document.addEventListener('click',event=>{if(!event.target.closest('.nav-group'))document.querySelectorAll('.nav-group').forEach(group=>{group.classList.remove('is-open');group.querySelector('button').setAttribute('aria-expanded','false')})});
 document.addEventListener('keydown',event=>{if(event.key==='Escape')document.querySelectorAll('.nav-group').forEach(group=>{group.classList.remove('is-open');group.querySelector('button').setAttribute('aria-expanded','false')})});
+
+// Keep atlas navigation within the current language of RICKS.
+document.querySelectorAll('a[href*="koica-research-atlas"]').forEach(a=>{a.href=location.pathname.startsWith('/ko/')?'/ko/research-initiatives/#koica-native-map':'/research-initiatives/#koica-native-map';});
