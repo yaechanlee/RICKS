@@ -13,3 +13,5 @@
 
 /* Photo previews and long source credits must fit narrow screens. */
 .reading-body figcaption{overflow-wrap:anywhere;word-break:normal;max-width:100%}.reading-body p{overflow-wrap:anywhere}.reading-body figure{min-width:0;max-width:100%}.post-card-cover{display:block;margin:0 0 24px;overflow:hidden}.post-card-cover[hidden]{display:none}.post-card-cover img{display:block;width:100%;height:auto;aspect-ratio:16/10;object-fit:cover}.cms-card{min-width:0}
+
+@media(min-width:900px){.post-card-cover img{height:190px;aspect-ratio:auto}.home-page .post-card-cover img{height:180px}.home-page .home-cover{max-height:200px;aspect-ratio:16/9}#activities-list .post-card-cover,#reviews-list .post-card-cover,#commentary-list .post-card-cover{float:left;width:280px;max-width:32%;margin:0 28px 12px 0}#activities-list .cms-card::after,#reviews-list .cms-card::after,#commentary-list .cms-card::after{content:'';display:block;clear:both}.reading-body img{width:auto;max-width:100%;max-height:420px;object-fit:contain;margin-inline:auto}}
