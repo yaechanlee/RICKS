@@ -77,3 +77,8 @@ window.addEventListener('load',()=>{if(!window.RicksCMS&&!document.querySelector
 
 // Anonymous readership metrics; the analytics dashboard is owner-only.
 (()=>{if(/^\/(admin|analytics)(\/|\.|$)/.test(location.pathname))return;const tracker=document.createElement('script');tracker.src='/ricks-tracker.js?v=1';tracker.dataset.endpoint='https://ricks-analytics.yaechanlee491236.chatgpt.site/api/collect';document.head.append(tracker);})();
+
+// Publication and research initiative submenus.
+document.querySelectorAll('.nav-submenu-toggle').forEach(button=>{button.addEventListener('click',()=>{const group=button.closest('.nav-group'),open=!group.classList.contains('is-open');document.querySelectorAll('.nav-group').forEach(other=>{other.classList.remove('is-open');other.querySelector('button').setAttribute('aria-expanded','false')});group.classList.toggle('is-open',open);button.setAttribute('aria-expanded',String(open))})});
+document.addEventListener('click',event=>{if(!event.target.closest('.nav-group'))document.querySelectorAll('.nav-group').forEach(group=>{group.classList.remove('is-open');group.querySelector('button').setAttribute('aria-expanded','false')})});
+document.addEventListener('keydown',event=>{if(event.key==='Escape')document.querySelectorAll('.nav-group').forEach(group=>{group.classList.remove('is-open');group.querySelector('button').setAttribute('aria-expanded','false')})});
