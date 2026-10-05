@@ -175,3 +175,16 @@
 .home-page .home-research-initiatives{padding:38px 0}
 .home-page .home-publications{padding-top:42px;padding-bottom:42px}
 }
+
+/* The expanded menu is a solid reading surface over the carousel. */
+@media(max-width:1300px){
+.home-page .site-header .primary-nav.open{--nav-surface:#06284b;--nav-ink:#fff;background:#06284b!important;opacity:1;box-shadow:0 14px 28px #001b3533!important}
+.home-page .site-header .primary-nav.open .nav-submenu{background:#06284b!important}
+}
+.atlas-carousel-card{display:grid;grid-template-columns:160px minmax(0,1fr);gap:20px;align-items:center}
+.atlas-slide-preview{display:flex;align-items:center;background:#eaf2f7;min-height:130px;padding:8px}
+.atlas-slide-preview img{display:block;width:100%;height:auto}
+.atlas-slide-type{display:block;font-size:10px;letter-spacing:.12em;color:#e3bd64}
+.atlas-slide-title{margin:10px 0!important}
+.atlas-slide-byline{font-size:13px;color:#dce5ef;margin:10px 0 16px}
+@media(max-width:680px){.atlas-carousel-card{grid-template-columns:90px minmax(0,1fr);gap:12px;padding:16px!important}.atlas-slide-preview{min-height:100px;padding:4px}.atlas-slide-type{font-size:8px;letter-spacing:.05em}.atlas-slide-title{font-size:21px!important}.atlas-slide-byline{font-size:11px}.atlas-carousel-card .button{padding:12px!important;font-size:12px!important}}
