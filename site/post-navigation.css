@@ -27,8 +27,8 @@
 .site-search{display:flex;align-items:center;gap:2px;margin:0;color:inherit;flex:0 0 154px}
 .site-search input{display:block;width:110px;min-width:0;min-height:38px;border:0;border-bottom:1px solid currentColor;border-radius:0;background:transparent;color:inherit;font:inherit;padding:6px 2px;outline-offset:4px}
 .site-search input:focus-visible{outline:2px solid #c6a45a}
-@media(min-width:1501px){.site-header .header-inner{width:min(1440px,calc(100% - 64px));gap:22px}.site-header .primary-nav{gap:16px}}
-@media(max-width:1500px){
+@media(min-width:901px){.site-header .header-inner{width:min(1440px,calc(100% - 64px));gap:22px}.site-header .primary-nav{gap:16px}}
+@media(max-width:900px){
   .site-header .header-inner,.home-page .site-header .header-inner{position:static}
   .site-header .brand{min-width:0;margin-right:auto}
   .site-header .brand-name{min-width:0}
@@ -44,4 +44,24 @@
   .site-header .primary-nav .site-search{flex:0 0 auto;width:100%;padding:12px 0}
   .site-header .primary-nav .site-search input{width:auto;flex:1;min-height:44px}
   .site-header .primary-nav .language-switch{margin:14px 0 0;align-self:flex-start}
+}
+
+/* Desktop navigation stays in the header; only small screens use the menu. */
+@media(min-width:901px){
+.site-header .header-inner,.home-page .site-header .header-inner{width:min(1440px,calc(100% - 48px));height:auto;min-height:88px;padding-block:16px;gap:18px;position:static}
+.site-header .menu-toggle,.home-page .site-header .menu-toggle{display:none}
+.site-header .brand,.home-page .site-header .brand{flex:0 1 350px;min-width:0;margin-right:auto}
+.site-header .brand-break{display:block}
+.site-header .brand-name strong{font-size:13px}
+.site-header .primary-nav,.home-page .site-header .primary-nav{display:flex;position:static;width:auto;max-height:none;overflow:visible;flex-direction:row;align-items:center;gap:14px;padding:0;border:0;background:transparent;font-size:12px}
+.site-header .primary-nav a:not(.nav-contact),.home-page .site-header .primary-nav a:not(.nav-contact){padding:0;border:0;font-size:12px;white-space:nowrap}
+.site-header .language-switch,.home-page .site-header .language-switch{margin-left:0;flex-shrink:0}
+.site-header .primary-nav .site-search{flex:0 0 144px;width:144px;padding:0}
+.site-header .primary-nav .site-search input{width:100px;min-height:38px;flex:none}
+}
+@media(min-width:901px) and (max-width:1250px){
+.site-header .header-inner,.home-page .site-header .header-inner{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:12px 20px}
+.site-header .brand{grid-column:1;grid-row:1}
+.site-header .language-switch{grid-column:2;grid-row:1}
+.site-header .primary-nav,.home-page .site-header .primary-nav{grid-column:1 / -1;grid-row:2;justify-content:space-between;gap:12px}
 }
