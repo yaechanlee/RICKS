@@ -33,6 +33,18 @@
   }
   addEventListener('scroll', () => {if(!scheduled){scheduled=true;requestAnimationFrame(update);}}, {passive:true});
   addEventListener('resize',update);update();
+  // Keep each campus photograph synchronized with the selected carousel slide.
+  const photoFrames = [...(hero?.querySelectorAll('.hero-scene-frame') || [])];
+  const slideHost = hero?.querySelector('.hero-slides');
+  function syncCampusPhoto() {
+    const slides = [...(slideHost?.querySelectorAll('.hero-slide') || [])];
+    const index = Math.max(0, slides.findIndex(slide => slide.classList.contains('is-active')));
+    photoFrames.forEach((frame, i) => frame.classList.toggle('is-active', i === index % photoFrames.length));
+  }
+  if (slideHost && photoFrames.length) {
+    new MutationObserver(syncCampusPhoto).observe(slideHost, {attributes:true,attributeFilter:['class'],childList:true,subtree:true});
+    syncCampusPhoto();
+  }
   // Touch swipes use the existing accessible carousel controls.
   let touchX;
   hero?.addEventListener('touchstart',e=>{touchX=e.touches[0].clientX;},{passive:true});
