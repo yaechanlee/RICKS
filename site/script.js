@@ -21,7 +21,6 @@ if (carousel) {
   let timer;
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
   let paused = reduceMotion.matches;
-  const slideInterval = 4800;
 
   if (featured) {
     const title = featured.querySelector('.article-copy h3')?.innerText.trim();
@@ -53,7 +52,7 @@ if (carousel) {
   function startTimer() {
     stopTimer();
     carousel.classList.toggle("is-paused", paused || document.hidden);
-    if (!paused && !document.hidden) timer = window.setInterval(() => showSlide(activeIndex + 1), slideInterval);
+    if (!paused && !document.hidden) timer = window.setInterval(() => showSlide(activeIndex + 1), 6500);
   }
   function manualMove(index) { showSlide(index); startTimer(); }
 
