@@ -74,3 +74,12 @@
 .site-search-hint span{opacity:.5}
 .site-search.has-query .site-search-hint span{display:none}
 @media(max-width:900px){.site-search-hint{inset:12px 0}}
+
+/* Match the desktop hint and typed text to the same underline geometry. */
+@media(min-width:901px){
+.site-header .primary-nav .site-search{height:32px;align-items:stretch}
+.site-header .primary-nav .site-search input{height:32px;min-height:32px;line-height:20px;padding:5px 8px 6px 35px;margin:0}
+.site-header .primary-nav .site-search-hint{inset:0 0 2px;line-height:20px}
+.site-header .primary-nav .site-search-hint span{display:block;line-height:20px}
+.site-header .primary-nav .site-search.has-query .site-search-hint span{display:none}
+}
