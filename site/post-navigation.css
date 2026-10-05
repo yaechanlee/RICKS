@@ -93,3 +93,27 @@ body:not(.home-page) #activities-list .byline,body:not(.home-page) #reviews-list
 .home-page .home-publication-grid .home-card-copy{padding:28px 32px}
 .home-page .home-publication-grid .byline{justify-content:flex-start;align-items:flex-start;gap:12px 24px}
 }
+
+/* One breakpoint for the masthead and grouped navigation. */
+@media(max-width:1300px){
+.site-header .header-inner,.home-page .site-header .header-inner{display:flex!important;position:relative!important;min-width:0;width:min(1440px,calc(100% - 48px));gap:14px}
+.site-header .brand,.home-page .site-header .brand{flex:1 1 auto;min-width:0;margin-right:auto}
+.site-header .menu-toggle,.home-page .site-header .menu-toggle{display:flex!important;flex-direction:column;align-items:center;justify-content:center;gap:5px;position:static;flex:0 0 42px;width:42px;height:42px;padding:10px;border:0;background:transparent;color:var(--nav-ink)}
+.site-header .menu-toggle>span:not(.sr-only){display:block;width:22px;height:1px;margin:0;background:currentColor}
+.site-header .primary-nav,.home-page .site-header .primary-nav{display:none!important;position:absolute!important;top:100%;left:0;right:0;width:auto!important;flex-direction:column!important;align-items:stretch!important;gap:0!important;padding:12px 24px 24px!important;max-height:calc(100dvh - 100px);overflow:auto!important;background:var(--nav-surface)!important}
+.site-header .primary-nav.open,.home-page .site-header .primary-nav.open{display:flex!important}
+.home-page .site-header .primary-nav.open{--nav-surface:#06284b;--nav-ink:#fff;background:#06284b!important}
+.site-header .primary-nav>a,.site-header .primary-nav .nav-group-heading>a{padding:11px 0!important;font-size:15px!important}
+.site-header .primary-nav .nav-group{width:100%!important;min-width:0}
+.site-header .primary-nav .nav-group-heading>a{white-space:normal}
+.site-header .primary-nav .site-search{flex:0 0 auto;width:100%;padding:14px 0}
+.site-header .primary-nav .site-search input{width:100%;min-width:0}
+.site-header .primary-nav .nav-submenu{position:static!important;min-width:0;max-width:100%}
+}
+@media(min-width:1301px){
+.site-header .header-inner,.home-page .site-header .header-inner{display:flex;min-width:0}
+.site-header .primary-nav .nav-group{width:auto;min-width:0;flex:0 0 auto}
+.site-header .primary-nav .nav-group-heading{width:auto;border:0;min-height:34px;gap:6px}
+.site-header .primary-nav .nav-group-heading>a{flex:0 1 auto!important}
+.site-header .primary-nav .nav-submenu-toggle{margin-left:0!important}
+}
