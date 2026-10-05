@@ -8,9 +8,31 @@ OUT.mkdir(exist_ok=True)
 STAMP=datetime.datetime.now(datetime.timezone.utc).isoformat()
 def api(action, **data):
     request=urllib.request.Request(ENDPOINT,data=json.dumps(dict(action=action,**data)).encode(),headers={'Content-Type':'text/plain;charset=utf-8'})
-    with urllib.request.urlopen(request, timeout=90) as response: result=json.load(response)
-    if not result.get('ok'): raise RuntimeError('Public content request failed')
-    return result
+    try:
+        with urllib.request.urlopen(request, timeout=90) as response: result=json.load(response)
+        if not result.get('ok'): raise RuntimeError('Public content request failed')
+        return result
+    except (OSError, ValueError, RuntimeError) as error:
+        # A temporary content-service outage should not block design deployments.
+        if action=='publicFeed':
+            name='feed.json'
+        elif action=='publicArticle' and re.fullmatch(r'[A-Za-z0-9_-]+',data.get('id','')):
+            name=data['id']+'.json'
+        else:
+            raise
+        with urllib.request.urlopen('https://ricks.kr/content-cache/'+name,timeout=30) as response:
+            cached=json.load(response)
+        if not cached.get('ok'): raise RuntimeError('No valid public snapshot available') from error
+        # Copy the already-public image assets referenced by the last good snapshot.
+        for photo in cached.get('item',{}).get('images',[]):
+            for field in ('data','thumbnail'):
+                value=photo.get(field,'')
+                match=re.fullmatch(r'/content-cache/([a-f0-9]{24}(?:-cover)?\.webp)',value)
+                if match and not (OUT/match[1]).exists():
+                    with urllib.request.urlopen('https://ricks.kr'+value,timeout=30) as response:
+                        (OUT/match[1]).write_bytes(response.read())
+        print('Using last published public snapshot for',action)
+        return cached
 
 def save(name, value):
     (OUT/name).write_text(json.dumps(value, ensure_ascii=False,separators=(',',':')))
