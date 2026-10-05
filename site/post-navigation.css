@@ -1,4 +1,4 @@
-.site-search-button{font:inherit;font-weight:700;color:inherit;background:none;border:0;padding:8px 0;cursor:pointer}
+.site-search-button{font:inherit;color:inherit;background:none;border:0;padding:10px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;min-width:44px;min-height:44px;flex-shrink:0}.site-search-button svg{display:block;width:20px;height:20px}.site-search-button:hover{color:#c6a45a}
 .post-search-dialog{box-sizing:border-box;width:min(760px,calc(100% - 32px));max-height:85vh;overflow:auto;border:1px solid #dce4eb;padding:32px;color:#183650;background:#fff;box-shadow:0 20px 80px #06284b33}
 .post-search-dialog::backdrop{background:#06284bb3}
 .post-search-heading{display:flex;justify-content:space-between;align-items:center;gap:20px}.post-search-heading h2{font-size:28px;margin:0}
