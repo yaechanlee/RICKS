@@ -43,7 +43,7 @@
 .hero-slide{transition:opacity 1.15s cubic-bezier(.22,.61,.36,1),visibility 1.15s cubic-bezier(.22,.61,.36,1)}
 .primary-nav a[aria-current="page"]{color:#a0782c!important;position:relative}
 .primary-nav a[aria-current="page"]:after{content:"";height:2px;background:#d8b45e;position:absolute;left:0;right:0;bottom:-6px}
-.page-hero{position:relative;overflow:hidden;background:#09284b url('/assets/carousel/main-building-hires.webp') center 48%/cover no-repeat;color:#fff;padding:75px 0 70px;isolation:isolate}
+.page-hero{position:relative;overflow:hidden;background:#09284b url('/assets/carousel/international-hires.webp') center 58%/cover no-repeat;color:#fff;padding:75px 0 70px;isolation:isolate}
 .page-hero:before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,#061c3ded,#08284bc7 55%,#08284b72)}
 .page-hero .eyebrow{color:#e3bd64}.page-hero h1{font:600 clamp(36px,5vw,55px)/1.3 var(--serif);letter-spacing:-.045em;margin:0;max-width:760px}.page-hero p:last-child{max-width:670px;color:#e5eaf0;margin:16px 0 0;word-break:keep-all}
 .page-content{padding:66px 0 84px}.page-content h2{font:500 27px/1.45 var(--serif);letter-spacing:-.035em;margin:0 0 17px}.page-content p{color:#556477;word-break:keep-all}.page-content .section-heading{margin-bottom:27px}
