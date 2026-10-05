@@ -3,7 +3,7 @@
 .home-page{--motion-ease:cubic-bezier(.2,.7,.2,1)}
 .home-page .hero{background:#06284b;min-height:clamp(680px,85svh,980px)}
 .home-page .hero-slides,.home-page .hero-slide-inner{min-height:clamp(680px,85svh,980px)}
-.hero-scene{position:absolute;inset:-3%;background:url('assets/hanyang-campus.webp') center 48%/cover;z-index:-2;animation:campus-drift 24s ease-in-out infinite alternate;transform:scale(1.03)}
+.hero-scene{position:absolute;inset:-3%;background:url('/assets/carousel/main-building-hires.webp') center 48%/cover;z-index:-2;animation:campus-drift 24s ease-in-out infinite alternate;transform:scale(1.03)}
 @keyframes campus-drift{from{transform:scale(1.03) translateX(-.5%)}to{transform:scale(1.12) translateX(.5%)}}
 .home-page .hero-grain{z-index:-1;background:linear-gradient(90deg,rgba(3,25,45,.83),rgba(3,25,45,.38) 65%,rgba(3,25,45,.15)),linear-gradient(0deg,rgba(3,25,45,.4),transparent 40%)}
 .home-page .hero-slide-inner{padding-top:70px;padding-bottom:160px}
