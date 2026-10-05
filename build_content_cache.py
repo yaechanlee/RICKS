@@ -45,9 +45,11 @@ def main():
     save('feed.json',dict(ok=True,generatedAt=STAMP,items=items))
     # Bust old script URLs and establish connections without blocking rendering.
     cms_version=hashlib.sha256((SITE/'cms.js').read_bytes()).hexdigest()[:12]
+    people_version=hashlib.sha256((SITE/'people.css').read_bytes()).hexdigest()[:12]
     for path in SITE.rglob('*.html'):
         text=path.read_text()
         text=re.sub(r'/cms\.js\?v=[^"\s]+','/cms.js?v='+cms_version,text)
+        text=re.sub(r'/people\.css\?v=[^"\s]+','/people.css?v='+people_version,text)
         if '/cms.js' in text and 'href="https://script.google.com"' not in text:
             text=text.replace('</head>','<link rel="preconnect" href="https://script.google.com"><link rel="preconnect" href="https://script.googleusercontent.com"></head>')
         path.write_text(text)

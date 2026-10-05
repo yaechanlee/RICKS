@@ -22,3 +22,26 @@
 .home-page .home-notice-grid .cms-card h3{overflow-wrap:normal;word-break:normal}
 .home-page .home-notice-grid .byline{display:flex;flex-direction:column;align-items:flex-start;gap:10px}
 @media(min-width:681px) and (max-width:1050px){.home-page .home-notice-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* Direct navigation search: magnifier followed by an underlined input. */
+.site-search{display:flex;align-items:center;gap:2px;margin:0;color:inherit;flex:0 0 154px}
+.site-search input{display:block;width:110px;min-width:0;min-height:38px;border:0;border-bottom:1px solid currentColor;border-radius:0;background:transparent;color:inherit;font:inherit;padding:6px 2px;outline-offset:4px}
+.site-search input:focus-visible{outline:2px solid #c6a45a}
+@media(min-width:1501px){.site-header .header-inner{width:min(1440px,calc(100% - 64px));gap:22px}.site-header .primary-nav{gap:16px}}
+@media(max-width:1500px){
+  .site-header .header-inner,.home-page .site-header .header-inner{position:static}
+  .site-header .brand{min-width:0;margin-right:auto}
+  .site-header .brand-name{min-width:0}
+  .site-header .brand-break{display:block}
+  .site-header .menu-toggle{display:flex;flex-direction:column;gap:5px;padding:10px;flex-shrink:0}
+  .site-header .menu-toggle span:not(.sr-only){width:22px;height:1px;background:currentColor}
+  .site-header .primary-nav,.home-page .site-header .primary-nav{display:none;position:absolute;left:0;right:0;top:100%;width:100%;max-height:calc(100dvh - var(--masthead-height,88px));overflow-y:auto;padding:12px max(18px,calc((100vw - 1160px)/2)) 24px;flex-direction:column;align-items:stretch;gap:0;border-top:1px solid #ffffff26}
+  .site-header .primary-nav.open,.home-page .site-header .primary-nav.open{display:flex}
+  .site-header .primary-nav a:not(.nav-contact){padding:11px 0;border-bottom:1px solid #dce4eb;font-size:15px}
+  .home-page .site-header .primary-nav{background:#06284b;color:#fff}
+  .home-page .site-header .primary-nav a:not(.nav-contact){color:#fff;border-color:#ffffff26}
+  .site-header .primary-nav a[aria-current="page"]:after{display:none}
+  .site-header .primary-nav .site-search{flex:0 0 auto;width:100%;padding:12px 0}
+  .site-header .primary-nav .site-search input{width:auto;flex:1;min-height:44px}
+  .site-header .primary-nav .language-switch{margin:14px 0 0;align-self:flex-start}
+}
