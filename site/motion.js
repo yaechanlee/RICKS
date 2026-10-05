@@ -15,6 +15,14 @@
       watch.observe(container,{childList:true});
     });
   }
+  // Reserve the actual masthead height, including wrapped branding and zoom.
+  const masthead = document.querySelector('.home-page .site-header');
+  function measureMasthead() {
+    if (masthead) document.body.style.setProperty('--masthead-height', masthead.offsetHeight + 'px');
+  }
+  if (masthead && 'ResizeObserver' in window) new ResizeObserver(measureMasthead).observe(masthead);
+  addEventListener('resize', measureMasthead);
+  measureMasthead();
   let scheduled = false;
   function update() {
     scheduled = false;
