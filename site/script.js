@@ -74,3 +74,6 @@ carousel.addEventListener('ricks-slides-updated',()=>{slides=[...carousel.queryS
 
 // Make post search available on every public page, including pages without a board.
 window.addEventListener('load',()=>{if(!window.RicksCMS&&!document.querySelector('script[src*="/cms.js"]')){const script=document.createElement('script');script.src='/cms.js?v=18';document.head.append(script);}});
+
+// Anonymous readership metrics; the analytics dashboard is owner-only.
+(()=>{if(/^\/(admin|analytics)(\/|\.|$)/.test(location.pathname))return;const tracker=document.createElement('script');tracker.src='/ricks-tracker.js?v=1';tracker.dataset.endpoint='https://ricks-analytics.yaechanlee491236.chatgpt.site/api/collect';document.head.append(tracker);})();
