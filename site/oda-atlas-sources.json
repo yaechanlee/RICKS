@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 2,
+  "sources": [
+    {
+      "agency": "KOICA",
+      "snapshot": "2026-07-31",
+      "format": "CSV",
+      "url": "https://www.data.go.kr/data/15051106/fileData.do",
+      "activities": 1646
+    },
+    {
+      "agency": "EDCF",
+      "snapshot": "2026-08-31",
+      "coverage": "Q2 2026",
+      "format": "IATI XML 2.02",
+      "url": "https://www.odakorea.go.kr/opm/iati_act_KR-GOV-021.xml",
+      "sha256": "2430c6a67aad079f9b5f209ad31bf804419d8bbd3c75015d83d252d4b5841d00",
+      "activities": 512
+    }
+  ],
+  "summary": {
+    "total": 2158,
+    "countryAllocated": 2119,
+    "unallocated": 39,
+    "countries": 102,
+    "agencies": {
+      "EDCF": {
+        "activities": 512,
+        "countries": 53,
+        "unallocated": 8
+      },
+      "KOICA": {
+        "activities": 1646,
+        "countries": 97,
+        "unallocated": 31
+      }
+    }
+  },
+  "normalization": {
+    "country": "ISO alpha-3; regional/unspecified records retain null allocation",
+    "sector": "Common exploratory RICKS grouping; original labels/codes retained",
+    "dates": "Actual start/end preferred, otherwise planned; originals retained",
+    "status": "EDCF IATI code 1 grouped as Planning; sourceStatus retained. All 512 EDCF rows report code 1.",
+    "finance": "Label, value, currency, transaction date, value date, period and source element retained; no aggregation or conversion"
+  }
+}
