@@ -85,3 +85,8 @@ document.addEventListener('keydown',event=>{if(event.key==='Escape')document.que
 
 // Keep atlas navigation within the current language of RICKS.
 document.querySelectorAll('a[href*="koica-research-atlas"]').forEach(a=>{a.href=location.pathname.startsWith('/ko/')?'/ko/research-initiatives/koica-atlas/':'/research-initiatives/koica-atlas/';});
+
+// Mobile menu state cannot carry over into the visible desktop navigation.
+const mobileNavigation = window.matchMedia('(max-width:768px)');
+function resetNavigation(){nav?.classList.remove('open');menuButton?.setAttribute('aria-expanded','false');document.querySelectorAll('.nav-group').forEach(group=>{group.classList.remove('is-open');group.querySelector('button')?.setAttribute('aria-expanded','false');});}
+mobileNavigation.addEventListener('change',resetNavigation);
