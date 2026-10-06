@@ -91,9 +91,9 @@ const mobileNavigation = window.matchMedia('(max-width:768px)');
 function resetNavigation(){nav?.classList.remove('open');menuButton?.setAttribute('aria-expanded','false');document.querySelectorAll('.nav-group').forEach(group=>{group.classList.remove('is-open');group.querySelector('button')?.setAttribute('aria-expanded','false');});}
 mobileNavigation.addEventListener('change',resetNavigation);
 
-// Native Korea Management Research Network initiative: shared navigation and cards.
+// Native Where Is Research on Korea Happening—and with Whom? initiative: shared navigation and cards.
 (function(){
- const ko=location.pathname.startsWith('/ko/'),prefix=ko?'/ko':'',route=prefix+'/research-initiatives/korea-management-network/',name=ko?'한국 경영 연구 네트워크':'Korea Management Research Network',description=ko?'한국 관련 경영 연구의 출판과 국가 간 공동연구를 탐색합니다.':'Explore where research on Korean business and management is published and how countries collaborate.',action=ko?'네트워크 탐색 →':'Explore the network →';
+ const ko=location.pathname.startsWith('/ko/'),prefix=ko?'/ko':'',route=prefix+'/research-initiatives/korea-management-network/',name=ko?'한국에 관한 연구는 어디에서, 누구와 이루어지고 있을까?':'Where Is Research on Korea Happening—and with Whom?',description=ko?'한국 관련 경영 연구의 출판과 국가 간 공동연구를 탐색합니다.':'Explore where research on Korean business and management is published and how countries collaborate.',action=ko?'네트워크 탐색 →':'Explore the network →';
  function ensureNetworkNavigation(){document.querySelectorAll('.nav-submenu').forEach(menu=>{if(menu.querySelector('a[href="'+prefix+'/research-initiatives/koica-atlas/"]')&&!menu.querySelector('a[href="'+route+'"]')){const a=document.createElement('a');a.href=route;a.textContent=name;menu.append(a)}});}
  ensureNetworkNavigation();const header=document.querySelector('.site-header');if(header)new MutationObserver(ensureNetworkNavigation).observe(header,{childList:true,subtree:true});
  const art='<img src="/korea-management-network.svg?v=20261006-1" alt="Country collaboration network" loading="lazy">';
