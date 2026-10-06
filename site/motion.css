@@ -259,7 +259,7 @@ body.atlas-fullscreen{height:100dvh;min-height:0;display:flex;flex-direction:col
 /* Bounded slide content stays between the masthead and carousel controls. */
 .home-page .hero-slide-inner{display:flex;align-items:center;height:100%;min-height:0!important;padding-top:calc(var(--masthead-height) + 32px);padding-bottom:100px}
 .home-page .hero-copy-block{max-width:780px;width:100%;flex:0 1 auto}
-.home-page .hero h1{font-size:clamp(40px,4vw,64px);line-height:1.13;max-width:780px;letter-spacing:-.04em}
+.home-page .hero h1,html[lang="ko"] .home-page .hero h1{font-size:clamp(40px,4vw,64px);line-height:1.13;max-width:780px;letter-spacing:-.04em}
 .home-page .publication-feature h1{font-size:clamp(36px,3.2vw,50px)}
 .home-page .hero-kicker{position:static;margin:0 0 20px}
 .home-page .hero-kicker .hero-brand-en{font-size:32px}
@@ -272,7 +272,7 @@ body.atlas-fullscreen{height:100dvh;min-height:0;display:flex;flex-direction:col
 @media(max-width:680px){
 .home-page .hero{height:100svh;min-height:100svh!important}
 .home-page .hero-slide-inner{padding-top:calc(var(--masthead-height) + 24px);padding-bottom:100px}
-.home-page .hero h1{font-size:clamp(32px,8.5vw,44px)}
+.home-page .hero h1,html[lang="ko"] .home-page .hero h1{font-size:clamp(32px,8.5vw,44px)}
 .home-page .publication-feature h1{font-size:clamp(30px,7.5vw,38px)}
 .home-page .hero-kicker{margin-bottom:18px}
 .home-page .hero-kicker .hero-brand-en{font-size:29px}
@@ -284,7 +284,7 @@ body.atlas-fullscreen{height:100dvh;min-height:0;display:flex;flex-direction:col
 .home-page .carousel-dot.is-active{width:32px}
 }
 @media(max-height:700px) and (min-width:681px){
-.home-page .hero h1{font-size:clamp(36px,3.5vw,52px)}
+.home-page .hero h1,html[lang="ko"] .home-page .hero h1{font-size:clamp(36px,3.5vw,52px)}
 .home-page .hero-kicker{margin-bottom:12px}
 .home-page .hero-copy{margin:16px 0 20px}
 }
