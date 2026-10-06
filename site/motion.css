@@ -244,3 +244,6 @@ body.atlas-fullscreen{height:100dvh;min-height:0;display:flex;flex-direction:col
 .home-page .hero-kicker{margin-bottom:12px}
 .home-page .hero-copy{margin:16px 0 20px}
 }
+
+/* Extra breathing room for desktop slides; mobile retains its current viewport. */
+@media(min-width:769px){.home-page .hero{height:calc(clamp(560px,78svh,760px) + 80px)}}
