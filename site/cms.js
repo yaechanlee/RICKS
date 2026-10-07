@@ -12,9 +12,9 @@ function encodeItem(item){if(item?.type==='Carousel settings')return {...item,ty
 async function networkApi(action,data={}){const controller=new AbortController(),timer=setTimeout(()=>controller.abort(),90000);try{const response=await fetch(endpoint,{method:'POST',credentials:'omit',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify({action,...data,...(data.item?{item:encodeItem(data.item)}:{})}),signal:controller.signal});const result=await response.json();if(!result.ok)throw new Error(result.error||'Please try again.');if(result.item)result.item=decodeItem(result.item);if(result.items)result.items=result.items.filter(item=>item.summary!=='[RICKS_DELETED]').map(decodeItem);return result;}finally{clearTimeout(timer);}}
 // Cache only public content. Editor requests always go directly to the content service.
 const publicMemory=new Map(),publicPending=new Map(),refreshing=new Set();
-const CACHE_PREFIX='ricks-public-v1:',FRESH_MS=60000,SNAPSHOT_MS=30*60000;
+const CACHE_PREFIX='ricks-public-v1:',FRESH_MS=60000;
 function cacheKey(action,data){return action+':'+(data.id||'')+':'+document.documentElement.lang;}
-function readCache(key){try{const value=publicMemory.get(key)||JSON.parse(sessionStorage.getItem(CACHE_PREFIX+key)||'null');if(value&&Date.now()-value.at<FRESH_MS)return value.result;}catch{}return null;}
+function readCache(key){try{const value=publicMemory.get(key)||JSON.parse(sessionStorage.getItem(CACHE_PREFIX+key)||'null');if(value?.result?.ok)return value;}catch{}return null;}
 function writeCache(key,result){const value={at:Date.now(),result};publicMemory.set(key,value);try{const text=JSON.stringify(value);if(text.length<1000000)sessionStorage.setItem(CACHE_PREFIX+key,text);}catch{}}
 function clearPublicCache(){publicMemory.clear();feedPromise=null;details.clear();try{for(const key of Object.keys(sessionStorage))if(key.startsWith(CACHE_PREFIX))sessionStorage.removeItem(key);sessionStorage.setItem('ricks-public-edited',String(Date.now()));}catch{}}
 function decodePublic(result){return {...result,...(result.item?{item:decodeItem(result.item)}:{}),...(result.items?{items:result.items.filter(x=>x.summary!=='[RICKS_DELETED]').map(decodeItem)}:{})};}
@@ -24,13 +24,13 @@ async function fastPublic(action,data,key){
  if(!edited){const controller=new AbortController(),timer=setTimeout(()=>controller.abort(),1800);try{
  const file=action==='publicFeed'?'feed':encodeURIComponent(data.id);
  const response=await fetch('/content-cache/'+file+'.json',{signal:controller.signal});
- if(response.ok){const snapshot=await response.json();if(snapshot.ok&&Date.now()-Date.parse(snapshot.generatedAt)<SNAPSHOT_MS){const result=decodePublic(snapshot);writeCache(key,result);refreshPublic(action,data,key);return result;}}
+ if(response.ok){const snapshot=await response.json();if(snapshot.ok&&((action==='publicArticle'&&snapshot.item?.id===data.id&&typeof snapshot.item.body==='string')||(action==='publicFeed'&&Array.isArray(snapshot.items)))){const result=decodePublic(snapshot);writeCache(key,result);refreshPublic(action,data,key);return result;}}
  }catch{}finally{clearTimeout(timer);}}
  const result=await networkApi(action,data);writeCache(key,result);return result;
 }
 async function api(action,data={}){
  if(!['publicFeed','publicArticle'].includes(action)){const result=await networkApi(action,data);if(action==='adminSave')clearPublicCache();return result;}
- const key=cacheKey(action,data),cached=readCache(key);if(cached)return cached;
+ const key=cacheKey(action,data),cached=readCache(key);if(cached){if(Date.now()-cached.at>=FRESH_MS)refreshPublic(action,data,key);return cached.result;}
  if(!publicPending.has(key))publicPending.set(key,fastPublic(action,data,key).finally(()=>publicPending.delete(key)));
  return publicPending.get(key);
 }
