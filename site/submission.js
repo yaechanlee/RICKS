@@ -22,7 +22,7 @@
    if(!response.ok)throw new Error('The submission service could not be reached. Please try again later.');
    const result=await response.json();if(!result.ok)throw new Error(result.error||'Your submission could not be accepted.');
    form.reset();syncMode();show((document.documentElement.lang==='ko'?"감사합니다. 편집 검토를 위해 원고가 접수되었습니다.":"Thank you. Your manuscript has been received for editorial review."));
-  }catch(error){show(error instanceof TypeError?'We could not confirm receipt. Please contact gsis@hanyang.ac.kr before resubmitting.':error.message,true);}
+  }catch(error){show(error instanceof TypeError?'We could not confirm receipt. Please contact ricks@hanyang.ac.kr before resubmitting.':error.message,true);}
   finally{button.disabled=false;button.textContent=(document.documentElement.lang==='ko'?"원고 보내기":"Send submission");}
  });
 })();
