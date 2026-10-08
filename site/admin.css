@@ -14,3 +14,8 @@
 .library-delete:hover{background:#fff0f0}
 
 .editor-actions button[aria-pressed="true"]{background:#004483;border-color:#004483;color:#fff;box-shadow:0 3px 10px #00448326}.editor-library .library-open[aria-pressed="true"]{background:#edf5fb;border:2px solid #004483;padding:11px;box-shadow:0 2px 9px #00448314}.editor-actions button[aria-pressed="false"]:hover{background:#eef4f8}
+
+
+/* Balanced space around public article content in both languages. */
+#article-view .reading-article{max-width:892px;padding-inline:64px}
+@media(max-width:760px){#article-view .reading-article{padding-inline:32px}}
