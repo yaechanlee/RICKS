@@ -47,7 +47,7 @@ def english(item):
 
 def caption(item):
     item = english(item)
-    url = ROOT + '/article/?id=' + urllib.parse.quote(item['id'], safe='')
+    url = item.get('sourceUrl') or ROOT + '/article/?id=' + urllib.parse.quote(item['id'], safe='')
     title = re.sub(r'\s+', ' ', item['title']).strip()
     summary = re.sub(r'\s+', ' ', item.get('summary', '')).strip()
     # Conservative X weighted length: reserve 23 for t.co and 2 per Unicode char.
@@ -125,16 +125,32 @@ def main():
     pending = [key for key, record in records.items() if record['status'] == 'pending']
     if pending:
         raise RuntimeError('Uncertain previous request: inspect Buffer and reconcile x-state.json before retrying')
+    queue_url = f"https://api.github.com/repos/{os.environ['GITHUB_REPOSITORY']}/contents/x-routine-queue.json?ref=main"
+    queue_blob = request(queue_url, headers=headers)
+    queue = json.loads(base64.b64decode(queue_blob['content']))
+    routine_items = []
+    for entry in queue['items']:
+        if (not isinstance(entry.get('id'), str) or
+                not entry['id'].startswith(('weekly:', 'classics:')) or
+                not isinstance(entry.get('title'), str) or
+                not isinstance(entry.get('summary'), str) or
+                not isinstance(entry.get('sourceUrl'), str) or
+                not entry['sourceUrl'].startswith('https://')):
+            raise RuntimeError('Invalid routine queue entry')
+        routine_items.append(dict(entry, routineQueue=True))
     count = 0
-    for item in sorted(feed['items'], key=lambda x: (x.get('date', ''), x['id'])):
+    for item in sorted(feed['items'] + routine_items, key=lambda x: (x.get('date', ''), x['id'])):
         ident = item['id']
-        if not eligible(item) or ident in records:
+        if (not item.get('routineQueue') and not eligible(item)) or ident in records:
             continue
-        detail = request(ROOT + '/content-cache/' + urllib.parse.quote(ident, safe='') + '.json')
-        if not detail.get('ok') or detail['item']['id'] != ident or not eligible(detail['item']):
-            raise RuntimeError('Public detail is unavailable or no longer published')
-        text = caption(detail['item'])
-        records[ident] = {'status': 'pending', 'text': text, 'sourceUrl': ROOT + '/article/?id=' + ident}
+        if item.get('routineQueue'):
+            text = caption(item)
+        else:
+            detail = request(ROOT + '/content-cache/' + urllib.parse.quote(ident, safe='') + '.json')
+            if not detail.get('ok') or detail['item']['id'] != ident or not eligible(detail['item']):
+                raise RuntimeError('Public detail is unavailable or no longer published')
+            text = caption(detail['item'])
+        records[ident] = {'status': 'pending', 'text': text, 'sourceUrl': item.get('sourceUrl') or ROOT + '/article/?id=' + ident}
         # Persist BEFORE the mutation. A timeout cannot cause duplicate posts on retry.
         sha = state_save(state, sha, url, headers)
         result = buffer('mutation($input: CreatePostInput!) { createPost(input:$input) { ... on PostActionSuccess { post { id text dueAt status } } ... on MutationError { message } } }',
