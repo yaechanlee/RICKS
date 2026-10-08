@@ -74,6 +74,9 @@ def main():
         text=re.sub(r'/people\.css\?v=[^"\s]+','/people.css?v='+people_version,text)
         if '/cms.js' in text and 'href="https://script.google.com"' not in text:
             text=text.replace('</head>','<link rel="preconnect" href="https://script.google.com"><link rel="preconnect" href="https://script.googleusercontent.com"></head>')
+        # Include the bilingual heritage initiative in every shared header.
+        if 'site-header' in text and '/korean-heritage-navigation.js' not in text:
+            text=text.replace('</head>', '<script src="/korean-heritage-navigation.js?v=20261008-1" defer></script></head>')
         path.write_text(text)
     print('Mirrored',len(items),'published items; article text and images are separate.')
 if __name__=='__main__': main()
