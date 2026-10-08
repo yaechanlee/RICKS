@@ -117,3 +117,12 @@ body:not(.home-page) #activities-list .byline,body:not(.home-page) #reviews-list
 .site-header .primary-nav .nav-group-heading>a{flex:0 1 auto!important}
 .site-header .primary-nav .nav-submenu-toggle{margin-left:0!important}
 }
+
+/* Keep byline text aligned and give publication cards room on both sides. */
+.cms-card .byline,.home-page .home-notice-grid .byline,.home-page .home-publication-grid .byline,body:not(.home-page) #activities-list .byline,body:not(.home-page) #reviews-list .byline,body:not(.home-page) #commentary-list .byline{flex-direction:row;align-items:baseline;gap:12px 28px;line-height:1.6}
+.cms-card .byline time{white-space:nowrap;flex-shrink:0}
+.reading-meta{align-items:baseline;line-height:1.6}
+.reading-meta strong,.reading-meta time{line-height:inherit}
+body:not(.home-page) #activities-list .cms-card,body:not(.home-page) #reviews-list .cms-card,body:not(.home-page) #commentary-list .cms-card,.home-page .home-notice-grid .cms-card{padding:32px clamp(24px,4vw,56px)}
+.home-page .home-publication-grid .home-card-copy{padding:32px clamp(24px,3vw,44px)}
+@media(max-width:600px){body:not(.home-page) #activities-list .cms-card,body:not(.home-page) #reviews-list .cms-card,body:not(.home-page) #commentary-list .cms-card,.home-page .home-notice-grid .cms-card,.home-page .home-publication-grid .home-card-copy{padding:24px}.cms-card .byline,.home-page .home-notice-grid .byline{gap:10px 18px}}
