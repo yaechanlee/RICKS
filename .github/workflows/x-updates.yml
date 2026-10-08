@@ -23,6 +23,6 @@ jobs:
         env:
           BUFFER_API_KEY: ${{ secrets.BUFFER_API_KEY }}
           BUFFER_X_HANDLE: ${{ vars.BUFFER_X_HANDLE }}
-          X_UPDATES_ENABLED: ${{ vars.X_UPDATES_ENABLED }}
+          X_UPDATES_ENABLED: 'true'
           GH_TOKEN: ${{ github.token }}
         run: python scripts/x_updates.py
