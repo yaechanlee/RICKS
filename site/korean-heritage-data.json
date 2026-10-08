@@ -1,0 +1,1639 @@
+{
+  "title": "Korean Heritage Abroad Atlas",
+  "retrievedAt": "2026-10-08",
+  "statisticsDate": "2026-01-01",
+  "totalItems": 256190,
+  "totalHolders": 801,
+  "countries": [
+    {
+      "code": "JP",
+      "name": "Japan",
+      "nameKo": "일본",
+      "totalItems": 110611,
+      "totalHolders": 388,
+      "center": [
+        36,
+        138
+      ],
+      "zoom": 5
+    },
+    {
+      "code": "US",
+      "name": "United States",
+      "nameKo": "미국",
+      "totalItems": 68961,
+      "totalHolders": 175,
+      "center": [
+        39,
+        -98
+      ],
+      "zoom": 4
+    },
+    {
+      "code": "DE",
+      "name": "Germany",
+      "nameKo": "독일",
+      "totalItems": 16082,
+      "totalHolders": 27,
+      "center": [
+        51,
+        10
+      ],
+      "zoom": 6
+    },
+    {
+      "code": "GB",
+      "name": "United Kingdom",
+      "nameKo": "영국",
+      "totalItems": 15417,
+      "totalHolders": 32,
+      "center": [
+        54,
+        -3
+      ],
+      "zoom": 5
+    },
+    {
+      "code": "CN",
+      "name": "China",
+      "nameKo": "중국",
+      "totalItems": 14226,
+      "totalHolders": 76,
+      "center": [
+        35,
+        105
+      ],
+      "zoom": 4
+    },
+    {
+      "code": "FR",
+      "name": "France",
+      "nameKo": "프랑스",
+      "totalItems": 6410,
+      "totalHolders": 11,
+      "center": [
+        47,
+        2
+      ],
+      "zoom": 5
+    },
+    {
+      "code": "RU",
+      "name": "Russia",
+      "nameKo": "러시아",
+      "totalItems": 5395,
+      "totalHolders": 7,
+      "center": [
+        59,
+        70
+      ],
+      "zoom": 3
+    },
+    {
+      "code": "CA",
+      "name": "Canada",
+      "nameKo": "캐나다",
+      "totalItems": 4322,
+      "totalHolders": 9,
+      "center": [
+        55,
+        -100
+      ],
+      "zoom": 3
+    },
+    {
+      "code": "TW",
+      "name": "Taiwan",
+      "nameKo": "대만",
+      "totalItems": 3074,
+      "totalHolders": 10,
+      "center": [
+        23.7,
+        121
+      ],
+      "zoom": 7
+    },
+    {
+      "code": "SE",
+      "name": "Sweden",
+      "nameKo": "스웨덴",
+      "totalItems": 2491,
+      "totalHolders": 9,
+      "center": [
+        62,
+        16
+      ],
+      "zoom": 4
+    },
+    {
+      "code": "NL",
+      "name": "Netherlands",
+      "nameKo": "네덜란드",
+      "totalItems": 1973,
+      "totalHolders": 6,
+      "center": [
+        52.2,
+        5.3
+      ],
+      "zoom": 7
+    },
+    {
+      "code": "AT",
+      "name": "Austria",
+      "nameKo": "오스트리아",
+      "totalItems": 1790,
+      "totalHolders": 5,
+      "center": [
+        47.6,
+        14.3
+      ],
+      "zoom": 7
+    },
+    {
+      "code": "DK",
+      "name": "Denmark",
+      "nameKo": "덴마크",
+      "totalItems": 1490,
+      "totalHolders": 2,
+      "center": [
+        56,
+        10
+      ],
+      "zoom": 6
+    },
+    {
+      "code": "KZ",
+      "name": "Kazakhstan",
+      "nameKo": "카자흐스탄",
+      "totalItems": 1024,
+      "totalHolders": 1,
+      "center": [
+        48,
+        67
+      ],
+      "zoom": 4
+    },
+    {
+      "code": "CH",
+      "name": "Switzerland",
+      "nameKo": "스위스",
+      "totalItems": 695,
+      "totalHolders": 11,
+      "center": [
+        46.8,
+        8.2
+      ],
+      "zoom": 7
+    },
+    {
+      "code": "AU",
+      "name": "Australia",
+      "nameKo": "호주",
+      "totalItems": 547,
+      "totalHolders": 7,
+      "center": [
+        -25,
+        134
+      ],
+      "zoom": 4
+    },
+    {
+      "code": "BE",
+      "name": "Belgium",
+      "nameKo": "벨기에",
+      "totalItems": 402,
+      "totalHolders": 4,
+      "center": [
+        50.8,
+        4.5
+      ],
+      "zoom": 7
+    },
+    {
+      "code": "HU",
+      "name": "Hungary",
+      "nameKo": "헝가리",
+      "totalItems": 353,
+      "totalHolders": 2,
+      "center": [
+        47.1,
+        19.5
+      ],
+      "zoom": 7
+    },
+    {
+      "code": "PL",
+      "name": "Poland",
+      "nameKo": "폴란드",
+      "totalItems": 302,
+      "totalHolders": 4,
+      "center": [
+        52,
+        19
+      ],
+      "zoom": 6
+    },
+    {
+      "code": "VA",
+      "name": "Vatican City",
+      "nameKo": "바티칸",
+      "totalItems": 298,
+      "totalHolders": 1,
+      "center": [
+        41.904,
+        12.453
+      ],
+      "zoom": 15
+    },
+    {
+      "code": "ES",
+      "name": "Spain",
+      "nameKo": "스페인",
+      "totalItems": 96,
+      "totalHolders": 2,
+      "center": [
+        40,
+        -3
+      ],
+      "zoom": 5
+    },
+    {
+      "code": "NO",
+      "name": "Norway",
+      "nameKo": "노르웨이",
+      "totalItems": 82,
+      "totalHolders": 2,
+      "center": [
+        64,
+        11
+      ],
+      "zoom": 4
+    },
+    {
+      "code": "IT",
+      "name": "Italy",
+      "nameKo": "이탈리아",
+      "totalItems": 70,
+      "totalHolders": 3,
+      "center": [
+        43,
+        12
+      ],
+      "zoom": 5
+    },
+    {
+      "code": "NZ",
+      "name": "New Zealand",
+      "nameKo": "뉴질랜드",
+      "totalItems": 36,
+      "totalHolders": 2,
+      "center": [
+        -41,
+        173
+      ],
+      "zoom": 5
+    },
+    {
+      "code": "GR",
+      "name": "Greece",
+      "nameKo": "그리스",
+      "totalItems": 32,
+      "totalHolders": 1,
+      "center": [
+        39,
+        23
+      ],
+      "zoom": 6
+    },
+    {
+      "code": "CZ",
+      "name": "Czechia",
+      "nameKo": "체코",
+      "totalItems": 7,
+      "totalHolders": 1,
+      "center": [
+        49.8,
+        15.3
+      ],
+      "zoom": 7
+    },
+    {
+      "code": "SI",
+      "name": "Slovenia",
+      "nameKo": "슬로베니아",
+      "totalItems": 2,
+      "totalHolders": 1,
+      "center": [
+        46.1,
+        14.9
+      ],
+      "zoom": 8
+    },
+    {
+      "code": "SG",
+      "name": "Singapore",
+      "nameKo": "싱가포르",
+      "totalItems": 1,
+      "totalHolders": 1,
+      "center": [
+        1.3,
+        103.8
+      ],
+      "zoom": 11
+    },
+    {
+      "code": "IL",
+      "name": "Israel",
+      "nameKo": "이스라엘",
+      "totalItems": 1,
+      "totalHolders": 1,
+      "center": [
+        31.5,
+        35
+      ],
+      "zoom": 7
+    }
+  ],
+  "institutions": [
+    {
+      "id": "jp-representative",
+      "country": "JP",
+      "name": "Tokyo National Museum",
+      "nameKo": "도쿄국립박물관",
+      "nativeName": "東京国立博物館",
+      "source": "https://www.overseaschf.or.kr/okchf/status/US_CS_FS_viw.do",
+      "sourceType": "official_country_table",
+      "sourceDate": "2026-01-01",
+      "collectionItems": null,
+      "archiveRecords": null,
+      "objects": [],
+      "type": "museum",
+      "lat": 35.7190448,
+      "lng": 139.7759676,
+      "address": "東京国立博物館, 9, 上野公園, 台東区, 東京都, 110-8712, 日本",
+      "locationSource": "https://www.openstreetmap.org/way/33439660",
+      "locationMethod": "OpenStreetMap named institutional feature; approximate holder location",
+      "locationRetrieved": "2026-10-08"
+    },
+    {
+      "id": "us-representative",
+      "country": "US",
+      "name": "Metropolitan Museum of Art",
+      "nameKo": "메트로폴리탄미술관",
+      "nativeName": "The Metropolitan Museum of Art",
+      "source": "https://www.overseaschf.or.kr/okchf/status/US_CS_FS_viw.do",
+      "sourceType": "official_country_table",
+      "sourceDate": "2026-01-01",
+      "collectionItems": null,
+      "archiveRecords": null,
+      "objects": [],
+      "type": "museum",
+      "lat": 40.7794396,
+      "lng": -73.9633825,
+      "address": "The Metropolitan Museum of Art, 1000, 5th Avenue, Upper East Side, Manhattan Community Board 8, Manhattan, New York County, New York, 10075, United States",
+      "locationSource": "https://www.openstreetmap.org/relation/3698894",
+      "locationMethod": "OpenStreetMap named institutional feature; approximate holder location",
+      "locationRetrieved": "2026-10-08"
+    },
+    {
+      "id": "de-representative",
+      "country": "DE",
+      "name": "Museum of East Asian Art, Cologne",
+      "nameKo": "쾰른동아시아미술관",
+      "nativeName": "Museum für Ostasiatische Kunst Köln",
+      "source": "https://www.overseaschf.or.kr/okchf/status/US_CS_FS_viw.do",
+      "sourceType": "official_country_table",
+      "sourceDate": "2026-01-01",
+      "collectionItems": null,
+      "archiveRecords": null,
+      "objects": [],
+      "type": "museum",
+      "lat": 50.9352025,
+      "lng": 6.9258688,
+      "address": "Museum für Ostasiatische Kunst, 100, Universitätsstraße, Neustadt/Süd, Innenstadt, Köln, Nordrhein-Westfalen, 50674, Deutschland",
+      "locationSource": "https://www.openstreetmap.org/relation/938988",
+      "locationMethod": "OpenStreetMap named institutional feature; approximate holder location",
+      "locationRetrieved": "2026-10-08"
+    },
+    {
+      "id": "gb-representative",
+      "country": "GB",
+      "name": "British Museum",
+      "nameKo": "영국박물관",
+      "nativeName": "The British Museum",
+      "source": "https://www.overseaschf.or.kr/okchf/status/US_CS_FS_viw.do",
+      "sourceType": "official_country_table",
+      "sourceDate": "2026-01-01",
+      "collectionItems": null,
+      "archiveRecords": null,
+      "objects": [],
+      "type": "museum",
+      "lat": 51.5193118,
+      "lng": -0.1267051,
+      "address": "British Museum, Great Russell Street, St Giles, Bloomsbury, London Borough of Camden, Greater London, England, WC1B 3DG, United Kingdom",
+      "locationSource": "https://www.openstreetmap.org/relation/177044",
+      "locationMethod": "OpenStreetMap named institutional feature; approximate holder location",
+      "locationRetrieved": "2026-10-08"
+    },
+    {
+      "id": "cn-representative",
+      "country": "CN",
+      "name": "Palace Museum, Beijing",
+      "nameKo": "고궁박물원",
+      "nativeName": "故宮博物院",
+      "source": "https://www.overseaschf.or.kr/okchf/status/US_CS_FS_viw.do",
+      "sourceType": "official_country_table",
+      "sourceDate": "2026-01-01",
+      "collectionItems": null,
+      "archiveRecords": null,
+      "objects": [],
+      "type": "museum",
+      "lat": 39.9174311,
+      "lng": 116.3907817,
+      "address": "故宫博物院, 4号, 景山前街, 智德社区, 东华门街道, 首都功能核心区, 东城区, 北京市, 100010, 中国",
+      "locationSource": "https://www.openstreetmap.org/node/3884441391",
+      "locationMethod": "OpenStreetMap named institutional feature; approximate holder location",
+      "locationRetrieved": "2026-10-08"
+    },
+    {
+      "id": "fr-representative",
+      "country": "FR",
+      "name": "Musée Guimet",
+      "nameKo": "국립기메동양박물관",
+      "nativeName": "Musée national des arts asiatiques-Guimet",
+      "source": "https://www.overseaschf.or.kr/okchf/status/US_CS_FS_viw.do",
+      "sourceType": "official_country_table",
+      "sourceDate": "2026-01-01",
+      "collectionItems": null,
+      "archiveRecords": null,
+      "objects": [],
+      "type": "museum",
+      "lat": 48.865379,
+      "lng": 2.2935933,
+      "address": "Musée Guimet, 6, Place d'Iéna, Chaillot, Paris 16e Arrondissement, Paris, Île-de-France, France métropolitaine, 75116, France",
+      "locationSource": "https://www.openstreetmap.org/way/79641993",
+      "locationMethod": "OpenStreetMap named institutional feature; approximate holder location",
+      "locationRetrieved": "2026-10-08"
+    },
+    {
+      "id": "ru-representative",
+      "country": "RU",
+      "name": "State Museum of Oriental Art",
+      "nameKo": "국립동양미술관",
+      "nativeName": "Государственный музей Востока",
+      "source": "https://www.overseaschf.or.kr/okchf/status/US_CS_FS_viw.do",
+      "sourceType": "official_country_table",
+      "sourceDate": "2026-01-01",
+      "collectionItems": null,
+      "archiveRecords": null,
+      "objects": [],
+      "type": "museum",
+      "lat": 55.7563931,
+      "lng": 37.5998947,
+      "address": "Музей искусства народов Востока, Никитский бульвар, 47, Пресненский район, Москва, Центральный федеральный округ, 119019, Россия",
+      "locationSource": "https://www.openstreetmap.org/node/2613597034",
+      "locationMethod": "OpenStreetMap named institutional feature; approximate holder location",
+      "locationRetrieved": "2026-10-08"
+    },
+    {
+      "id": "tw-representative",
+      "country": "TW",
+      "name": "National Palace Museum",
+      "nameKo": "국립고궁박물원",
+      "nativeName": "國立故宮博物院",
+      "source": "https://www.overseaschf.or.kr/okchf/status/US_CS_FS_viw.do",
+      "sourceType": "official_country_table",
+      "sourceDate": "2026-01-01",
+      "collectionItems": null,
+      "archiveRecords": null,
+      "objects": [],
+      "type": "museum",
+      "lat": 25.1015744,
+      "lng": 121.5488623,
+      "address": "國立故宮博物院, 221, 至善路二段, 臨溪里, 士林區, 石角, 臺北市, 111, 臺灣",
+      "locationSource": "https://www.openstreetmap.org/way/827791918",
+      "locationMethod": "OpenStreetMap named institutional feature; approximate holder location",
+      "locationRetrieved": "2026-10-08"
+    },
+    {
+      "id": "se-representative",
+      "country": "SE",
+      "name": "Museum of Far Eastern Antiquities",
+      "nameKo": "동아시아박물관",
+      "nativeName": "Östasiatiska museet",
+      "source": "https://www.overseaschf.or.kr/okchf/status/US_CS_FS_viw.do",
+      "sourceType": "official_country_table",
+      "sourceDate": "2026-01-01",
+      "collectionItems": null,
+      "archiveRecords": null,
+      "objects": [],
+      "type": "museum",
+      "lat": 59.3273849,
+      "lng": 18.0816743,
+      "address": "Östasiatiska museet, Tyghusplan, Skeppsholmen, Norra innerstadens stadsdelsområde, Stockholm, Stockholms kommun, Stockholms län, 111 49, Sverige",
+      "locationSource": "https://www.openstreetmap.org/node/1476007025",
+      "locationMethod": "OpenStreetMap named institutional feature; approximate holder location",
+      "locationRetrieved": "2026-10-08"
+    },
+    {
+      "id": "at-representative",
+      "country": "AT",
+      "name": "Volkskundemuseum Wien",
+      "nameKo": "빈민족학박물관",
+      "nativeName": "Volkskundemuseum Wien",
+      "source": "https://www.overseaschf.or.kr/okchf/status/US_CS_FS_viw.do",
+      "sourceType": "official_country_table",
+      "sourceDate": "2026-01-01",
+      "collectionItems": null,
+      "archiveRecords": null,
+      "objects": [],
+      "type": "museum",
+      "lat": 48.2131498,
+      "lng": 16.3505518,
+      "address": "Volkskundemuseum, 17, Laudongasse, Buchfeld, Josefstadt, Katastralgemeinde Josefstadt, Josefstadt, Wien, 1080, Österreich",
+      "locationSource": "https://www.openstreetmap.org/node/666750600",
+      "locationMethod": "OpenStreetMap named institutional feature; approximate holder location",
+      "locationRetrieved": "2026-10-08"
+    },
+    {
+      "id": "dk-representative",
+      "country": "DK",
+      "name": "National Museum of Denmark",
+      "nameKo": "국립박물관",
+      "nativeName": "Nationalmuseet",
+      "source": "https://www.overseaschf.or.kr/okchf/status/US_CS_FS_viw.do",
+      "sourceType": "official_country_table",
+      "sourceDate": "2026-01-01",
+      "collectionItems": null,
+      "archiveRecords": null,
+      "objects": [],
+      "type": "museum",
+      "lat": 55.6747103,
+      "lng": 12.5743545,
+      "address": "Nationalmuseet, Vester Voldgade, Islands Brygge, Indre By, København, Københavns Kommune, Region Hovedstaden, 1555, Danmark",
+      "locationSource": "https://www.openstreetmap.org/relation/1989714",
+      "locationMethod": "OpenStreetMap named institutional feature; approximate holder location",
+      "locationRetrieved": "2026-10-08"
+    },
+    {
+      "id": "kz-representative",
+      "country": "KZ",
+      "name": "National Library of Kazakhstan",
+      "nameKo": "카자흐스탄국립도서관",
+      "nativeName": "Национальная Библиотека Республики Казахстан",
+      "source": "https://www.overseaschf.or.kr/okchf/status/US_CS_FS_viw.do",
+      "sourceType": "official_country_table",
+      "sourceDate": "2026-01-01",
+      "collectionItems": null,
+      "archiveRecords": null,
+      "objects": [],
+      "type": "library",
+      "lat": 43.2414437,
+      "lng": 76.9437789,
+      "address": "Қазақстан Республикасының Ұлттық Кітапханасы, 14, Абай даңғылы, Көктем, Бостандық ауданы, Алматы, 050021, Қазақстан",
+      "locationSource": "https://www.openstreetmap.org/relation/19950012",
+      "locationMethod": "OpenStreetMap named institutional feature; approximate holder location",
+      "locationRetrieved": "2026-10-08"
+    },
+    {
+      "id": "ch-representative",
+      "country": "CH",
+      "name": "Bern Historical Museum",
+      "nameKo": "베른역사박물관",
+      "nativeName": "Bernisches Historisches Museum",
+      "source": "https://www.overseaschf.or.kr/okchf/status/US_CS_FS_viw.do",
+      "sourceType": "official_country_table",
+      "sourceDate": "2026-01-01",
+      "collectionItems": null,
+      "archiveRecords": null,
+      "objects": [],
+      "type": "museum",
+      "lat": 46.9429677,
+      "lng": 7.4488696,
+      "address": "Bernisches Historisches Museum, 5, Helvetiaplatz, Dalmazi, Kirchenfeld, Stadtteil IV, Bern, Verwaltungskreis Bern-Mittelland, Verwaltungsregion Bern-Mittelland, Bern/Berne, 3005, Schweiz/Suisse/Svizzera/Svizra",
+      "locationSource": "https://www.openstreetmap.org/way/40422946",
+      "locationMethod": "OpenStreetMap named institutional feature; approximate holder location",
+      "locationRetrieved": "2026-10-08"
+    },
+    {
+      "id": "au-representative",
+      "country": "AU",
+      "name": "Art Gallery of New South Wales",
+      "nameKo": "뉴사우스웨일즈미술관",
+      "nativeName": "Art Gallery of New South Wales",
+      "source": "https://www.overseaschf.or.kr/okchf/status/US_CS_FS_viw.do",
+      "sourceType": "official_country_table",
+      "sourceDate": "2026-01-01",
+      "collectionItems": null,
+      "archiveRecords": null,
+      "objects": [],
+      "type": "museum",
+      "lat": -33.8686067,
+      "lng": 151.2174176,
+      "address": "Art Gallery of New South Wales, Cahill Expressway Offramp, Sydney, New South Wales, 2000, Australia",
+      "locationSource": "https://www.openstreetmap.org/way/1265404795",
+      "locationMethod": "OpenStreetMap named institutional feature; approximate holder location",
+      "locationRetrieved": "2026-10-08"
+    },
+    {
+      "id": "be-representative",
+      "country": "BE",
+      "name": "Art & History Museum, Brussels",
+      "nameKo": "예술역사박물관",
+      "nativeName": "Museum Kunst & Geschiedenis",
+      "source": "https://www.overseaschf.or.kr/okchf/status/US_CS_FS_viw.do",
+      "sourceType": "official_country_table",
+      "sourceDate": "2026-01-01",
+      "collectionItems": null,
+      "archiveRecords": null,
+      "objects": [],
+      "type": "museum",
+      "lat": 50.8393458,
+      "lng": 4.3920768,
+      "address": "Musée Art & Histoire - Museum Kunst & Geschiedenis, Avenue des Nerviens - Nerviërslaan, Quartier européen - Europese wijk, Bruxelles - Brussel, Brussel-Hoofdstad - Bruxelles-Capitale, Région de Bruxelles-Capitale - Brussels Hoofdstedelijk Gewest, 1000, België / Belgique / Belgien",
+      "locationSource": "https://www.openstreetmap.org/node/251316201",
+      "locationMethod": "OpenStreetMap named institutional feature; approximate holder location",
+      "locationRetrieved": "2026-10-08"
+    },
+    {
+      "id": "hu-representative",
+      "country": "HU",
+      "name": "Hopp Ferenc Museum of Asiatic Arts",
+      "nameKo": "호프페렌츠아시아미술관",
+      "nativeName": "Hopp Ferenc Ázsiai Művészeti Múzeum",
+      "source": "https://www.overseaschf.or.kr/okchf/status/US_CS_FS_viw.do",
+      "sourceType": "official_country_table",
+      "sourceDate": "2026-01-01",
+      "collectionItems": null,
+      "archiveRecords": null,
+      "objects": [],
+      "type": "museum",
+      "lat": 47.5112766,
+      "lng": 19.0732811,
+      "address": "Hopp Ferenc Ázsiai Művészeti Múzeum, 103, Andrássy út, Terézváros, VI. kerület, Budapest, 1062, Magyarország",
+      "locationSource": "https://www.openstreetmap.org/way/25291179",
+      "locationMethod": "OpenStreetMap named institutional feature; approximate holder location",
+      "locationRetrieved": "2026-10-08"
+    },
+    {
+      "id": "pl-representative",
+      "country": "PL",
+      "name": "National Museum in Warsaw",
+      "nameKo": "바르샤바국립박물관",
+      "nativeName": "Muzeum Narodowe w Warszawie",
+      "source": "https://www.overseaschf.or.kr/okchf/status/US_CS_FS_viw.do",
+      "sourceType": "official_country_table",
+      "sourceDate": "2026-01-01",
+      "collectionItems": null,
+      "archiveRecords": null,
+      "objects": [],
+      "type": "museum",
+      "lat": 52.2316938,
+      "lng": 21.0247708,
+      "address": "Muzeum Narodowe w Warszawie, 3, Aleje Jerozolimskie, Powiśle-Solec, Śródmieście Południowe, Śródmieście, Warszawa, województwo mazowieckie, 00-495, Polska",
+      "locationSource": "https://www.openstreetmap.org/node/9984134345",
+      "locationMethod": "OpenStreetMap named institutional feature; approximate holder location",
+      "locationRetrieved": "2026-10-08"
+    },
+    {
+      "id": "va-representative",
+      "country": "VA",
+      "name": "Vatican Museums · Anima Mundi",
+      "nameKo": "아니마문디민족학박물관",
+      "nativeName": "Museo Etnologico Anima Mundi, Musei Vaticani",
+      "source": "https://www.overseaschf.or.kr/okchf/status/US_CS_FS_viw.do",
+      "sourceType": "official_country_table",
+      "sourceDate": "2026-01-01",
+      "collectionItems": null,
+      "archiveRecords": null,
+      "objects": [],
+      "type": "museum",
+      "lat": 41.904961,
+      "lng": 12.4546617,
+      "address": "Musei Vaticani, Rampa dell'Archeologia, Civitas Vaticana - Città del Vaticano, 00120, Civitas Vaticana - Città del Vaticano",
+      "locationSource": "https://www.openstreetmap.org/way/255959482",
+      "locationMethod": "OpenStreetMap named institutional feature; approximate holder location",
+      "locationRetrieved": "2026-10-08"
+    },
+    {
+      "id": "es-representative",
+      "country": "ES",
+      "name": "Museum of Ethnology and World Cultures, Barcelona",
+      "nameKo": "민족학세계문화박물관",
+      "nativeName": "Museu Etnològic i de Cultures del Món",
+      "source": "https://www.overseaschf.or.kr/okchf/status/US_CS_FS_viw.do",
+      "sourceType": "official_country_table",
+      "sourceDate": "2026-01-01",
+      "collectionItems": null,
+      "archiveRecords": null,
+      "objects": [],
+      "type": "museum",
+      "lat": 41.3687661,
+      "lng": 2.1563362,
+      "address": "Museu Etnològic, Passeig de Santa Madrona, França Xica, el Poble-sec, Sants-Montjuïc, Barcelona, Barcelonès, Barcelona, Catalunya, 08004, España",
+      "locationSource": "https://www.openstreetmap.org/way/118709755",
+      "locationMethod": "OpenStreetMap named institutional feature; approximate holder location",
+      "locationRetrieved": "2026-10-08"
+    },
+    {
+      "id": "no-representative",
+      "country": "NO",
+      "name": "National Museum, Oslo",
+      "nameKo": "국립박물관",
+      "nativeName": "Nasjonalmuseet",
+      "source": "https://www.overseaschf.or.kr/okchf/status/US_CS_FS_viw.do",
+      "sourceType": "official_country_table",
+      "sourceDate": "2026-01-01",
+      "collectionItems": null,
+      "archiveRecords": null,
+      "objects": [],
+      "type": "museum",
+      "lat": 59.9116278,
+      "lng": 10.728425,
+      "address": "Nasjonalmuseet, Operatunnelen / Festningstunnelen, Akershus festning, Frogner, Oslo, 0037, Norge",
+      "locationSource": "https://www.openstreetmap.org/relation/13920125",
+      "locationMethod": "OpenStreetMap named institutional feature; approximate holder location",
+      "locationRetrieved": "2026-10-08"
+    },
+    {
+      "id": "it-representative",
+      "country": "IT",
+      "name": "Museum of Civilizations, Rome",
+      "nameKo": "문명박물관",
+      "nativeName": "Museo delle Civiltà",
+      "source": "https://www.overseaschf.or.kr/okchf/status/US_CS_FS_viw.do",
+      "sourceType": "official_country_table",
+      "sourceDate": "2026-01-01",
+      "collectionItems": null,
+      "archiveRecords": null,
+      "objects": [],
+      "type": "museum",
+      "lat": 41.8325467,
+      "lng": 12.4718151,
+      "address": "Museo delle Civiltà, 14, Piazza Guglielmo Marconi, E.U.R., Municipio Roma IX, Roma, Roma Capitale, Lazio, 00144, Italia",
+      "locationSource": "https://www.openstreetmap.org/node/10937793525",
+      "locationMethod": "OpenStreetMap named institutional feature; approximate holder location",
+      "locationRetrieved": "2026-10-08"
+    },
+    {
+      "id": "nz-representative",
+      "country": "NZ",
+      "name": "Canterbury Museum",
+      "nameKo": "켄터베리박물관",
+      "nativeName": "Te Whare Taonga o Waitaha",
+      "source": "https://www.overseaschf.or.kr/okchf/status/US_CS_FS_viw.do",
+      "sourceType": "official_country_table",
+      "sourceDate": "2026-01-01",
+      "collectionItems": null,
+      "archiveRecords": null,
+      "objects": [],
+      "type": "museum",
+      "lat": -43.530943,
+      "lng": 172.6270728,
+      "address": "Canterbury Museum, Rolleston Avenue, Christchurch Central, Christchurch, Christchurch City, Canterbury, 8013, New Zealand / Aotearoa",
+      "locationSource": "https://www.openstreetmap.org/way/23504437",
+      "locationMethod": "OpenStreetMap named institutional feature; approximate holder location",
+      "locationRetrieved": "2026-10-08"
+    },
+    {
+      "id": "gr-representative",
+      "country": "GR",
+      "name": "Museum of Asian Art, Corfu",
+      "nameKo": "코르푸아시아미술관",
+      "nativeName": "Μουσείο Ασιατικής Τέχνης Κέρκυρας",
+      "source": "https://www.overseaschf.or.kr/okchf/status/US_CS_FS_viw.do",
+      "sourceType": "official_country_table",
+      "sourceDate": "2026-01-01",
+      "collectionItems": null,
+      "archiveRecords": null,
+      "objects": [],
+      "type": "museum",
+      "lat": 39.6257762,
+      "lng": 19.9247816,
+      "address": "Μουσείο Ασιατικής Τέχνης, Πλατεία Ανακτόρων, Αγ. Αποστόλοι, Καμπιέλο, Παλιά Πόλη Κέρκυρας, Κέρκυρα, Δήμος Κεντρικής Κέρκυρας και Διαποντίων Νήσων, Περιφερειακή Ενότητα Κέρκυρας, Περιφέρεια Ιονίων Νήσων, Αποκεντρωμένη Διοίκηση Πελοποννήσου, Δυτικής Ελλάδας και Ιονίου, 491 00, Ελλάς",
+      "locationSource": "https://www.openstreetmap.org/way/345780778",
+      "locationMethod": "OpenStreetMap named institutional feature; approximate holder location",
+      "locationRetrieved": "2026-10-08"
+    },
+    {
+      "id": "cz-representative",
+      "country": "CZ",
+      "name": "Náprstek Museum",
+      "nameKo": "나프르스텍박물관",
+      "nativeName": "Náprstkovo muzeum asijských, afrických a amerických kultur",
+      "source": "https://www.overseaschf.or.kr/okchf/status/US_CS_FS_viw.do",
+      "sourceType": "official_country_table",
+      "sourceDate": "2026-01-01",
+      "collectionItems": null,
+      "archiveRecords": null,
+      "objects": [],
+      "type": "museum",
+      "lat": 50.0840937,
+      "lng": 14.4159695,
+      "address": "Náprstkovo muzeum, 269/1, Betlémské náměstí, Staré Město, obvod Praha 1, Praha, 110 00, Česko",
+      "locationSource": "https://www.openstreetmap.org/node/344975004",
+      "locationMethod": "OpenStreetMap named institutional feature; approximate holder location",
+      "locationRetrieved": "2026-10-08"
+    },
+    {
+      "id": "si-representative",
+      "country": "SI",
+      "name": "Regional Museum of Celje",
+      "nameKo": "첼레시립박물관",
+      "nativeName": "Pokrajinski muzej Celje",
+      "source": "https://www.overseaschf.or.kr/okchf/status/US_CS_FS_viw.do",
+      "sourceType": "official_country_table",
+      "sourceDate": "2026-01-01",
+      "collectionItems": null,
+      "archiveRecords": null,
+      "objects": [],
+      "type": "museum",
+      "lat": 46.2276849,
+      "lng": 15.2618902,
+      "address": "Pokrajinski muzej Celje, 1, Muzejski trg, Center, Celje, 3000, Slovenija",
+      "locationSource": "https://www.openstreetmap.org/node/4185674609",
+      "locationMethod": "OpenStreetMap named institutional feature; approximate holder location",
+      "locationRetrieved": "2026-10-08"
+    },
+    {
+      "id": "sg-representative",
+      "country": "SG",
+      "name": "NUS Museum",
+      "nameKo": "싱가포르국립대학교박물관",
+      "nativeName": "National University of Singapore Museum",
+      "source": "https://www.overseaschf.or.kr/okchf/status/US_CS_FS_viw.do",
+      "sourceType": "official_country_table",
+      "sourceDate": "2026-01-01",
+      "collectionItems": null,
+      "archiveRecords": null,
+      "objects": [],
+      "type": "museum",
+      "lat": 1.3014454,
+      "lng": 103.7725633,
+      "address": "NUS Museum, 50, Kent Ridge Crescent, National University of Singapore, one-north, Queenstown, Central Region, Singapore, 119279, Singapore",
+      "locationSource": "https://www.openstreetmap.org/node/6807575789",
+      "locationMethod": "OpenStreetMap named institutional feature; approximate holder location",
+      "locationRetrieved": "2026-10-08"
+    },
+    {
+      "id": "il-representative",
+      "country": "IL",
+      "name": "Israel Museum",
+      "nameKo": "이스라엘국립박물관",
+      "nativeName": "מוזיאון ישראל",
+      "source": "https://www.overseaschf.or.kr/okchf/status/US_CS_FS_viw.do",
+      "sourceType": "official_country_table",
+      "sourceDate": "2026-01-01",
+      "collectionItems": null,
+      "archiveRecords": null,
+      "objects": [],
+      "type": "museum",
+      "lat": 31.771888,
+      "lng": 35.2033867,
+      "address": "מוזיאון ישראל, 11, נחמן אביגד, ירושלים, ניות, ירושלים | القدس, נפת ירושלים, מחוז ירושלים, 9218812, ישראל",
+      "locationSource": "https://www.openstreetmap.org/way/44307909",
+      "locationMethod": "OpenStreetMap named institutional feature; approximate holder location",
+      "locationRetrieved": "2026-10-08"
+    },
+    {
+      "id": "NLD007",
+      "country": "NL",
+      "name": "National Museum of World Cultures, Leiden",
+      "nameKo": "국립민족학박물관",
+      "nativeName": null,
+      "source": "https://www.overseaschf.or.kr/archive/search/category.do?mode=list&cateType=INSTITUTION&cateId=NLD007&pagerLimit=10",
+      "sourceType": "public_archive",
+      "sourceDate": "2026-10-08",
+      "collectionItems": null,
+      "archiveRecords": 721,
+      "objects": [
+        {
+          "title": "각반",
+          "period": "조선, 19세기 말",
+          "creator": "-",
+          "source": "https://www.overseaschf.or.kr/archive/search/category.do?mode=view&srSearchTy=relic&id=19342&iDivCd=1"
+        },
+        {
+          "title": "갓을 든 남자",
+          "period": "1800–1875년",
+          "creator": "-",
+          "source": "https://www.overseaschf.or.kr/archive/search/category.do?mode=view&srSearchTy=relic&id=19348&iDivCd=1"
+        },
+        {
+          "title": "돗자리",
+          "period": "조선, 19세기 말",
+          "creator": "-",
+          "source": "https://www.overseaschf.or.kr/archive/search/category.do?mode=view&srSearchTy=relic&id=19344&iDivCd=1"
+        },
+        {
+          "title": "배 모형",
+          "period": "19세기 초",
+          "creator": "-",
+          "source": "https://www.overseaschf.or.kr/archive/search/category.do?mode=view&srSearchTy=relic&id=19349&iDivCd=1"
+        },
+        {
+          "title": "배 모형 설계도",
+          "period": "1947년",
+          "creator": "-",
+          "source": "https://www.overseaschf.or.kr/archive/search/category.do?mode=view&srSearchTy=relic&id=19350&iDivCd=1"
+        }
+      ],
+      "type": "museum",
+      "lat": 52.1633137,
+      "lng": 4.4824444,
+      "address": "Wereldmuseum Leiden, 1, Steenstraat, Oude Morsch, Binnenstad, Leiden, Zuid-Holland, Nederland, 2312 BS, Nederland",
+      "locationSource": "https://www.openstreetmap.org/node/12120355366",
+      "locationMethod": "OpenStreetMap named institutional feature; approximate holder location",
+      "locationRetrieved": "2026-10-08",
+      "recordsUrl": "/korean-heritage-records/NLD007.json"
+    },
+    {
+      "id": "USA147",
+      "country": "US",
+      "name": "Newark Museum of Art",
+      "nameKo": "뉴어크박물관",
+      "nativeName": null,
+      "source": "https://www.overseaschf.or.kr/archive/search/category.do?mode=list&cateType=INSTITUTION&cateId=USA147&pagerLimit=10",
+      "sourceType": "public_archive",
+      "sourceDate": "2026-10-08",
+      "collectionItems": null,
+      "archiveRecords": 486,
+      "objects": [
+        {
+          "title": "백자대접",
+          "period": "16·17세기",
+          "creator": "-",
+          "source": "https://www.overseaschf.or.kr/archive/search/category.do?mode=view&srSearchTy=relic&id=109083&iDivCd=1"
+        },
+        {
+          "title": "골무",
+          "period": "20세기",
+          "creator": "-",
+          "source": "https://www.overseaschf.or.kr/archive/search/category.do?mode=view&srSearchTy=relic&id=19230&iDivCd=1"
+        },
+        {
+          "title": "두루마기",
+          "period": "20세기",
+          "creator": "-",
+          "source": "https://www.overseaschf.or.kr/archive/search/category.do?mode=view&srSearchTy=relic&id=19195&iDivCd=1"
+        },
+        {
+          "title": "뚜껑",
+          "period": "통일신라, 7세기 후반",
+          "creator": "-",
+          "source": "https://www.overseaschf.or.kr/archive/search/category.do?mode=view&srSearchTy=relic&id=19229&iDivCd=1"
+        },
+        {
+          "title": "박쥐단작노리개",
+          "period": "20세기",
+          "creator": "-",
+          "source": "https://www.overseaschf.or.kr/archive/search/category.do?mode=view&srSearchTy=relic&id=19236&iDivCd=1"
+        }
+      ],
+      "type": "museum",
+      "lat": 40.7431635,
+      "lng": -74.1717646,
+      "address": "Newark Museum, 49, Washington Street, The Ironbound, Newark, Essex County, New Jersey, 07102, United States",
+      "locationSource": "https://www.openstreetmap.org/way/259617388",
+      "locationMethod": "OpenStreetMap named institutional feature; approximate holder location",
+      "locationRetrieved": "2026-10-08",
+      "recordsUrl": "/korean-heritage-records/USA147.json"
+    },
+    {
+      "id": "USA044",
+      "country": "US",
+      "name": "University of Michigan Museum of Art",
+      "nameKo": "미시간대학교미술관",
+      "nativeName": null,
+      "source": "https://www.overseaschf.or.kr/archive/search/category.do?mode=list&cateType=INSTITUTION&cateId=USA044&pagerLimit=10",
+      "sourceType": "public_archive",
+      "sourceDate": "2026-10-08",
+      "collectionItems": null,
+      "archiveRecords": 404,
+      "objects": [
+        {
+          "title": "이층장",
+          "period": "1800년 전후",
+          "creator": "-",
+          "source": "https://www.overseaschf.or.kr/archive/search/category.do?mode=view&srSearchTy=relic&id=92200&iDivCd=1"
+        },
+        {
+          "title": "광구장경호",
+          "period": "삼국시대 5-6세기",
+          "creator": "-",
+          "source": "https://www.overseaschf.or.kr/archive/search/category.do?mode=view&srSearchTy=relic&id=10553&iDivCd=1"
+        },
+        {
+          "title": "기마인물형토기",
+          "period": "미상",
+          "creator": "-",
+          "source": "https://www.overseaschf.or.kr/archive/search/category.do?mode=view&srSearchTy=relic&id=11078&iDivCd=1"
+        },
+        {
+          "title": "대부단경호",
+          "period": "삼국시대 4-5세기",
+          "creator": "-",
+          "source": "https://www.overseaschf.or.kr/archive/search/category.do?mode=view&srSearchTy=relic&id=11077&iDivCd=1"
+        },
+        {
+          "title": "대부완",
+          "period": "5세기",
+          "creator": "-",
+          "source": "https://www.overseaschf.or.kr/archive/search/category.do?mode=view&srSearchTy=relic&id=10815&iDivCd=1"
+        }
+      ],
+      "type": "museum",
+      "lat": 42.2755914,
+      "lng": -83.7398377,
+      "address": "University of Michigan Museum of Art, 525, South State Street, Germantown, Ann Arbor, Washtenaw County, Michigan, 48109, United States",
+      "locationSource": "https://www.openstreetmap.org/way/154202613",
+      "locationMethod": "OpenStreetMap named institutional feature; approximate holder location",
+      "locationRetrieved": "2026-10-08",
+      "recordsUrl": "/korean-heritage-records/USA044.json"
+    },
+    {
+      "id": "USA049",
+      "country": "US",
+      "name": "Fleming Museum of Art, University of Vermont",
+      "nameKo": "버몬트대학교 플레밍미술관",
+      "nativeName": null,
+      "source": "https://www.overseaschf.or.kr/archive/search/category.do?mode=list&cateType=INSTITUTION&cateId=USA049&pagerLimit=10",
+      "sourceType": "public_archive",
+      "sourceDate": "2026-10-08",
+      "collectionItems": null,
+      "archiveRecords": 40,
+      "objects": [
+        {
+          "title": "동절기용 신발(鞋)",
+          "period": "기타",
+          "creator": "-",
+          "source": "https://www.overseaschf.or.kr/archive/search/category.do?mode=view&srSearchTy=relic&id=21005&iDivCd=1"
+        },
+        {
+          "title": "색동짚신",
+          "period": "1893년  추정",
+          "creator": "-",
+          "source": "https://www.overseaschf.or.kr/archive/search/category.do?mode=view&srSearchTy=relic&id=21004&iDivCd=1"
+        },
+        {
+          "title": "변형전복",
+          "period": "기타",
+          "creator": "-",
+          "source": "https://www.overseaschf.or.kr/archive/search/category.do?mode=view&srSearchTy=relic&id=21003&iDivCd=1"
+        },
+        {
+          "title": "원삼",
+          "period": "기타",
+          "creator": "-",
+          "source": "https://www.overseaschf.or.kr/archive/search/category.do?mode=view&srSearchTy=relic&id=21002&iDivCd=1"
+        },
+        {
+          "title": "마고자",
+          "period": "1927년",
+          "creator": "-",
+          "source": "https://www.overseaschf.or.kr/archive/search/category.do?mode=view&srSearchTy=relic&id=21001&iDivCd=1"
+        }
+      ],
+      "type": "museum",
+      "lat": 44.4799091,
+      "lng": -73.1971071,
+      "address": "Fleming Museum of Art, 61, Colchester Avenue, North Hill Section, Burlington, Chittenden County, Vermont, 05405, United States",
+      "locationSource": "https://www.openstreetmap.org/way/235380988",
+      "locationMethod": "OpenStreetMap named institutional feature; approximate holder location",
+      "locationRetrieved": "2026-10-08",
+      "recordsUrl": "/korean-heritage-records/USA049.json"
+    },
+    {
+      "id": "USA139",
+      "country": "US",
+      "name": "Claremont Colleges Library · McCormick Collection",
+      "nameKo": "클레어몬트대학도서관 맥코믹컬렉션",
+      "nativeName": null,
+      "source": "https://www.overseaschf.or.kr/archive/search/category.do?mode=list&cateType=INSTITUTION&cateId=USA139&pagerLimit=10",
+      "sourceType": "public_archive",
+      "sourceDate": "2026-10-08",
+      "collectionItems": null,
+      "archiveRecords": 126,
+      "objects": [
+        {
+          "title": "[사씨]남정기",
+          "period": "發行年不明",
+          "creator": "金萬重 (1637–1692) 撰",
+          "source": "https://www.overseaschf.or.kr/archive/search/category.do?mode=view&srSearchTy=relic&id=30516&iDivCd=2"
+        },
+        {
+          "title": "가정선생문집",
+          "period": "1662(顯宗 3)跋",
+          "creator": "李穀 (1298–1351) 著, 李穡 編",
+          "source": "https://www.overseaschf.or.kr/archive/search/category.do?mode=view&srSearchTy=relic&id=30801&iDivCd=2"
+        },
+        {
+          "title": "간이당문집",
+          "period": "1631(仁祖 9)序",
+          "creator": "崔岦 (1539–1612) 著",
+          "source": "https://www.overseaschf.or.kr/archive/search/category.do?mode=view&srSearchTy=relic&id=30648&iDivCd=2"
+        },
+        {
+          "title": "경산집",
+          "period": "1895(高宗 32)跋",
+          "creator": "鄭元容 (1783–1873) 著, 鄭範朝 (1833–1897, 朝鮮) 編",
+          "source": "https://www.overseaschf.or.kr/archive/search/category.do?mode=view&srSearchTy=relic&id=30488&iDivCd=2"
+        },
+        {
+          "title": "계원필경집",
+          "period": "1834(純祖 34)序",
+          "creator": "崔致遠 (857?–910) 著",
+          "source": "https://www.overseaschf.or.kr/archive/search/category.do?mode=view&srSearchTy=relic&id=30798&iDivCd=2"
+        }
+      ],
+      "type": "library",
+      "lat": 34.1021377,
+      "lng": -117.7126533,
+      "address": "Honnold Library, 800, College Way, Claremont, Los Angeles County, California, 91711, United States",
+      "locationSource": "https://www.openstreetmap.org/way/378787887",
+      "locationMethod": "OpenStreetMap named institutional feature; approximate holder location",
+      "locationRetrieved": "2026-10-08",
+      "recordsUrl": "/korean-heritage-records/USA139.json"
+    },
+    {
+      "id": "USA108",
+      "country": "US",
+      "name": "Cleveland Museum of Art",
+      "nameKo": "클리블랜드미술관",
+      "nativeName": null,
+      "source": "https://www.overseaschf.or.kr/archive/search/category.do?mode=list&cateType=INSTITUTION&cateId=USA108&pagerLimit=10",
+      "sourceType": "public_archive",
+      "sourceDate": "2026-10-08",
+      "collectionItems": null,
+      "archiveRecords": 341,
+      "objects": [
+        {
+          "title": "감지금자『대방광불화엄경』제78권",
+          "period": "14세기 중반",
+          "creator": "-",
+          "source": "https://www.overseaschf.or.kr/archive/search/category.do?mode=view&srSearchTy=relic&id=46493&iDivCd=1"
+        },
+        {
+          "title": "나전원형반",
+          "period": "19세기",
+          "creator": "-",
+          "source": "https://www.overseaschf.or.kr/archive/search/category.do?mode=view&srSearchTy=relic&id=46490&iDivCd=1"
+        },
+        {
+          "title": "동곳",
+          "period": "고려",
+          "creator": "-",
+          "source": "https://www.overseaschf.or.kr/archive/search/category.do?mode=view&srSearchTy=relic&id=46487&iDivCd=1"
+        },
+        {
+          "title": "용문화각합",
+          "period": "20세기",
+          "creator": "-",
+          "source": "https://www.overseaschf.or.kr/archive/search/category.do?mode=view&srSearchTy=relic&id=46491&iDivCd=1"
+        },
+        {
+          "title": "지승사각반",
+          "period": "20세기 전반",
+          "creator": "-",
+          "source": "https://www.overseaschf.or.kr/archive/search/category.do?mode=view&srSearchTy=relic&id=46492&iDivCd=1"
+        }
+      ],
+      "type": "museum",
+      "lat": 41.5090438,
+      "lng": -81.6117367,
+      "address": "Cleveland Museum of Art, 11150, East Boulevard, Uptown, University Circle, Cleveland, Cuyahoga County, Ohio, 44114, United States",
+      "locationSource": "https://www.openstreetmap.org/way/109114109",
+      "locationMethod": "OpenStreetMap named institutional feature; approximate holder location",
+      "locationRetrieved": "2026-10-08",
+      "recordsUrl": "/korean-heritage-records/USA108.json"
+    },
+    {
+      "id": "USA143",
+      "country": "US",
+      "name": "Hamilton Library, University of Hawaiʻi at Mānoa",
+      "nameKo": "하와이주립대학교 해밀턴도서관",
+      "nativeName": null,
+      "source": "https://www.overseaschf.or.kr/archive/search/category.do?mode=list&cateType=INSTITUTION&cateId=USA143&pagerLimit=10",
+      "sourceType": "public_archive",
+      "sourceDate": "2026-10-08",
+      "collectionItems": null,
+      "archiveRecords": 329,
+      "objects": [
+        {
+          "title": "간재사고",
+          "period": "1926",
+          "creator": "田愚 著 ; 金楨鎬 編",
+          "source": "https://www.overseaschf.or.kr/archive/search/category.do?mode=view&srSearchTy=relic&id=130444&iDivCd=2"
+        },
+        {
+          "title": "격몽요결",
+          "period": "發行年不明",
+          "creator": "李珥 著",
+          "source": "https://www.overseaschf.or.kr/archive/search/category.do?mode=view&srSearchTy=relic&id=130449&iDivCd=2"
+        },
+        {
+          "title": "경재잠집설",
+          "period": "英祖 26(1750)序",
+          "creator": "李象靖 編",
+          "source": "https://www.overseaschf.or.kr/archive/search/category.do?mode=view&srSearchTy=relic&id=130439&iDivCd=2"
+        },
+        {
+          "title": "고봉선생문집",
+          "period": "1970",
+          "creator": "奇大升 著",
+          "source": "https://www.overseaschf.or.kr/archive/search/category.do?mode=view&srSearchTy=relic&id=130442&iDivCd=2"
+        },
+        {
+          "title": "공과신격",
+          "period": "1905",
+          "creator": "權重顯 著",
+          "source": "https://www.overseaschf.or.kr/archive/search/category.do?mode=view&srSearchTy=relic&id=130448&iDivCd=2"
+        }
+      ],
+      "type": "library",
+      "lat": 21.3005724,
+      "lng": -157.8161449,
+      "address": "Hamilton Library, 2550, McCarthy Mall, Lower Mānoa, Mānoa, East Honolulu, Honolulu, Honolulu County, Hawaii, 96822, United States",
+      "locationSource": "https://www.openstreetmap.org/way/31810981",
+      "locationMethod": "OpenStreetMap named institutional feature; approximate holder location",
+      "locationRetrieved": "2026-10-08",
+      "recordsUrl": "/korean-heritage-records/USA143.json"
+    },
+    {
+      "id": "JPN035",
+      "country": "JP",
+      "name": "Waseda University Library",
+      "nameKo": "와세다대학도서관",
+      "nativeName": null,
+      "source": "https://www.overseaschf.or.kr/archive/search/category.do?mode=list&cateType=INSTITUTION&cateId=JPN035&pagerLimit=10",
+      "sourceType": "public_archive",
+      "sourceDate": "2026-10-08",
+      "collectionItems": null,
+      "archiveRecords": 482,
+      "objects": [
+        {
+          "title": "임언승집",
+          "period": "[1590(萬曆 18) 跋]",
+          "creator": "任昉(梁, 460-508) 著；呂兆禧(明) 校",
+          "source": "https://www.overseaschf.or.kr/archive/search/category.do?mode=view&srSearchTy=relic&id=46485&iDivCd=2"
+        },
+        {
+          "title": "포명원집",
+          "period": "[1510(正德 5) 跋]",
+          "creator": "鮑照(宋, 421(?)-466) 著；程榮(明) 校",
+          "source": "https://www.overseaschf.or.kr/archive/search/category.do?mode=view&srSearchTy=relic&id=46486&iDivCd=2"
+        },
+        {
+          "title": "고금명유",
+          "period": "1577(萬曆 5)",
+          "creator": "吳仕期(明, ?-1579) 編輯；沈懋學(明, 1539-1582) 批閱 · 梅鼎祚(明, 1549-1615) 同閱；蔡逢春 校釋 ; 蔡逢時 同校",
+          "source": "https://www.overseaschf.or.kr/archive/search/category.do?mode=view&srSearchTy=relic&id=46477&iDivCd=2"
+        },
+        {
+          "title": "대명집례",
+          "period": "[發行年未詳]",
+          "creator": "徐一夔(明，1315-1400)…等 奉勅撰",
+          "source": "https://www.overseaschf.or.kr/archive/search/category.do?mode=view&srSearchTy=relic&id=46476&iDivCd=2"
+        },
+        {
+          "title": "도정백집",
+          "period": "[16世紀]",
+          "creator": "陶弘景(梁, 456-536) 著；黃省曾(明, 1490-1540) 編；汪士賢(明) 校",
+          "source": "https://www.overseaschf.or.kr/archive/search/category.do?mode=view&srSearchTy=relic&id=46480&iDivCd=2"
+        }
+      ],
+      "type": "library",
+      "lat": 35.7109327,
+      "lng": 139.7179988,
+      "address": "早稲田大学 中央図書館, 西早稲田, 新宿区, 東京都, 169-8050, 日本",
+      "locationSource": "https://www.openstreetmap.org/way/120266726",
+      "locationMethod": "OpenStreetMap named institutional feature; approximate holder location",
+      "locationRetrieved": "2026-10-08",
+      "recordsUrl": "/korean-heritage-records/JPN035.json"
+    },
+    {
+      "id": "JPN012",
+      "country": "JP",
+      "name": "Japan Folk Crafts Museum",
+      "nameKo": "일본민예관",
+      "nativeName": null,
+      "source": "https://www.overseaschf.or.kr/archive/search/category.do?mode=list&cateType=INSTITUTION&cateId=JPN012&pagerLimit=10",
+      "sourceType": "public_archive",
+      "sourceDate": "2026-10-08",
+      "collectionItems": null,
+      "archiveRecords": 1630,
+      "objects": [
+        {
+          "title": "쌍아연",
+          "period": "조선후기",
+          "creator": "-",
+          "source": "https://www.overseaschf.or.kr/archive/search/category.do?mode=view&srSearchTy=relic&id=47127&iDivCd=1"
+        },
+        {
+          "title": "어문사각벼루",
+          "period": "조선후기",
+          "creator": "-",
+          "source": "https://www.overseaschf.or.kr/archive/search/category.do?mode=view&srSearchTy=relic&id=47126&iDivCd=1"
+        },
+        {
+          "title": "곱돌화로",
+          "period": "조선후기",
+          "creator": "-",
+          "source": "https://www.overseaschf.or.kr/archive/search/category.do?mode=view&srSearchTy=relic&id=47125&iDivCd=1"
+        },
+        {
+          "title": "곱돌잔",
+          "period": "조선, 19세기",
+          "creator": "-",
+          "source": "https://www.overseaschf.or.kr/archive/search/category.do?mode=view&srSearchTy=relic&id=47123&iDivCd=1"
+        },
+        {
+          "title": "쑥돌연적",
+          "period": "조선, 19세기",
+          "creator": "-",
+          "source": "https://www.overseaschf.or.kr/archive/search/category.do?mode=view&srSearchTy=relic&id=47122&iDivCd=1"
+        }
+      ],
+      "type": "museum",
+      "lat": 35.6608154,
+      "lng": 139.6793079,
+      "address": "日本民藝館, 33, 駒場四丁目, 駒場, 目黒区, 東京都, 153-0041, 日本",
+      "locationSource": "https://www.openstreetmap.org/way/133340564",
+      "locationMethod": "OpenStreetMap named institutional feature; approximate holder location",
+      "locationRetrieved": "2026-10-08",
+      "recordsUrl": "/korean-heritage-records/JPN012.json"
+    },
+    {
+      "id": "CHN050",
+      "country": "CN",
+      "name": "Shanghai Library",
+      "nameKo": "상하이도서관",
+      "nativeName": null,
+      "source": "https://www.overseaschf.or.kr/archive/search/category.do?mode=list&cateType=INSTITUTION&cateId=CHN050&pagerLimit=10",
+      "sourceType": "public_archive",
+      "sourceDate": "2026-10-08",
+      "collectionItems": null,
+      "archiveRecords": 193,
+      "objects": [
+        {
+          "title": "간독회수",
+          "period": "19世紀",
+          "creator": "編著者不明",
+          "source": "https://www.overseaschf.or.kr/archive/search/category.do?mode=view&srSearchTy=relic&id=30861&iDivCd=2"
+        },
+        {
+          "title": "갱장록",
+          "period": "正祖 10(1786)",
+          "creator": "李福源(朝鮮) 編",
+          "source": "https://www.overseaschf.or.kr/archive/search/category.do?mode=view&srSearchTy=relic&id=30974&iDivCd=2"
+        },
+        {
+          "title": "건주기정도기",
+          "period": "1940",
+          "creator": "申忠一(朝鮮) 撰繪",
+          "source": "https://www.overseaschf.or.kr/archive/search/category.do?mode=view&srSearchTy=relic&id=30917&iDivCd=2"
+        },
+        {
+          "title": "경국대전",
+          "period": "景宗 1(1721)",
+          "creator": "崔恒(朝鮮) 等奉敎撰",
+          "source": "https://www.overseaschf.or.kr/archive/search/category.do?mode=view&srSearchTy=relic&id=30897&iDivCd=2"
+        },
+        {
+          "title": "경릉지장",
+          "period": "哲宗 1(1850)",
+          "creator": "編著者不明",
+          "source": "https://www.overseaschf.or.kr/archive/search/category.do?mode=view&srSearchTy=relic&id=30869&iDivCd=2"
+        }
+      ],
+      "type": "library",
+      "lat": 31.2100122,
+      "lng": 121.4396546,
+      "address": "上海图书馆, 淮海中路, 枫林桥, 湖南路街道, 徐汇区, 上海市, 200031, 中国",
+      "locationSource": "https://www.openstreetmap.org/node/5306444960",
+      "locationMethod": "OpenStreetMap named institutional feature; approximate holder location",
+      "locationRetrieved": "2026-10-08",
+      "recordsUrl": "/korean-heritage-records/CHN050.json"
+    },
+    {
+      "id": "CHN049",
+      "country": "CN",
+      "name": "Fudan University Library",
+      "nameKo": "푸단대학도서관",
+      "nativeName": null,
+      "source": "https://www.overseaschf.or.kr/archive/search/category.do?mode=list&cateType=INSTITUTION&cateId=CHN049&pagerLimit=10",
+      "sourceType": "public_archive",
+      "sourceDate": "2026-10-08",
+      "collectionItems": null,
+      "archiveRecords": 65,
+      "objects": [
+        {
+          "title": "숙혜기략",
+          "period": "高宗 32(1895)",
+          "creator": "編著者不明",
+          "source": "https://www.overseaschf.or.kr/archive/search/category.do?mode=view&srSearchTy=relic&id=30771&iDivCd=2"
+        },
+        {
+          "title": "초학계제수집",
+          "period": "發行年不明",
+          "creator": "編著者不明",
+          "source": "https://www.overseaschf.or.kr/archive/search/category.do?mode=view&srSearchTy=relic&id=30772&iDivCd=2"
+        },
+        {
+          "title": "각간선생실기",
+          "period": "光武 4(1900)",
+          "creator": "金致馥…等編",
+          "source": "https://www.overseaschf.or.kr/archive/search/category.do?mode=view&srSearchTy=relic&id=25884&iDivCd=2"
+        },
+        {
+          "title": "노릉지",
+          "period": "英祖 17(1741) 識",
+          "creator": "尹舜擧(朝鮮) 編",
+          "source": "https://www.overseaschf.or.kr/archive/search/category.do?mode=view&srSearchTy=relic&id=25817&iDivCd=2"
+        },
+        {
+          "title": "대전회통",
+          "period": "高宗 2(1865)",
+          "creator": "趙斗淳(朝鮮)…等受命編",
+          "source": "https://www.overseaschf.or.kr/archive/search/category.do?mode=view&srSearchTy=relic&id=30741&iDivCd=2"
+        }
+      ],
+      "type": "library",
+      "lat": null,
+      "lng": null,
+      "address": null,
+      "locationSource": null,
+      "locationMethod": "Location pending verification",
+      "locationRetrieved": "2026-10-08",
+      "recordsUrl": "/korean-heritage-records/CHN049.json"
+    },
+    {
+      "id": "CAN005",
+      "country": "CA",
+      "name": "Royal Ontario Museum",
+      "nameKo": "로열온타리오박물관",
+      "nativeName": null,
+      "source": "https://www.overseaschf.or.kr/archive/search/category.do?mode=list&cateType=INSTITUTION&cateId=CAN005&pagerLimit=10",
+      "sourceType": "public_archive",
+      "sourceDate": "2026-10-08",
+      "collectionItems": null,
+      "archiveRecords": 1228,
+      "objects": [
+        {
+          "title": "상평통보",
+          "period": "1679년",
+          "creator": "-",
+          "source": "https://www.overseaschf.or.kr/archive/search/category.do?mode=view&srSearchTy=relic&id=22183&iDivCd=1"
+        },
+        {
+          "title": "상평통보",
+          "period": "1679년",
+          "creator": "-",
+          "source": "https://www.overseaschf.or.kr/archive/search/category.do?mode=view&srSearchTy=relic&id=22182&iDivCd=1"
+        },
+        {
+          "title": "상평통보",
+          "period": "1883년",
+          "creator": "-",
+          "source": "https://www.overseaschf.or.kr/archive/search/category.do?mode=view&srSearchTy=relic&id=22181&iDivCd=1"
+        },
+        {
+          "title": "상평통보",
+          "period": "1731년",
+          "creator": "-",
+          "source": "https://www.overseaschf.or.kr/archive/search/category.do?mode=view&srSearchTy=relic&id=22180&iDivCd=1"
+        },
+        {
+          "title": "상평통보",
+          "period": "1679년",
+          "creator": "-",
+          "source": "https://www.overseaschf.or.kr/archive/search/category.do?mode=view&srSearchTy=relic&id=22179&iDivCd=1"
+        }
+      ],
+      "type": "museum",
+      "lat": 43.6676565,
+      "lng": -79.3946988,
+      "address": "Royal Ontario Museum, 100, Queen's Park, University, Downtown, Toronto, Ontario, M5S 2C6, Canada",
+      "locationSource": "https://www.openstreetmap.org/way/4942687",
+      "locationMethod": "OpenStreetMap named institutional feature; approximate holder location",
+      "locationRetrieved": "2026-10-08",
+      "recordsUrl": "/korean-heritage-records/CAN005.json"
+    }
+  ],
+  "trends": [
+    {
+      "year": 2008,
+      "items": 76143,
+      "source": "https://www.overseaschf.or.kr/_res/okchf/okchf/img/sub/img_sta02_2026.jpg"
+    },
+    {
+      "year": 2009,
+      "items": 107857,
+      "source": "https://www.overseaschf.or.kr/_res/okchf/okchf/img/sub/img_sta02_2026.jpg"
+    },
+    {
+      "year": 2010,
+      "items": 116896,
+      "source": "https://www.overseaschf.or.kr/_res/okchf/okchf/img/sub/img_sta02_2026.jpg"
+    },
+    {
+      "year": 2011,
+      "items": 140075,
+      "source": "https://www.overseaschf.or.kr/_res/okchf/okchf/img/sub/img_sta02_2026.jpg"
+    },
+    {
+      "year": 2012,
+      "items": 152910,
+      "source": "https://www.overseaschf.or.kr/_res/okchf/okchf/img/sub/img_sta02_2026.jpg"
+    },
+    {
+      "year": 2013,
+      "items": 152915,
+      "source": "https://www.overseaschf.or.kr/_res/okchf/okchf/img/sub/img_sta02_2026.jpg"
+    },
+    {
+      "year": 2014,
+      "items": 156160,
+      "source": "https://www.overseaschf.or.kr/_res/okchf/okchf/img/sub/img_sta02_2026.jpg"
+    },
+    {
+      "year": 2015,
+      "items": 160342,
+      "source": "https://www.overseaschf.or.kr/_res/okchf/okchf/img/sub/img_sta02_2026.jpg"
+    },
+    {
+      "year": 2016,
+      "items": 167968,
+      "source": "https://www.overseaschf.or.kr/_res/okchf/okchf/img/sub/img_sta02_2026.jpg"
+    },
+    {
+      "year": 2017,
+      "items": 168330,
+      "source": "https://www.overseaschf.or.kr/_res/okchf/okchf/img/sub/img_sta02_2026.jpg"
+    },
+    {
+      "year": 2018,
+      "items": 172316,
+      "source": "https://www.overseaschf.or.kr/_res/okchf/okchf/img/sub/img_sta02_2026.jpg"
+    },
+    {
+      "year": 2019,
+      "items": 182080,
+      "source": "https://www.overseaschf.or.kr/_res/okchf/okchf/img/sub/img_sta02_2026.jpg"
+    },
+    {
+      "year": 2020,
+      "items": 193136,
+      "source": "https://www.overseaschf.or.kr/_res/okchf/okchf/img/sub/img_sta02_2026.jpg"
+    },
+    {
+      "year": 2021,
+      "items": 204693,
+      "source": "https://www.overseaschf.or.kr/_res/okchf/okchf/img/sub/img_sta02_2026.jpg"
+    },
+    {
+      "year": 2022,
+      "items": 214208,
+      "source": "https://www.overseaschf.or.kr/_res/okchf/okchf/img/sub/img_sta02_2026.jpg"
+    },
+    {
+      "year": 2023,
+      "items": 229655,
+      "source": "https://www.overseaschf.or.kr/_res/okchf/okchf/img/sub/img_sta02_2026.jpg"
+    },
+    {
+      "year": 2024,
+      "items": 246304,
+      "source": "https://www.overseaschf.or.kr/_res/okchf/okchf/img/sub/img_sta02_2026.jpg"
+    },
+    {
+      "year": 2025,
+      "items": 247718,
+      "source": "https://www.overseaschf.or.kr/_res/okchf/okchf/img/sub/img_sta02_2026.jpg"
+    },
+    {
+      "year": 2026,
+      "items": 256190,
+      "source": "https://www.overseaschf.or.kr/_res/okchf/okchf/img/sub/img_sta02_2026.jpg"
+    }
+  ],
+  "sources": [
+    {
+      "name": "OKCHF country statistics",
+      "url": "https://www.overseaschf.or.kr/okchf/status/US_CS_FS_viw.do"
+    },
+    {
+      "name": "OKCHF public collection archive",
+      "url": "https://www.overseaschf.or.kr/archive/search/category.do"
+    },
+    {
+      "name": "OpenStreetMap institutional features",
+      "url": "https://www.openstreetmap.org/copyright"
+    },
+    {
+      "name": "OKCHF annual series, 2008–2026",
+      "url": "https://www.overseaschf.or.kr/_res/okchf/okchf/img/sub/img_sta02_2026.jpg"
+    }
+  ],
+  "publicArchiveRecords": 6045
+}
