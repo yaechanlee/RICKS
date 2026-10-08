@@ -100,3 +100,19 @@ mobileNavigation.addEventListener('change',resetNavigation);
  const grid=document.querySelector('.initiative-card-grid');if(grid&&!grid.querySelector('a[href="'+route+'"]')){const card=document.createElement('a');card.className='initiative-card';card.href=route;card.innerHTML='<div class="initiative-card-art">'+art+'</div><div class="initiative-card-copy"><p class="eyebrow">KOREA RESEARCH NETWORK · MANAGEMENT</p><h2>'+name+'</h2><p>'+description+'</p><p class="initiative-card-stats">9,039 '+(ko?'편 · 2000–2025년 · 잠정 선별':'articles and reviews · 2000–2025 · provisional screening')+'</p><span class="text-link">'+action+'</span></div>';grid.append(card)}
  const home=document.querySelector('.home-research-initiatives>.wrap');if(home&&!home.querySelector('a[href="'+route+'"]')){const card=document.createElement('a');card.className='atlas-feature';card.href=route;card.style.marginTop='24px';card.innerHTML='<div class="atlas-art">'+art+'</div><div class="atlas-feature-copy"><p class="eyebrow">KOREA RESEARCH NETWORK · MANAGEMENT</p><h3>'+name+'</h3><p>'+description+'</p><div class="atlas-facts"><span><b>9,039</b> '+(ko?'논문':'articles / reviews')+'</span><span><b>2000–2025</b></span></div><span class="text-link">'+action+'</span></div>';home.append(card)}
 })();
+
+/* Official RICKS institutional contact. */
+(function () {
+  function updateInstituteContact() {
+    document.querySelectorAll('a[href="mailto:gsis@hanyang.ac.kr"]').forEach(function (link) {
+      link.href = 'mailto:ricks@hanyang.ac.kr';
+      link.textContent = link.textContent.replace('gsis@hanyang.ac.kr', 'ricks@hanyang.ac.kr');
+    });
+    const inquiry = document.querySelector('.people-cta p');
+    if (inquiry) inquiry.textContent = document.documentElement.lang === 'ko'
+      ? '연구소 및 구성원 관련 문의: RICKS 공식 이메일.'
+      : 'For inquiries about the Institute or its members, contact RICKS.';
+  }
+  updateInstituteContact();
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', updateInstituteContact, { once: true });
+})();
