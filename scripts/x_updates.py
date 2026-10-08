@@ -93,7 +93,7 @@ def main():
         channels += buffer('query($input: ChannelsInput!) { channels(input:$input) { id name service serviceId organizationId isDisconnected isLocked isQueuePaused } }',
                            {'input': {'organizationId': org['id']}})['channels']
     choices = [c for c in channels if c['service'] == 'twitter']
-    handle = os.environ.get('BUFFER_X_HANDLE', '').lstrip('@').lower()
+    handle = (os.environ.get('BUFFER_X_HANDLE') or 'RICKS_HYUGSIS').lstrip('@').lower()
     if not handle:
         print('Verification only: set repository variable BUFFER_X_HANDLE to the intended handle.')
         print('Connected X channels:', [(c['name'], c['id']) for c in choices])
