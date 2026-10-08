@@ -1,0 +1,28 @@
+name: RICKS X updates
+on:
+  schedule:
+    - cron: '17 0 * * *'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: ricks-x-updates
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Check and schedule new public RICKS posts
+        env:
+          BUFFER_API_KEY: ${{ secrets.BUFFER_API_KEY }}
+          BUFFER_X_HANDLE: ${{ vars.BUFFER_X_HANDLE }}
+          X_UPDATES_ENABLED: ${{ vars.X_UPDATES_ENABLED }}
+          GH_TOKEN: ${{ github.token }}
+        run: python scripts/x_updates.py
