@@ -1,7 +1,9 @@
 name: RICKS X updates
 on:
-  schedule:
-    - cron: '17 0 * * *'
+  workflow_run:
+    workflows: ["Deploy to GitHub Pages"]
+    types: [completed]
+    branches: [main]
   workflow_dispatch:
 permissions:
   contents: write
@@ -10,11 +12,13 @@ concurrency:
   cancel-in-progress: false
 jobs:
   publish:
+    if: github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
         with:
+          ref: main
           persist-credentials: false
       - uses: actions/setup-python@v5
         with:
