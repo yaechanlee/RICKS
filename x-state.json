@@ -1,7 +1,10 @@
 {
   "version": 1,
   "baselineAt": "2026-10-08T08:35:01Z",
-  "identity": null,
+  "identity": {
+    "channelId": "6ac753de6a5c39ccb64e4719",
+    "serviceId": "1912858824224231424"
+  },
   "records": {
     "d993fd2d-aec5-4975-bc59-ac0675b71c36": {
       "status": "baseline"
