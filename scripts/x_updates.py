@@ -1,8 +1,8 @@
 """Publish new public RICKS items through Buffer; never log credentials."""
 import base64
-import datetime as dt
 import json
 import os
+import pathlib
 import re
 import sys
 import urllib.error
@@ -30,6 +30,18 @@ def buffer(query, variables=None):
     if result.get('errors'):
         raise RuntimeError('Buffer GraphQL request failed; check account, schema or limits')
     return result['data']
+
+def public_content(action, **data):
+    # Use the same public CMS endpoint as the website, not a CDN snapshot.
+    cms = pathlib.Path(__file__).resolve().parents[1] / 'site' / 'cms.js'
+    match = re.search(r"const endpoint='([^']+)'", cms.read_text())
+    if not match or not match[1].startswith('https://script.google.com/macros/s/'):
+        raise RuntimeError('Public CMS endpoint missing or invalid')
+    result = request(match[1], {'action': action, **data},
+                     {'Content-Type': 'text/plain;charset=utf-8'})
+    if not result.get('ok'):
+        raise RuntimeError('Live public content unavailable; publication deferred')
+    return result
 
 def eligible(item):
     summary = item.get('summary', '')
@@ -114,13 +126,7 @@ def main():
     if state.get('identity') is None:
         state['identity'] = identity
         sha = state_save(state, sha, url, headers)
-    feed = request(ROOT + '/content-cache/feed.json')
-    if not feed.get('ok'):
-        raise RuntimeError('Public feed unavailable')
-    # Do not act on stale snapshots.
-    stamp = dt.datetime.fromisoformat(feed['generatedAt'].replace('Z', '+00:00'))
-    if dt.datetime.now(dt.timezone.utc) - stamp > dt.timedelta(hours=3):
-        raise RuntimeError('Public feed is stale; wait for website refresh')
+    feed = public_content('publicFeed')
     records = state['records']
     pending = [key for key, record in records.items() if record['status'] == 'pending']
     if pending:
@@ -146,7 +152,7 @@ def main():
         if item.get('routineQueue'):
             text = caption(item)
         else:
-            detail = request(ROOT + '/content-cache/' + urllib.parse.quote(ident, safe='') + '.json')
+            detail = public_content('publicArticle', id=ident)
             if not detail.get('ok') or detail['item']['id'] != ident or not eligible(detail['item']):
                 raise RuntimeError('Public detail is unavailable or no longer published')
             text = caption(detail['item'])
