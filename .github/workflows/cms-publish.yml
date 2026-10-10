@@ -1,0 +1,29 @@
+name: RICKS authenticated publishing
+on:
+  workflow_dispatch:
+    inputs:
+      post_json:
+        description: 'CMS post JSON. Leave blank to verify saved authentication only.'
+        required: false
+        default: ''
+        type: string
+permissions:
+  contents: read
+concurrency:
+  group: ricks-cms-publishing
+  cancel-in-progress: false
+jobs:
+  publish:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Authenticate and verify content operation
+        env:
+          RICKS_CMS_PASSWORD: ${{ secrets.RICKS_CMS_PASSWORD }}
+          RICKS_POST_JSON: ${{ inputs.post_json }}
+        run: python scripts/cms_publish.py
