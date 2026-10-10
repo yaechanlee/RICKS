@@ -43,9 +43,11 @@
       "status": "baseline"
     },
     "4e7a2862-f4f2-40ee-92be-fb8ce86eac76": {
-      "status": "pending",
+      "status": "scheduled",
       "text": "Song Minjae and Ines Amrouche Receive KIEP Excellence Award\nHanyang GSIS Ph.D. students Song Minjae and Ines Amrouche have received the Excellence Award (우수상) in the doctoral category of the 2026 KIEP Global South Regional Studies Paper Competition.…\nhttps://ricks.kr/article/?id=4e7a2862-f4f2-40ee-92be-fb8ce86eac76",
-      "sourceUrl": "https://ricks.kr/article/?id=4e7a2862-f4f2-40ee-92be-fb8ce86eac76"
+      "sourceUrl": "https://ricks.kr/article/?id=4e7a2862-f4f2-40ee-92be-fb8ce86eac76",
+      "bufferPostId": "6ac9a600f91f772d457c716a",
+      "dueAt": "2026-10-13T00:33:00.000Z"
     }
   }
 }
