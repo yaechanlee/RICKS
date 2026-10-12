@@ -50,9 +50,11 @@
       "dueAt": "2026-10-13T00:33:00.000Z"
     },
     "weekly:10.25024/ksq.35.4.201212.87": {
-      "status": "pending",
+      "status": "scheduled",
       "text": "What travelled through Joseon's markets?\nDaegil Kim examines late Joseon's five-day markets. He argues that they linked trade, information and cultural life. #RICKS #KoreanHistory\nhttps://doi.org/10.25024/ksq.35.4.201212.87",
-      "sourceUrl": "https://doi.org/10.25024/ksq.35.4.201212.87"
+      "sourceUrl": "https://doi.org/10.25024/ksq.35.4.201212.87",
+      "bufferPostId": "6accdbf28130a0adb8ee1a79",
+      "dueAt": "2026-10-13T00:33:00.000Z"
     }
   }
 }
