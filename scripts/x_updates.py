@@ -57,27 +57,62 @@ def english(item):
     item['summary'] = re.sub(r'^\[RICKS_ACTIVITY:[^\]]+\]\s*', '', item.get('summary', ''))
     return item
 
+def weight(text):
+    # X counts links as 23 characters; keep URLs atomic when splitting.
+    return sum(23 if part.startswith(('https://', 'http://')) else
+               sum(1 if ord(c) <= 0x10ff or 0x2000 <= ord(c) <= 0x206f else 2 for c in part)
+               for part in re.split(r'(https?://[^\\s]+)', text))
+
 def caption(item):
     item = english(item)
     url = item.get('sourceUrl') or ROOT + '/article/?id=' + urllib.parse.quote(item['id'], safe='')
-    title = re.sub(r'\s+', ' ', item['title']).strip()
-    summary = re.sub(r'\s+', ' ', item.get('summary', '')).strip()
-    # Conservative X weighted length: reserve 23 for t.co and 2 per Unicode char.
-    def weight(s):
-        return sum(1 if ord(c) <= 0x10ff or 0x2000 <= ord(c) <= 0x206f else 2 for c in s)
-    def shorten(s, budget):
-        if weight(s) <= budget:
-            return s
-        out = ''
-        for c in s:
-            if weight(out + c) + 2 > budget:
-                break
-            out += c
-        return out.rstrip() + '…'
-    title = shorten(title, 170)
-    budget = 280 - weight(title) - 23 - 4
-    summary = shorten(summary, budget) if budget >= 35 and summary != title else ''
-    return title + ('\n' + summary if summary else '') + '\n' + url
+    # Prepared social copy is identical to Instagram's full caption.
+    if item.get('caption'):
+        return item['caption'].strip()
+    title = item['title'].strip()
+    summary = item.get('summary', '').strip()
+    body = item.get('body', '').strip()
+    # The published text supplies the detail for notices and faculty updates.
+    content = body or summary
+    return '\\n\\n'.join(part for part in (title, content if content != title else '', url) if part)
+
+def thread_parts(text):
+    if weight(text) <= 280:
+        return [text]
+    # Reserve room for numbering; split at word boundaries, never discard content.
+    parts, current = [], ''
+    for word in re.findall(r'https?://[^\\s]+|[^\\s]+', text):
+        if weight(word) > 260:
+            raise ValueError('Unsplit long token in caption; prepare readable social copy')
+        candidate = (current + ' ' + word).strip()
+        if weight(candidate) > 260:
+            parts.append(current)
+            current = word
+        else:
+            current = candidate
+    if current:
+        parts.append(current)
+    if len(parts) > 25:
+        raise ValueError('Summary exceeds 25 thread posts; prepare a substantive shorter summary')
+    return [f'{part} ({i}/{len(parts)})' for i, part in enumerate(parts, 1)]
+
+def post_payload(item, channel_id):
+    full_text = caption(item)
+    parts = thread_parts(full_text)
+    media = item.get('mediaUrls', [])
+    if not isinstance(media, list) or len(media) > 4 or any(
+            not isinstance(u, str) or not u.startswith('https://') for u in media):
+        raise ValueError('Expected up to four publicly accessible HTTPS card URLs')
+    assets = [{'image': {'url': u}} for u in media]
+    payload = {'channelId': channel_id, 'text': parts[0], 'assets': assets,
+               'schedulingType': 'automatic', 'mode': 'addToQueue',
+               'needsApproval': False, 'saveToDraft': False,
+               'source': 'ricks-website-updates'}
+    if len(parts) > 1:
+        payload['metadata'] = {'twitter': {'thread': [
+            {'text': part, 'assets': assets if i == 0 else []}
+            for i, part in enumerate(parts)]}}
+    return payload, full_text, parts
 
 def state_read():
     repo = os.environ['GITHUB_REPOSITORY']
@@ -137,33 +172,45 @@ def main():
     routine_items = []
     for entry in queue['items']:
         if (not isinstance(entry.get('id'), str) or
-                not entry['id'].startswith(('weekly:', 'classics:')) or
+                not entry['id'].strip() or
                 not isinstance(entry.get('title'), str) or
                 not isinstance(entry.get('summary'), str) or
                 not isinstance(entry.get('sourceUrl'), str) or
                 not entry['sourceUrl'].startswith('https://')):
             raise RuntimeError('Invalid routine queue entry')
         routine_items.append(dict(entry, routineQueue=True))
+    # Prepared packages override the same canonical website ID, never create a second post.
+    prepared = {entry['id']: entry for entry in routine_items}
+    items = {item['id']: item for item in feed['items']}
+    items.update(prepared)
     count = 0
-    for item in sorted(feed['items'] + routine_items, key=lambda x: (x.get('date', ''), x['id'])):
+    for item in sorted(items.values(), key=lambda x: (x.get('date', ''), x['id'])):
         ident = item['id']
         if (not item.get('routineQueue') and not eligible(item)) or ident in records:
             continue
-        if item.get('routineQueue'):
-            text = caption(item)
-        else:
+        if not item.get('routineQueue'):
             detail = public_content('publicArticle', id=ident)
             if not detail.get('ok') or detail['item']['id'] != ident or not eligible(detail['item']):
                 raise RuntimeError('Public detail is unavailable or no longer published')
-            text = caption(detail['item'])
-        records[ident] = {'status': 'pending', 'text': text, 'sourceUrl': item.get('sourceUrl') or ROOT + '/article/?id=' + ident}
+            item = english(detail['item'])
+            # Reviews need the prepared card package before X can publish.
+            if item.get('type') in {'Book review', 'Article review', 'Commentary'}:
+                print('Awaiting substantive social caption and news cards for', ident)
+                continue
+            item['mediaUrls'] = [image['data'] for image in item.get('images', [])
+                                 if image.get('data', '').startswith('https://')][:4]
+        elif not item.get('caption') or not item.get('mediaUrls'):
+            print('Awaiting full caption and news cards for', ident)
+            continue
+        payload, full_text, parts = post_payload(item, channel['id'])
+        text = payload['text']
+        records[ident] = {'status': 'pending', 'text': text, 'caption': full_text,
+                          'thread': parts, 'mediaUrls': item.get('mediaUrls', []),
+                          'sourceUrl': item.get('sourceUrl') or ROOT + '/article/?id=' + ident}
         # Persist BEFORE the mutation. A timeout cannot cause duplicate posts on retry.
         sha = state_save(state, sha, url, headers)
         result = buffer('mutation($input: CreatePostInput!) { createPost(input:$input) { ... on PostActionSuccess { post { id text dueAt status } } ... on MutationError { message } } }',
-                        {'input': {'channelId': channel['id'], 'text': text, 'assets': [],
-                                   'schedulingType': 'automatic', 'mode': 'addToQueue',
-                                   'needsApproval': False, 'saveToDraft': False,
-                                   'source': 'ricks-website-updates'}})['createPost']
+                        {'input': payload})['createPost']
         if not result.get('post'):
             # A definite rejection created no post. Permit a subsequent daily retry.
             del records[ident]
