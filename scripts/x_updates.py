@@ -61,7 +61,7 @@ def weight(text):
     # X counts links as 23 characters; keep URLs atomic when splitting.
     return sum(23 if part.startswith(('https://', 'http://')) else
                sum(1 if ord(c) <= 0x10ff or 0x2000 <= ord(c) <= 0x206f else 2 for c in part)
-               for part in re.split(r'(https?://[^\\s]+)', text))
+               for part in re.split(r'(https?://[^\s]+)', text))
 
 def caption(item):
     item = english(item)
@@ -74,14 +74,14 @@ def caption(item):
     body = item.get('body', '').strip()
     # The published text supplies the detail for notices and faculty updates.
     content = body or summary
-    return '\\n\\n'.join(part for part in (title, content if content != title else '', url) if part)
+    return '\n\n'.join(part for part in (title, content if content != title else '', url) if part)
 
 def thread_parts(text):
     if weight(text) <= 280:
         return [text]
     # Reserve room for numbering; split at word boundaries, never discard content.
     parts, current = [], ''
-    for word in re.findall(r'https?://[^\\s]+|[^\\s]+', text):
+    for word in re.findall(r'https?://[^\s]+|[^\s]+', text):
         if weight(word) > 260:
             raise ValueError('Unsplit long token in caption; prepare readable social copy')
         candidate = (current + ' ' + word).strip()
