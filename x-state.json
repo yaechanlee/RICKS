@@ -57,7 +57,7 @@
       "dueAt": "2026-10-13T00:33:00.000Z"
     },
     "social:edcf-koica-atlas-2026-10-19": {
-      "status": "pending",
+      "status": "scheduled",
       "text": "EDCF data has been added to the KOICA ODA Atlas. Explore KOICA and EDCF activities together and filter by provider: https://ricks.kr/research-initiatives/koica-atlas/",
       "caption": "EDCF data has been added to the KOICA ODA Atlas. Explore KOICA and EDCF activities together and filter by provider: https://ricks.kr/research-initiatives/koica-atlas/",
       "thread": [
@@ -66,7 +66,9 @@
       "mediaUrls": [
         "https://ricks.kr/assets/edcf-atlas-update-20261019.png"
       ],
-      "sourceUrl": "https://ricks.kr/research-initiatives/koica-atlas/"
+      "sourceUrl": "https://ricks.kr/research-initiatives/koica-atlas/",
+      "bufferPostId": "6ad5944bae173d6e002cf7e7",
+      "dueAt": "2026-10-20T00:33:00.000Z"
     }
   }
 }
