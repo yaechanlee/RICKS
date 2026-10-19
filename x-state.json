@@ -55,6 +55,18 @@
       "sourceUrl": "https://doi.org/10.25024/ksq.35.4.201212.87",
       "bufferPostId": "6accdbf28130a0adb8ee1a79",
       "dueAt": "2026-10-13T00:33:00.000Z"
+    },
+    "social:edcf-koica-atlas-2026-10-19": {
+      "status": "pending",
+      "text": "EDCF data has been added to the KOICA ODA Atlas. Explore KOICA and EDCF activities together and filter by provider: https://ricks.kr/research-initiatives/koica-atlas/",
+      "caption": "EDCF data has been added to the KOICA ODA Atlas. Explore KOICA and EDCF activities together and filter by provider: https://ricks.kr/research-initiatives/koica-atlas/",
+      "thread": [
+        "EDCF data has been added to the KOICA ODA Atlas. Explore KOICA and EDCF activities together and filter by provider: https://ricks.kr/research-initiatives/koica-atlas/"
+      ],
+      "mediaUrls": [
+        "https://ricks.kr/assets/edcf-atlas-update-20261019.png"
+      ],
+      "sourceUrl": "https://ricks.kr/research-initiatives/koica-atlas/"
     }
   }
 }
