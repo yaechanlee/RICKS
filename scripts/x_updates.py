@@ -5,6 +5,7 @@ import os
 import pathlib
 import re
 import sys
+import time
 import urllib.error
 import urllib.parse
 import urllib.request
@@ -13,20 +14,40 @@ ROOT = 'https://ricks.kr'
 STATE_BRANCH = 'ricks-x-state'
 STATE_FILE = 'x-state.json'
 
-def request(url, payload=None, headers=None, method=None):
+def request(url, payload=None, headers=None, method=None, *, retryable=False, timeout=45):
     req = urllib.request.Request(url, data=None if payload is None else json.dumps(payload).encode(),
                                  headers=headers or {}, method=method)
-    try:
-        with urllib.request.urlopen(req, timeout=45) as response:
-            return json.load(response)
-    except urllib.error.HTTPError as error:
-        # Do not echo response bodies or headers containing credentials.
-        raise RuntimeError(f'HTTP {error.code}; retry later, no automatic mutation retry') from None
+    # Retry only reads, including the CMS/GraphQL reads sent as POST requests.
+    # Writes must never be replayed after an uncertain response.
+    attempts = 3 if retryable or req.get_method() == 'GET' else 1
+    host = urllib.parse.urlsplit(url).hostname
+    service = {'api.buffer.com': 'Buffer', 'api.github.com': 'GitHub',
+               'script.google.com': 'Public CMS'}.get(host, 'Remote service')
+    for attempt in range(attempts):
+        try:
+            with urllib.request.urlopen(req, timeout=timeout) as response:
+                result = json.load(response)
+            if not isinstance(result, dict):
+                raise ValueError('Expected JSON object')
+            return result
+        except urllib.error.HTTPError as error:
+            reason = f'HTTP {error.code}'
+            transient = error.code in {408, 429, 500, 502, 503, 504}
+        except (json.JSONDecodeError, UnicodeDecodeError, ValueError):
+            reason, transient = 'empty or invalid JSON response', True
+        except (urllib.error.URLError, TimeoutError):
+            reason, transient = 'connection failure or timeout', True
+        # Log neither response bodies, credentials nor endpoint query strings.
+        if not transient or attempt + 1 == attempts:
+            raise RuntimeError(f'{service}: {reason}; request stopped without replaying writes') from None
+        print(f'{service}: {reason}; retrying read ({attempt + 2}/{attempts})', flush=True)
+        time.sleep(2 ** (attempt + 1))
 
 def buffer(query, variables=None):
     result = request('https://api.buffer.com', {'query': query, 'variables': variables or {}},
                      {'Authorization': 'Bearer ' + os.environ['BUFFER_API_KEY'],
-                      'Content-Type': 'application/json'})
+                      'Content-Type': 'application/json'},
+                     retryable=not query.lstrip().startswith('mutation'))
     if result.get('errors'):
         raise RuntimeError('Buffer GraphQL request failed; check account, schema or limits')
     return result['data']
@@ -38,7 +59,7 @@ def public_content(action, **data):
     if not match or not match[1].startswith('https://script.google.com/macros/s/'):
         raise RuntimeError('Public CMS endpoint missing or invalid')
     result = request(match[1], {'action': action, **data},
-                     {'Content-Type': 'text/plain;charset=utf-8'})
+                     {'Content-Type': 'text/plain;charset=utf-8'}, retryable=True, timeout=90)
     if not result.get('ok'):
         raise RuntimeError('Live public content unavailable; publication deferred')
     return result
