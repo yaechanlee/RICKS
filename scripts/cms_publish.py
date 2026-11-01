@@ -22,7 +22,12 @@ def request(action, **data):
     with urllib.request.urlopen(req, timeout=120) as response:
         result = json.load(response)
     if not result.get("ok"):
-        raise RuntimeError("CMS rejected the request; check authentication or post validation.")
+        message = "CMS rejected " + action
+        if action == "adminSave":
+            error = str(result.get("error", "")).lower()
+            fields = [field for field in ("image", "photo", "body", "title", "date", "summary", "author", "affiliation", "id", "status") if field in error]
+            message += "; validation fields: " + (", ".join(fields) or "unspecified")
+        raise RuntimeError(message + ".")
     return result
 
 def main():
