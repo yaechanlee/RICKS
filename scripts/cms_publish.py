@@ -31,6 +31,17 @@ def main():
         raise RuntimeError("Add the RICKS_CMS_PASSWORD repository secret before running.")
     raw = os.environ.get("RICKS_POST_JSON", "").strip()
     item = json.loads(raw) if raw else None
+    request_file = os.environ.get("RICKS_REQUEST_FILE", "").strip()
+    if request_file:
+        if raw or request_file != "cms-publication-request.json":
+            raise RuntimeError("Use exactly one supported publication input.")
+        envelope = json.loads((ROOT / request_file).read_text(encoding="utf-8"))
+        if (not isinstance(envelope, dict) or
+                set(envelope) != {"requestId", "item"} or
+                not isinstance(envelope["requestId"], str) or
+                not re.fullmatch(r"[A-Za-z0-9._-]{1,120}", envelope["requestId"])):
+            raise RuntimeError("Publication request requires requestId and item.")
+        item = envelope["item"]
     if item is not None:
         if not isinstance(item, dict) or not item.get("title") or not item.get("body"):
             raise RuntimeError("Post JSON requires title and body.")
@@ -44,6 +55,15 @@ def main():
             request("adminList", token=token)
             print("Verified: automatic authenticated CMS access works.")
             return
+        if not item.get("id"):
+            existing = request("adminList", token=token).get("items", [])
+            duplicate = next((entry for entry in existing
+                              if entry.get("title") == item["title"]), None)
+            if duplicate:
+                print("Existing post found; no duplicate created: " + duplicate["id"])
+                return
+        elif not item.get("updatedAt"):
+            raise RuntimeError("Editing an existing post requires its current updatedAt.")
         saved = request("adminSave", token=token, item=item)["item"]
         verified = request("adminGet", token=token, id=saved["id"])["item"]
         if verified["updatedAt"] != saved["updatedAt"]:

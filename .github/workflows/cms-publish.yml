@@ -1,5 +1,8 @@
 name: RICKS authenticated publishing
 on:
+  push:
+    branches: [main]
+    paths: [cms-publication-request.json]
   workflow_dispatch:
     inputs:
       post_json:
@@ -26,4 +29,5 @@ jobs:
         env:
           RICKS_CMS_PASSWORD: ${{ secrets.RICKS_CMS_PASSWORD }}
           RICKS_POST_JSON: ${{ inputs.post_json }}
+          RICKS_REQUEST_FILE: ${{ github.event_name == 'push' && 'cms-publication-request.json' || '' }}
         run: python scripts/cms_publish.py
