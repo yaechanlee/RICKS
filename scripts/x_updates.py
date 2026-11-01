@@ -215,7 +215,8 @@ def main():
                 raise RuntimeError('Public detail is unavailable or no longer published')
             item = english(detail['item'])
             # Reviews need the prepared card package before X can publish.
-            if item.get('type') in {'Book review', 'Article review', 'Commentary'}:
+            if (item.get('type') in {'Book review', 'Article review', 'Commentary', 'Academic publications'} or
+                    detail['item'].get('summary', '').startswith('[RICKS_ACTIVITY:academic]')):
                 print('Awaiting substantive social caption and news cards for', ident)
                 continue
             item['mediaUrls'] = [image['data'] for image in item.get('images', [])
