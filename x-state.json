@@ -131,7 +131,7 @@
       "dueAt": "2026-11-03T00:33:00.000Z"
     },
     "fa2d31cf-d64e-4778-b5d6-0d9beeab0f25": {
-      "status": "pending",
+      "status": "scheduled",
       "text": "Professor Lee Yaechan has published “From financial regionalism to capital market regionalization: Asian bond market development and China-ASEAN financial connectivity” in The Pacific Review, coauthored with Chen Li and Huanhuan Zheng. The article asks whether (1/9)",
       "caption": "Professor Lee Yaechan has published “From financial regionalism to capital market regionalization: Asian bond market development and China-ASEAN financial connectivity” in The Pacific Review, coauthored with Chen Li and Huanhuan Zheng.\n\nThe article asks whether the official financial cooperation developed in East Asia since the 1997 Asian Financial Crisis has produced closer connections between the region’s capital markets. It distinguishes financial regionalism, organized through cooperation between governments, from capital market regionalization, understood as the integration of markets through cross-border investment. The distinction makes it possible to examine whether institution building has translated into changes in investment patterns.\n\nThe authors use the IMF’s Coordinated Portfolio Investment Survey for 1997–2024 to investigate regional investment in debt securities. They identify a significant increase in intraregional portfolio investment, driven largely by China’s emergence as a major regional creditor after 2008. They then use process tracing of the Asian Bond Markets Initiative to examine how official cooperation contributed to this development.\n\nState-led cooperation helped deepen regional bond-market integration.\n\nThe authors argue that regional institution building and China’s strategic opening to portfolio investment substantially strengthened China–ASEAN bond-market connectivity. Their account connects changes in investment patterns to the cooperative frameworks through which governments sought to develop regional markets. The study’s significance lies in showing how market integration can be rooted in official cooperation: regional institutions matter not only as agreements between states, but also through their relationship with cross-border capital-market activity.\n\nChen Li, Yaechan Lee and Huanhuan Zheng (2026), “From financial regionalism to capital market regionalization: Asian bond market development and China-ASEAN financial connectivity,” The Pacific Review, published online 21 October 2026. https://doi.org/10.1080/09512748.2026.2749551\n\n#RICKS #HanyangUniversity #PoliticalEconomy",
       "thread": [
@@ -148,7 +148,9 @@
       "mediaUrls": [
         "https://ricks.kr/assets/RICKS-bond-markets-20261101.jpg"
       ],
-      "sourceUrl": "https://ricks.kr/article/?id=fa2d31cf-d64e-4778-b5d6-0d9beeab0f25"
+      "sourceUrl": "https://ricks.kr/article/?id=fa2d31cf-d64e-4778-b5d6-0d9beeab0f25",
+      "bufferPostId": "6ae683c0f0984eef333b7ce2",
+      "dueAt": "2026-11-04T00:58:00.000Z"
     }
   }
 }
