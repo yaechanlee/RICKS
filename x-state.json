@@ -173,7 +173,7 @@
       "dueAt": "2026-11-05T00:22:00.000Z"
     },
     "weekly:10.29186/kjhh.2018.38.5": {
-      "status": "pending",
+      "status": "scheduled",
       "text": "What changes when the March First Movement is told beyond Seoul? Seo Dong-il examines how scholarship published during the 2010s reinterpreted the March First Movement compared with work from the 1990s and 2000s. Reviewing 81 major studies, Seo groups the (1/8)",
       "caption": "What changes when the March First Movement is told beyond Seoul?\n\nSeo Dong-il examines how scholarship published during the 2010s reinterpreted the March First Movement compared with work from the 1990s and 2000s. Reviewing 81 major studies, Seo groups the literature into four broad areas—ideas and background, participants and individuals, foreign and local perspectives, and consequences and memory—and identifies the questions that increasingly shaped the field.\n\nThe review finds that the most important shift was an effort to move beyond both Seoul-centered history and state-centered interpretation. Researchers paid greater attention to local participants and foreign observers, while sustained work on memory, commemoration, and representation questioned how the movement had been absorbed into nationalist narratives. Studies reconsidering such issues as the claim that Emperor Gojong was poisoned and the movement’s place in world history also sought to separate historical evidence from established myths. Seo presents these changes as part of a broader attempt to recover the movement’s complexity: who participated, how it unfolded outside the capital, how outsiders understood it, and how later generations remembered it. The article therefore shows how changing the scale and viewpoint of research can change the history we think we know.\n\n서동일 (2018), 「중앙사와 국가주의의 틀을 넘어—2010년대 3·1운동 연구경향」 [“Overcoming Capital-focused History and Statism Interpretation: A Review of the Research Patterns in 2010s on March First Movement”], The Korean Journal of History of Historiography 38, 5–47.\n\nDOI: https://doi.org/10.29186/kjhh.2018.38.5\nKCI: https://www.kci.go.kr/kciportal/landing/article.kci?arti_id=ART002431870\n\nImage: Korean Information Bureau, peaceful demonstration in Seoul, March 1919; Wikimedia Commons, public domain.\n\n#RICKS #WeeklyResearchFocus #KoreanHistory #MarchFirstMovement",
       "thread": [
@@ -189,7 +189,9 @@
       "mediaUrls": [
         "https://static.metricool.com/planner/202611/7203134-file-16803411206641229581.png"
       ],
-      "sourceUrl": "https://doi.org/10.29186/kjhh.2018.38.5"
+      "sourceUrl": "https://doi.org/10.29186/kjhh.2018.38.5",
+      "bufferPostId": "6af1ea1f07b8501775fe414f",
+      "dueAt": "2026-11-10T00:33:00.000Z"
     }
   }
 }
