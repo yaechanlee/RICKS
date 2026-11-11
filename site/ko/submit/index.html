@@ -55,7 +55,16 @@
     #submission-status.error{background:#fff1ef;color:#9b2f22}
     .submission-trap{position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden}
     @media(max-width:680px){.submission-row{grid-template-columns:1fr;gap:22px}}
-.submission-choice{border:0;padding:0;margin:0 0 24px}.submission-choice legend{font-size:15px;font-weight:700;color:#173955;margin-bottom:12px}#ricks-submission .submission-choice label{display:inline-flex;align-items:center;gap:8px;margin-right:24px}#ricks-submission .submission-choice input{width:auto}#manuscriptText{min-height:360px}[hidden]{display:none!important}</style>
+.submission-choice{border:0;padding:0;margin:0 0 24px}.submission-choice legend{font-size:15px;font-weight:700;color:#173955;margin-bottom:12px}#ricks-submission .submission-choice label{display:inline-flex;align-items:center;gap:8px;margin-right:24px}#ricks-submission .submission-choice input{width:auto}#manuscriptText{min-height:360px}[hidden]{display:none!important}
+    .submission-guidelines{margin-bottom:36px;padding:clamp(22px,4vw,40px);border:1px solid #d9e2ea;border-top:3px solid #004483;background:#fff;color:#50677b;line-height:1.85}
+    .guidelines-heading{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;margin-bottom:20px}
+    .submission-guidelines h2{margin:0;color:#123c60;font-size:clamp(24px,3vw,32px)}
+    .submission-guidelines h3{margin:24px 0 8px;color:#173955;font-size:18px}
+    .submission-guidelines p{margin:0 0 12px}.submission-guidelines ul{margin:0;padding-left:22px}.submission-guidelines li+li{margin-top:8px}
+    .submission-guidelines a{color:#004483;text-decoration:underline;text-underline-offset:3px}
+    .guidelines-download{display:inline-block;font-size:14px;font-weight:700}.guidelines-columns{display:grid;grid-template-columns:1fr 1fr;gap:30px}
+    @media(max-width:680px){.guidelines-columns{grid-template-columns:1fr;gap:0}}
+</style>
 <link rel="stylesheet" href="/page-motion.css?v=international-banner-4"><script src="/page-motion.js?v=1" defer></script><meta property="og:image" content="https://ricks.kr/assets/ricks-share-20261004.png"><meta property="og:image:alt" content="Research Institute for Contemporary Korean Studies · Hanyang University"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="https://ricks.kr/assets/ricks-share-20261004.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:type" content="image/png"><meta property="og:title" content="원고 투고 | RICKS"><meta name="twitter:title" content="HYU RICKS"><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700;800&display=swap" rel="stylesheet"><link rel="alternate" hreflang="en" href="https://ricks.kr/submit/"><link rel="alternate" hreflang="ko" href="https://ricks.kr/ko/submit/"><link rel="stylesheet" href="/languages.css?v=2"><script src="/languages.js?v=desktop-nav-20261006-9" defer></script><link rel="stylesheet" href="/post-navigation.css?v=7"><script src="/cms.js?v=bilingual-admin-20261006-7" defer></script></head>
 <body class="campus-view-international">
   <a class="skip-link" href="#main">본문 바로가기</a>
@@ -83,6 +92,29 @@
     <section class="page-content">
       <div class="wrap">
         
+        <section class="submission-guidelines" id="submission-guidelines" aria-labelledby="guidelines-title">
+          <div class="guidelines-heading"><h2 id="guidelines-title">투고 안내</h2><a class="guidelines-download" href="/assets/documents/RICKS_Submission_Guidelines.pdf" download>영문 투고 안내 다운로드 (PDF)</a></div>
+          <h3>투고 자격과 발행 일정</h3>
+          <p>대학에 소속된 학생이라면 누구나 투고할 수 있다. 매월 15일 두 편의 글을 발행한다. 원고는 아래 투고 양식을 통해 상시 접수한다.</p>
+          <h3>모집 원고</h3>
+          <p>한국의 학술 연구와 세계의 독자를 연결하는 독창적인 서평, 논문 리뷰, 논평을 모집한다. 모든 원고는 한국과 관련된 주제를 다루고, <strong>영어로 400~600단어</strong> 분량으로 작성해야 한다. 학술적 기준에 부합하도록 신중하고 엄밀하게 작성해야 한다.</p>
+          <div class="guidelines-columns">
+            <div><h3>리뷰 (서평 또는 논문 리뷰)</h3><ul>
+              <li>리뷰 대상은 한국어로 작성된 저작이어야 한다.</li>
+              <li>한국어를 읽지 못하는 독자에게 해당 저작을 소개한다. 중요하다고 판단한 내용을 자신의 언어로 종합한 뒤, 저작을 존중하는 태도로 개인적인 논평을 덧붙인다.</li>
+              <li>해당 주장의 끝에 리뷰 대상 저작의 쪽수를 괄호 안에 표기한다. 예: (p. 125), (pp. 122-123).</li>
+            </ul></div>
+            <div><h3>논평</h3><ul>
+              <li>사건, 텍스트 또는 상황을 분석하거나 설명하거나 비판하는 견해와 해설을 담는다.</li>
+              <li>주제는 한국과 관련되어야 한다.</li>
+              <li>모든 주장은 근거로 뒷받침해야 하며, 각각의 사실, 수치, 인용문에 출처를 제시해야 한다.</li>
+              <li>참고문헌과 인용은 시카고 양식의 주석·참고문헌 방식(번호를 매긴 주석)을 따른다.</li>
+            </ul></div>
+          </div>
+          <h3>투고 방법</h3>
+          <p>원고 유형을 선택하고 이름, 이메일 주소, 원고 제목을 입력한 뒤, 본문을 직접 작성하거나 붙여넣거나 파일을 업로드한다.</p>
+          <h3>문의</h3><p>문의: <a href="mailto:ricks@hanyang.ac.kr">ricks@hanyang.ac.kr</a></p>
+        </section>
         <section class="form-panel" aria-labelledby="form-title">
           <div class="form-panel-head">
             <h2 id="form-title">원고 투고 양식</h2>
