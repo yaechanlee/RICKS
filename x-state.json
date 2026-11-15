@@ -211,7 +211,7 @@
       "dueAt": "2026-11-17T00:33:00.000Z"
     },
     "78add5cb-8400-4696-8f25-988e723eb45d": {
-      "status": "pending",
+      "status": "scheduled",
       "text": "Korea’s nuclear diplomacy: Ines Amrouche reviews Hanna Lee’s argument that winning the Czech contract traded some autonomy for US cooperation. https://ricks.kr/article/?id=78add5cb-8400-4696-8f25-988e723eb45d #RICKS #NuclearDiplomacy",
       "caption": "Korea’s nuclear diplomacy: Ines Amrouche reviews Hanna Lee’s argument that winning the Czech contract traded some autonomy for US cooperation. https://ricks.kr/article/?id=78add5cb-8400-4696-8f25-988e723eb45d #RICKS #NuclearDiplomacy",
       "thread": [
@@ -223,7 +223,9 @@
         "https://static.metricool.com/planner/202611/7203134-file-8519217307649287620.png",
         "https://static.metricool.com/planner/202611/7203134-file-15662347035409941465.png"
       ],
-      "sourceUrl": "https://ricks.kr/article/?id=78add5cb-8400-4696-8f25-988e723eb45d"
+      "sourceUrl": "https://ricks.kr/article/?id=78add5cb-8400-4696-8f25-988e723eb45d",
+      "bufferPostId": "6af99871918fe79d2edc5db8",
+      "dueAt": "2026-11-18T00:58:00.000Z"
     }
   }
 }
