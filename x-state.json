@@ -194,7 +194,7 @@
       "dueAt": "2026-11-10T00:33:00.000Z"
     },
     "6e8340ad-e73a-49ff-b4d8-523d71b5c541": {
-      "status": "pending",
+      "status": "scheduled",
       "text": "Hanbok diplomacy can give South Korea’s first lady a bounded cultural role, Yue Wing Suet argues, while leaving legal ambiguity and public acceptance unresolved. https://ricks.kr/article/?id=6e8340ad-e73a-49ff-b4d8-523d71b5c541 #RICKS #CulturalDiplomacy",
       "caption": "Hanbok diplomacy can give South Korea’s first lady a bounded cultural role, Yue Wing Suet argues, while leaving legal ambiguity and public acceptance unresolved. https://ricks.kr/article/?id=6e8340ad-e73a-49ff-b4d8-523d71b5c541 #RICKS #CulturalDiplomacy",
       "thread": [
@@ -206,7 +206,9 @@
         "https://static.metricool.com/planner/202611/7203134-file-5197369676845217922.png",
         "https://static.metricool.com/planner/202611/7203134-file-13686365880798381274.png"
       ],
-      "sourceUrl": "https://ricks.kr/article/?id=6e8340ad-e73a-49ff-b4d8-523d71b5c541"
+      "sourceUrl": "https://ricks.kr/article/?id=6e8340ad-e73a-49ff-b4d8-523d71b5c541",
+      "bufferPostId": "6af9986e76c23bf1c776fab3",
+      "dueAt": "2026-11-17T00:33:00.000Z"
     }
   }
 }
