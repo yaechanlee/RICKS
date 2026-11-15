@@ -68,7 +68,24 @@
       ],
       "sourceUrl": "https://ricks.kr/research-initiatives/koica-atlas/",
       "bufferPostId": "6ad5944bae173d6e002cf7e7",
-      "dueAt": "2026-10-20T00:33:00.000Z"
+      "dueAt": "2026-10-20T00:33:00.000Z",
+      "bufferReadback": {
+        "id": "6ad5944bae173d6e002cf7e7",
+        "text": "EDCF data has been added to the KOICA ODA Atlas. Explore KOICA and EDCF activities together and filter by provider: https://ricks.kr/research-initiatives/koica-atlas/",
+        "channelId": "6ac753de6a5c39ccb64e4719",
+        "status": "sent",
+        "dueAt": "2026-10-20T00:33:00.000Z",
+        "assets": [
+          {
+            "source": "https://ricks.kr/assets/edcf-atlas-update-20261019.png",
+            "mimeType": "image/png"
+          }
+        ],
+        "metadata": {
+          "threadCount": 0,
+          "thread": []
+        }
+      }
     },
     "weekly:10.22827/seoul.2020..106.004": {
       "status": "scheduled",
@@ -208,7 +225,36 @@
       ],
       "sourceUrl": "https://ricks.kr/article/?id=6e8340ad-e73a-49ff-b4d8-523d71b5c541",
       "bufferPostId": "6af9986e76c23bf1c776fab3",
-      "dueAt": "2026-11-17T00:33:00.000Z"
+      "dueAt": "2026-11-17T00:33:00.000Z",
+      "bufferReadback": {
+        "id": "6af9986e76c23bf1c776fab3",
+        "text": "Hanbok diplomacy can give South Korea’s first lady a bounded cultural role, Yue Wing Suet argues, while leaving legal ambiguity and public acceptance unresolved. https://ricks.kr/article/?id=6e8340ad-e73a-49ff-b4d8-523d71b5c541 #RICKS #CulturalDiplomacy",
+        "channelId": "6ac753de6a5c39ccb64e4719",
+        "status": "scheduled",
+        "dueAt": "2026-11-17T00:33:00.000Z",
+        "assets": [
+          {
+            "source": "https://static.metricool.com/planner/202611/7203134-file-13845091136395208364.png",
+            "mimeType": "image/png"
+          },
+          {
+            "source": "https://static.metricool.com/planner/202611/7203134-file-13281914127327199689.png",
+            "mimeType": "image/png"
+          },
+          {
+            "source": "https://static.metricool.com/planner/202611/7203134-file-5197369676845217922.png",
+            "mimeType": "image/png"
+          },
+          {
+            "source": "https://static.metricool.com/planner/202611/7203134-file-13686365880798381274.png",
+            "mimeType": "image/png"
+          }
+        ],
+        "metadata": {
+          "threadCount": 0,
+          "thread": []
+        }
+      }
     },
     "78add5cb-8400-4696-8f25-988e723eb45d": {
       "status": "scheduled",
@@ -225,7 +271,36 @@
       ],
       "sourceUrl": "https://ricks.kr/article/?id=78add5cb-8400-4696-8f25-988e723eb45d",
       "bufferPostId": "6af99871918fe79d2edc5db8",
-      "dueAt": "2026-11-18T00:58:00.000Z"
+      "dueAt": "2026-11-18T00:58:00.000Z",
+      "bufferReadback": {
+        "id": "6af99871918fe79d2edc5db8",
+        "text": "Korea’s nuclear diplomacy: Ines Amrouche reviews Hanna Lee’s argument that winning the Czech contract traded some autonomy for US cooperation. https://ricks.kr/article/?id=78add5cb-8400-4696-8f25-988e723eb45d #RICKS #NuclearDiplomacy",
+        "channelId": "6ac753de6a5c39ccb64e4719",
+        "status": "scheduled",
+        "dueAt": "2026-11-18T00:58:00.000Z",
+        "assets": [
+          {
+            "source": "https://static.metricool.com/planner/202611/7203134-file-9143910903665211219.png",
+            "mimeType": "image/png"
+          },
+          {
+            "source": "https://static.metricool.com/planner/202611/7203134-file-1396923960626410051.png",
+            "mimeType": "image/png"
+          },
+          {
+            "source": "https://static.metricool.com/planner/202611/7203134-file-8519217307649287620.png",
+            "mimeType": "image/png"
+          },
+          {
+            "source": "https://static.metricool.com/planner/202611/7203134-file-15662347035409941465.png",
+            "mimeType": "image/png"
+          }
+        ],
+        "metadata": {
+          "threadCount": 0,
+          "thread": []
+        }
+      }
     }
   }
 }
