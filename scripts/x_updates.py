@@ -149,6 +149,23 @@ def state_save(state, sha, url, headers):
                           'branch': STATE_BRANCH, 'sha': sha}, headers, 'PUT')
     return result['content']['sha']
 
+def verify_single_media_post(record, expected, channel_id):
+    verified = buffer(
+        'query($input: PostInput!) { post(input:$input) { id text channelId status dueAt '
+        'assets { source mimeType } metadata { ... on TwitterPostMetadata { threadCount thread { text } } } } }',
+        {'input': {'id': record['bufferPostId']}})['post']
+    if verified['text'] != expected['caption'] or verified['channelId'] != channel_id:
+        raise RuntimeError('Existing X post readback mismatch; never reschedule automatically')
+    if [asset['source'] for asset in verified['assets']] != expected['mediaUrls']:
+        raise RuntimeError('Existing X media readback mismatch; never reschedule automatically')
+    metadata = verified.get('metadata') or {}
+    if metadata.get('threadCount', 0) > 1 or len(metadata.get('thread', [])) > 1:
+        raise RuntimeError('Expected one X post, but Buffer reports a thread')
+    if not all(asset['mimeType'].startswith('image/') for asset in verified['assets']):
+        raise RuntimeError('Expected native X image assets')
+    print('Verified single X post with', len(verified['assets']), 'images:', verified['id'])
+    return verified
+
 def main():
     if not os.environ.get('BUFFER_API_KEY'):
         print('Inactive: add BUFFER_API_KEY in GitHub Actions secrets.')
@@ -200,6 +217,18 @@ def main():
                 not entry['sourceUrl'].startswith('https://')):
             raise RuntimeError('Invalid routine queue entry')
         routine_items.append(dict(entry, routineQueue=True))
+    # Read back media and single-post structure for prepared concise packages.
+    # This is read-only in Buffer and never reposts an existing scheduled item.
+    proof_changed = False
+    for entry in routine_items:
+        record = records.get(entry['id'], {})
+        if (record.get('status') == 'scheduled' and record.get('bufferPostId')
+                and entry.get('mediaUrls') and entry.get('caption')
+                and weight(entry['caption']) <= 280 and not record.get('bufferReadback')):
+            record['bufferReadback'] = verify_single_media_post(record, entry, channel['id'])
+            proof_changed = True
+    if proof_changed:
+        sha = state_save(state, sha, url, headers)
     # Prepared packages override the same canonical website ID, never create a second post.
     prepared = {entry['id']: entry for entry in routine_items}
     items = {item['id']: item for item in feed['items']}
