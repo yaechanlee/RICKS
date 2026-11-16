@@ -303,7 +303,7 @@
       }
     },
     "weekly:10.23013/localh.2025.28.1.007": {
-      "status": "pending",
+      "status": "scheduled",
       "text": "How did North Korean refugees seek belonging on wartime Geoje? Park Jeong-seok traces shelters, the “Yankee market,” and refugee schools—spaces of survival and citizenship that did not erase social distance. https://doi.org/10.23013/localh.2025.28.1.007 #RICKS #KoreanHistory",
       "caption": "How did North Korean refugees seek belonging on wartime Geoje? Park Jeong-seok traces shelters, the “Yankee market,” and refugee schools—spaces of survival and citizenship that did not erase social distance. https://doi.org/10.23013/localh.2025.28.1.007 #RICKS #KoreanHistory",
       "thread": [
@@ -314,7 +314,9 @@
         "https://raw.githubusercontent.com/yaechanlee/RICKS/main/assets/social/2026-11-16/RICKS-weekly-geoje-refugees-X-02.png",
         "https://raw.githubusercontent.com/yaechanlee/RICKS/main/assets/social/2026-11-16/RICKS-weekly-geoje-refugees-X-03.png"
       ],
-      "sourceUrl": "https://doi.org/10.23013/localh.2025.28.1.007"
+      "sourceUrl": "https://doi.org/10.23013/localh.2025.28.1.007",
+      "bufferPostId": "6afb1497c8de1cd873fbc79d",
+      "dueAt": "2026-11-19T00:22:00.000Z"
     }
   }
 }
