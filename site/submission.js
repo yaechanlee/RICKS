@@ -16,7 +16,12 @@
   button.disabled=true;button.textContent=(document.documentElement.lang==='ko'?"전송 중…":"Sending…");status.hidden=true;
   try{
    const fileData=textMode?null:await new Promise((resolve,reject)=>{const reader=new FileReader();reader.onload=()=>resolve(String(reader.result).split(',')[1]);reader.onerror=()=>reject(new Error('The file could not be read. Please attach it again.'));reader.readAsDataURL(file);});
-   const data={};['submissionType','name','email','title','website'].forEach(key=>data[key]=form.elements[key].value);
+   const data={};['submissionType','name','affiliation','email','title','website'].forEach(key=>data[key]=form.elements[key].value);
+   data.affiliation=data.affiliation.trim();
+   if(!data.affiliation){show(document.documentElement.lang==='ko'?'소속 대학을 입력해 주세요.':'Please enter your university affiliation.',true);return;}
+   // The existing submission service persists the name for both text and file submissions.
+   // Keep affiliation in that saved author field as well as the dedicated payload field.
+   data.name=data.name.trim()+' ('+data.affiliation+')';
    if(textMode){data.manuscriptText=form.elements.manuscriptText.value;}else{data.fileData=fileData;data.fileName=file.name;data.fileType=/\.pdf$/i.test(file.name)?'application/pdf':'application/vnd.openxmlformats-officedocument.wordprocessingml.document';}
    const response=await fetch(endpoint,{method:'POST',credentials:'omit',redirect:'follow',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(data)});
    if(!response.ok)throw new Error('The submission service could not be reached. Please try again later.');

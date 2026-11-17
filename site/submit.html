@@ -12,7 +12,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/styles.css?v=desktop-nav-20261006-9">
   <script src="/script.js?v=desktop-nav-20261006-9" defer></script>
-  <script src="/submission.js?v=20261003-text" defer></script>
+  <script src="/submission.js?v=20261117-affiliation" defer></script>
   <style>
     .submit-intro{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(28px,7vw,90px);align-items:start;margin-bottom:38px}
     .submit-intro h2{font-size:clamp(24px,3vw,34px);line-height:1.35;margin:0;color:#123c60}
@@ -112,7 +112,7 @@
             </ul></div>
           </div>
           <h3>How to submit</h3>
-          <p>Contributors select the submission type, enter their name, email address and manuscript title, then write or paste the text, or upload a file.</p>
+          <p>Contributors select the submission type, enter their name, university affiliation, university-issued email address and manuscript title, then write or paste the text, or upload a file.</p>
           <h3>Questions</h3><p>For any inquiry, contact <a href="mailto:ricks@hanyang.ac.kr">ricks@hanyang.ac.kr</a>.</p>
         </section>
         <section class="form-panel" aria-labelledby="form-title">
@@ -123,7 +123,8 @@
           <form id="ricks-submission">
 <div class="submission-trap" aria-hidden="true"><label>Leave empty<input name="website" tabindex="-1" autocomplete="off"></label></div>
 <div class="submission-row"><div><label for="submissionType">Submission type</label><select id="submissionType" name="submissionType" required><option value="">Choose a type</option><option>Book review</option><option>Article review</option><option>Commentary</option></select></div><div><label for="authorName">Your name</label><input id="authorName" name="name" autocomplete="name" maxlength="200" required></div></div>
-<div class="submission-row"><div><label for="authorEmail">Email address</label><input id="authorEmail" name="email" type="email" autocomplete="email" maxlength="200" required></div><div><label for="manuscriptTitle">Manuscript title</label><input id="manuscriptTitle" name="title" maxlength="300" required></div></div>
+<div class="submission-field"><label for="authorAffiliation">University affiliation</label><input id="authorAffiliation" name="affiliation" autocomplete="organization" maxlength="300" aria-describedby="affiliation-hint" required><p class="submission-hint" id="affiliation-hint">Enter the full name of your university. You may also include your department or programme.</p></div>
+<div class="submission-row"><div><label for="authorEmail">University email address</label><input id="authorEmail" aria-describedby="email-hint" name="email" type="email" autocomplete="email" maxlength="200" required><p class="submission-hint" id="email-hint">Please use your university-issued email address to help us confirm your affiliation. If you cannot access a university email address, contact ricks@hanyang.ac.kr before submitting.</p></div><div><label for="manuscriptTitle">Manuscript title</label><input id="manuscriptTitle" name="title" maxlength="300" required></div></div>
 <fieldset class="submission-choice"><legend>How would you like to submit?</legend><label><input type="radio" name="submissionMode" value="text" checked> Write or paste text</label><label><input type="radio" name="submissionMode" value="file"> Upload a file</label></fieldset>
 <div class="submission-field" id="text-submission"><label for="manuscriptText">Your manuscript</label><textarea id="manuscriptText" name="manuscriptText" maxlength="1000000" required placeholder="Write or paste your manuscript here." rows="16"></textarea></div>
 <div class="submission-field" id="file-submission" hidden><label for="manuscript">Manuscript file</label><input id="manuscript" name="manuscript" type="file" accept=".docx,.pdf" disabled><p class="submission-hint">DOCX or PDF, up to 10 MB.</p></div>

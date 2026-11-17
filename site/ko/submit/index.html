@@ -12,7 +12,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/styles.css?v=desktop-nav-20261006-9">
   <script src="/script.js?v=desktop-nav-20261006-9" defer></script>
-  <script src="/submission.js?v=ko-2" defer></script>
+  <script src="/submission.js?v=20261117-affiliation" defer></script>
   <style>
     .submit-intro{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(28px,7vw,90px);align-items:start;margin-bottom:38px}
     .submit-intro h2{font-size:clamp(24px,3vw,34px);line-height:1.35;margin:0;color:#123c60}
@@ -112,7 +112,7 @@
             </ul></div>
           </div>
           <h3>투고 방법</h3>
-          <p>원고 유형을 선택하고 이름, 이메일 주소, 원고 제목을 입력한 뒤, 본문을 직접 작성하거나 붙여넣거나 파일을 업로드한다.</p>
+          <p>원고 유형을 선택하고 이름, 소속 대학, 대학에서 발급한 이메일 주소, 원고 제목을 입력한 뒤, 본문을 직접 작성하거나 붙여넣거나 파일을 업로드한다.</p>
           <h3>문의</h3><p>문의: <a href="mailto:ricks@hanyang.ac.kr">ricks@hanyang.ac.kr</a></p>
         </section>
         <section class="form-panel" aria-labelledby="form-title">
@@ -123,7 +123,8 @@
           <form id="ricks-submission">
 <div class="submission-trap" aria-hidden="true"><label>비워 두세요<input name="website" tabindex="-1" autocomplete="off"></label></div>
 <div class="submission-row"><div><label for="submissionType">원고 유형</label><select id="submissionType" name="submissionType" required><option value="">유형을 선택하세요</option><option value="Book review">서평</option><option value="Article review">논문 리뷰</option><option value="Commentary">시사 논평</option></select></div><div><label for="authorName">이름</label><input id="authorName" name="name" autocomplete="name" maxlength="200" required></div></div>
-<div class="submission-row"><div><label for="authorEmail">이메일 주소</label><input id="authorEmail" name="email" type="email" autocomplete="email" maxlength="200" required></div><div><label for="manuscriptTitle">원고 제목</label><input id="manuscriptTitle" name="title" maxlength="300" required></div></div>
+<div class="submission-field"><label for="authorAffiliation">소속 대학</label><input id="authorAffiliation" name="affiliation" autocomplete="organization" maxlength="300" aria-describedby="affiliation-hint" required><p class="submission-hint" id="affiliation-hint">소속 대학의 정식 명칭을 입력해 주세요. 학과 또는 전공도 함께 기재할 수 있습니다.</p></div>
+<div class="submission-row"><div><label for="authorEmail">대학 이메일 주소</label><input id="authorEmail" aria-describedby="email-hint" name="email" type="email" autocomplete="email" maxlength="200" required><p class="submission-hint" id="email-hint">대학 소속 확인을 위해 소속 대학에서 발급한 이메일 주소를 사용해 주세요. 대학 이메일을 사용할 수 없다면 투고 전 ricks@hanyang.ac.kr로 문의해 주세요.</p></div><div><label for="manuscriptTitle">원고 제목</label><input id="manuscriptTitle" name="title" maxlength="300" required></div></div>
 <fieldset class="submission-choice"><legend>투고 방식을 선택해 주세요</legend><label><input type="radio" name="submissionMode" value="text" checked> 텍스트 작성 또는 붙여넣기</label><label><input type="radio" name="submissionMode" value="file"> 파일 업로드</label></fieldset>
 <div class="submission-field" id="text-submission"><label for="manuscriptText">영문 원고</label><textarea id="manuscriptText" name="manuscriptText" maxlength="1000000" required placeholder="Write or paste your manuscript here." rows="16"></textarea></div>
 <div class="submission-field" id="file-submission" hidden><label for="manuscript">원고 파일</label><input id="manuscript" name="manuscript" type="file" accept=".docx,.pdf" disabled><p class="submission-hint">DOCX 또는 PDF 파일, 최대 10MB</p></div>
