@@ -344,7 +344,7 @@
       }
     },
     "weekly:ART002040291": {
-      "status": "pending",
+      "status": "scheduled",
       "text": "Sejong’s tax reform grew through disagreement. Kim Jun-tae shows how rival ideas of fairness helped shape a compromise. https://www.kci.go.kr/kciportal/landing/article.kci?arti_id=ART002040291 #RICKS #KoreanHistory",
       "caption": "Sejong’s tax reform grew through disagreement. Kim Jun-tae shows how rival ideas of fairness helped shape a compromise. https://www.kci.go.kr/kciportal/landing/article.kci?arti_id=ART002040291 #RICKS #KoreanHistory",
       "thread": [
@@ -355,7 +355,9 @@
         "https://raw.githubusercontent.com/yaechanlee/RICKS/main/assets/social/2026-11-23/RICKS-weekly-sejong-tax-X-02.png",
         "https://raw.githubusercontent.com/yaechanlee/RICKS/main/assets/social/2026-11-23/RICKS-weekly-sejong-tax-X-03.png"
       ],
-      "sourceUrl": "https://www.kci.go.kr/kciportal/landing/article.kci?arti_id=ART002040291"
+      "sourceUrl": "https://www.kci.go.kr/kciportal/landing/article.kci?arti_id=ART002040291",
+      "bufferPostId": "6b0448f9f23a24bb20dab73f",
+      "dueAt": "2026-11-24T00:33:00.000Z"
     }
   }
 }
